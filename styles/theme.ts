@@ -1,14 +1,18 @@
 import { createTheme } from '@mui/material'
 import { Shadows } from '@mui/material/styles/shadows'
 
-declare module '@mui/material/Button' {
-  // eslint-disable-next-line no-unused-vars
-  interface ButtonPropsVariantOverrides {
-    nav: true
-    nav_active: true
-    input: true
-    input_active: true
-  }
+const colors = {
+  ice: '#DAE4E9',
+  shadow: '#202020',
+  gray: '#151616',
+  black: '#101010',
+  wine: '#3C0000',
+  red: '#7E0000',
+}
+
+const fonts = {
+  text: "'Righteous', cursive",
+  custom: "'Sedgwick Ave Display', cursive;",
 }
 
 const theme = createTheme({
@@ -21,57 +25,31 @@ const theme = createTheme({
       xl: 1200,
     },
   },
-  components: {
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: 'nav' },
-          style: {
-            backgroundColor: '#3C0000',
-          },
-        },
-        {
-          props: { variant: 'nav_active' },
-          style: {
-            backgroundColor: '#3C0000',
-          },
-        },
-        {
-          props: { variant: 'input' },
-          style: {
-            backgroundColor: '#7E0000',
-          },
-        },
-        {
-          props: { variant: 'input_active' },
-          style: {
-            backgroundColor: '#7E0000',
-          },
-        },
-      ],
-    },
-  },
   palette: {
     mode: 'dark',
     background: {
-      paper: '#101010',
-      default: '#101010',
+      paper: colors.black,
+      default: colors.black,
+    },
+    primary: {
+      main: colors.wine,
+      contrastText: colors.ice,
+    },
+    action: {
+      disabled: colors.ice,
+      disabledBackground: colors.red,
+      disabledOpacity: 1,
     },
   },
   spacing: 4,
   shape: {
     borderRadius: 0,
   },
-  shadows: [
-    'none',
-    '8px 8px 0px #7E0000',
-    '2px 3px 0px #7E0000',
-    ...Array(22).fill('none'),
-  ] as Shadows,
+  shadows: [...Array(25).fill('none')] as Shadows,
   typography: {
-    fontFamily: "'Righteous', cursive",
+    fontFamily: fonts.text,
     h1: {
-      fontFamily: "'Sedgwick Ave Display', cursive;", // fontWeight, fontSize, lineHeight, letterSpacing - textTransform:"uppercase"
+      fontFamily: fonts.custom,
     },
   },
 })
