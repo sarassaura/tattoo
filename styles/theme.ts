@@ -1,6 +1,13 @@
 import { createTheme } from '@mui/material'
 import { Shadows } from '@mui/material/styles/shadows'
 
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    nav: true
+    input: true
+  }
+}
+
 const colors = {
   white: '#fff',
   ice: '#DAE4E9',
@@ -30,6 +37,40 @@ const tempTheme = createTheme({
 
 const theme = createTheme(tempTheme, {
   ...tempTheme,
+  components: {
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          '& .MuiGrid-item': {
+            backgroundColor: '#094155',
+          },
+        },
+      },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'nav' },
+          style: {
+            backgroundColor: colors.wine,
+            padding: '4px 12px',
+          },
+        },
+        {
+          props: { variant: 'input' },
+          style: {
+            backgroundColor: colors.wine,
+            padding: '8px 16px',
+          },
+        },
+      ],
+      styleOverrides: {
+        root: {
+          '&:hover': { backgroundColor: `${colors.red} !important` },
+        },
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     background: {

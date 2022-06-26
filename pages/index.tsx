@@ -1,8 +1,8 @@
-import { Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 
-function Home() {
+function home() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2.5}>
       <Grid item xs={12}>
         <Typography variant="h1">Hero text</Typography>
       </Grid>
@@ -22,10 +22,16 @@ function Home() {
         <Typography variant="h6">Text</Typography>
       </Grid>
       <Grid item xs={12}>
+        <Button variant="input">
+          <Typography variant="h4">Tattoo</Typography>
+        </Button>
         <Typography>Subtitles</Typography>
+        <Button variant="nav">
+          <Typography variant="h4">Enviar</Typography>
+        </Button>
       </Grid>
     </Grid>
   )
 }
 
-export default Home
+export default home
