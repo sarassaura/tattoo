@@ -41,6 +41,7 @@ function Info() {
         paddingRight="32px"
       >
         <WhatsAppIcon />
+        <Box height="100%" width="24px" />
         <InstagramIcon />
       </Box>
       <Stack spacing="0.5rem">
