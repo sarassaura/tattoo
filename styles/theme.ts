@@ -9,6 +9,8 @@ declare module '@mui/material/Button' {
 }
 
 const colors = {
+  footerwhite: 'rgba(255,255,255,0.32)',
+  footerice: 'rgba(218, 228, 233, 0.32)',
   white: '#fff',
   ice: '#DAE4E9',
   shadow: '#202020',
@@ -29,7 +31,7 @@ const tempTheme = createTheme({
       xs: 0, // mobile
       sm: 576, // ???
       md: 768, // ?????
-      lg: 992, // max-width
+      lg: 1015, // max-width
       xl: 1200, // desktop
     },
   },
@@ -161,6 +163,18 @@ const theme = createTheme(tempTheme, {
         color: colors.ice,
         fontSize: '0.875rem',
         lineHeight: 1.5,
+      },
+    },
+    subtitle1: {
+      fontFamily: fonts.text,
+      fontSize: '0.75rem',
+      lineHeight: 1,
+      color: colors.footerwhite,
+      letterSpacing: '0.04rem',
+      [tempTheme.breakpoints.up('sm')]: {
+        color: colors.footerice,
+        fontSize: '0.875rem',
+        lineHeight: 1,
       },
     },
   },
