@@ -40,6 +40,16 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecorationThickness: '3px',
+          textDecorationColor: colors.white,
+          cursor: 'pointer',
+          '&:hover': { textDecorationThickness: '3px' },
+        },
+      },
+    },
     MuiGrid: {
       styleOverrides: {
         root: {
@@ -78,7 +88,7 @@ const theme = createTheme(tempTheme, {
       default: colors.black,
     },
     primary: {
-      main: colors.wine,
+      main: colors.white,
       contrastText: colors.ice,
     },
     action: {

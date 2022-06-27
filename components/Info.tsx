@@ -1,6 +1,7 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import InstagramIcon from '@mui/icons-material/Instagram'
+import Link from 'next/link'
 
 function Info() {
   return (
@@ -12,9 +13,13 @@ function Info() {
         justifyContent="center"
         paddingRight="32px"
       >
-        <Typography variant="h3">Under</Typography>
-        <Typography variant="h3">|</Typography>
-        <Typography variant="h3">Ground</Typography>
+        <Link href="/">
+          <Box display="flex" style={{ cursor: 'pointer' }}>
+            <Typography variant="h3">Under</Typography>
+            <Typography variant="h3">|</Typography>
+            <Typography variant="h3">Ground</Typography>
+          </Box>
+        </Link>
       </Box>
       <Box display="flex" justifyContent="center" paddingRight="32px">
         <Avatar

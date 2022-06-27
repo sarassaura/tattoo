@@ -1,9 +1,16 @@
 import { Box } from '@mui/material'
+import { Router } from 'next/router'
 import React from 'react'
 import Info from './Info'
 import MenuComponent from './menu'
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({
+  children,
+  router,
+}: {
+  children: React.ReactNode
+  router: Router
+}) {
   return (
     <Box bgcolor="#00126a" height="100vh" display="flex">
       <Box
@@ -34,7 +41,7 @@ function Layout({ children }: { children: React.ReactNode }) {
           display="flex"
           justifyContent="flex-end"
         >
-          <MenuComponent />
+          <MenuComponent path={router.asPath} />
         </Box>
         <Box
           bgcolor="#0125d4"

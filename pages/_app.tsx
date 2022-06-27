@@ -4,12 +4,12 @@ import '../styles/fonts.css'
 import theme from '../styles/theme'
 import Layout from '../components/layout'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Layout>
-        <Component {...pageProps} />
+      <Layout router={router}>
+        <Component {...pageProps} key={router.route} />
       </Layout>
     </ThemeProvider>
   )
