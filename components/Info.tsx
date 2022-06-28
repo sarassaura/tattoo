@@ -24,7 +24,7 @@ function Info() {
       <Box display="flex" justifyContent="center" paddingRight="32px">
         <Avatar
           alt="Vitor Valentim"
-          src="./123.png"
+          src="./topo.jpg"
           sx={{ width: '6rem', height: '6rem' }}
         />
       </Box>
