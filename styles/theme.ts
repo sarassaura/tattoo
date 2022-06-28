@@ -40,6 +40,20 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: colors.white,
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: colors.white,
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {
