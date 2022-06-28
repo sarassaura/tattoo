@@ -1,4 +1,4 @@
-import { Avatar, Box, Stack, Typography } from '@mui/material'
+import { Avatar, Box, Stack, Typography, Link as MuiLink } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ function Info() {
         display="flex"
         paddingTop={1.5}
         justifyContent="center"
-        paddingRight="32px"
+        paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Link href="/">
           <Box display="flex" style={{ cursor: 'pointer' }}>
@@ -21,10 +21,14 @@ function Info() {
           </Box>
         </Link>
       </Box>
-      <Box display="flex" justifyContent="center" paddingRight="32px">
+      <Box
+        display="flex"
+        justifyContent="center"
+        paddingRight={{ xs: '0px', lg: '32px' }}
+      >
         <Avatar
           alt="Vitor Valentim"
-          src="./topo.jpg"
+          src="./profile.webp"
           sx={{ width: '6rem', height: '6rem' }}
         />
       </Box>
@@ -33,7 +37,7 @@ function Info() {
         marginBottom="0.5rem"
         display="flex"
         justifyContent="center"
-        paddingRight="32px"
+        paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Typography variant="h5">Vitor Valentim</Typography>
       </Box>
@@ -43,11 +47,23 @@ function Info() {
         display="flex"
         marginY="1rem"
         justifyContent="center"
-        paddingRight="32px"
+        paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        <WhatsAppIcon />
+        <MuiLink
+          href="https://wa.me/5511999999999"
+          target="_blank"
+          rel="noopener"
+        >
+          <WhatsAppIcon />
+        </MuiLink>
         <Box height="100%" width="12px" />
-        <InstagramIcon />
+        <MuiLink
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <InstagramIcon />
+        </MuiLink>
       </Box>
       <Stack spacing="0.5rem">
         <Typography>Endereço: R. Pe. Manuel Luís de Vergueiro, 850A</Typography>
