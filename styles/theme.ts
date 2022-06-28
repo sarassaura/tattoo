@@ -179,14 +179,22 @@ const theme = createTheme(tempTheme, {
     },
     body1: {
       fontFamily: fonts.text,
-      fontSize: '0.75rem',
-      lineHeight: 1,
+      fontSize: '0.875rem',
+      lineHeight: 1.5,
       color: colors.white,
       letterSpacing: '0.04rem',
       [tempTheme.breakpoints.up('sm')]: {
         color: colors.ice,
-        fontSize: '0.875rem',
-        lineHeight: 1.5,
+      },
+    },
+    body2: {
+      fontFamily: fonts.text,
+      fontSize: '0.875rem',
+      lineHeight: 1.5,
+      color: colors.white,
+      letterSpacing: '0.04rem',
+      [tempTheme.breakpoints.up('sm')]: {
+        color: colors.ice,
       },
     },
     subtitle1: {

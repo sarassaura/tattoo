@@ -19,9 +19,9 @@ function About() {
         <Box
           bgcolor="#000c46"
           display={{ xs: 'flex', lg: 'none' }}
-          width="300px"
+          width="285px"
           height="100%"
-          paddingRight="20px"
+          paddingRight="32px"
           paddingLeft="32px"
           paddingY="1.5rem"
           flexDirection="column"
