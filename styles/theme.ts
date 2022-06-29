@@ -83,8 +83,7 @@ const theme = createTheme(tempTheme, {
         {
           props: { variant: 'input' },
           style: {
-            backgroundColor: colors.wine,
-            padding: '8px 16px',
+            backgroundColor: colors.red,
           },
         },
       ],
@@ -103,6 +102,10 @@ const theme = createTheme(tempTheme, {
     },
     primary: {
       main: colors.white,
+      contrastText: colors.ice,
+    },
+    secondary: {
+      main: colors.wine,
       contrastText: colors.ice,
     },
     action: {

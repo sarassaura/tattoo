@@ -89,12 +89,17 @@ function Layout({
           <MenuComponent path={router.asPath} />
         </Box>
         <Box
+          display="flex"
           bgcolor="#0125d4"
           flexGrow={1}
           marginRight={{ xs: '32px', lg: '32px' }}
           marginLeft={{ xs: '32px', lg: '0px' }}
           paddingLeft={{ xs: '0px', lg: '20px' }}
-          justifyItems="center"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          height="100%"
+          width="100%"
         >
           {children}
         </Box>

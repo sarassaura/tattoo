@@ -1,5 +1,3 @@
-function contato() {
-  return <div>contato</div>
-}
+function contato() {}
 
 export default contato
