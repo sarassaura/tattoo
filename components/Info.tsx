@@ -72,7 +72,7 @@ function Info() {
         <Typography>Gmail: vitor.underground</Typography>
       </Stack>
       <Box display="flex" flexGrow={1} />
-      <Typography variant="subtitle1">
+      <Typography variant="subtitle1" mt={2} sx={{userSelect:'none'}}>
         ©Copyright 2022 Todos os direitos reservados
       </Typography>
     </>

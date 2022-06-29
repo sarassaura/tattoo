@@ -20,11 +20,12 @@ function About() {
           bgcolor="#000c46"
           display={{ xs: 'flex', lg: 'none' }}
           width="285px"
-          height="100%"
+          height="auto"
           paddingRight="32px"
           paddingLeft="32px"
           paddingY="1.5rem"
           flexDirection="column"
+          flexGrow={1}
         >
           <Info />
         </Box>
