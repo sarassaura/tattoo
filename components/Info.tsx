@@ -7,14 +7,14 @@ function Info() {
   return (
     <>
       <Box
-        height="4.5rem"
+        paddingBottom="2rem"
         display="flex"
         paddingTop={1.5}
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Link href="/">
-          <Box display="flex" style={{ cursor: 'pointer' }}>
+          <Box display="flex" sx={{ cursor: 'pointer' }}>
             <Typography variant="h3">Under</Typography>
             <Typography variant="h3">|</Typography>
             <Typography variant="h3">Ground</Typography>
@@ -53,6 +53,7 @@ function Info() {
           href="https://wa.me/5511999999999"
           target="_blank"
           rel="noopener"
+          title="whatsapp"
         >
           <WhatsAppIcon />
         </MuiLink>
@@ -61,6 +62,7 @@ function Info() {
           href="https://www.instagram.com/"
           target="_blank"
           rel="noreferrer"
+          title="instragram"
         >
           <InstagramIcon />
         </MuiLink>
@@ -72,7 +74,7 @@ function Info() {
         <Typography>Gmail: vitor.underground</Typography>
       </Stack>
       <Box display="flex" flexGrow={1} />
-      <Typography variant="subtitle1" mt={2} sx={{userSelect:'none'}}>
+      <Typography variant="subtitle1" mt={3} sx={{ userSelect: 'none' }}>
         ©Copyright 2022 Todos os direitos reservados
       </Typography>
     </>

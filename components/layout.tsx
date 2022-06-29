@@ -13,15 +13,54 @@ function Layout({
   router: Router
 }) {
   return (
-    <Box bgcolor="#00126a" height="100vh" display="flex">
+    <Box
+      bgcolor="#00126a"
+      height="100vh"
+      display="flex"
+      sx={{
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        scrollbarWidth: 'thin',
+        '&::-webkit-scrollbar': {
+          width: '0.4em',
+        },
+        '&::-webkit-scrollbar-track': {
+          background: 'invisible',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#ffffff21',
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+          background: '#7E000041',
+        },
+      }}
+    >
       <Box
         bgcolor="#000c46"
         display={{ xs: 'none', lg: 'flex' }}
         width="calc(((100% - 220px) / 4) + 40px)"
+        height="100%"
         paddingRight="20px"
         paddingLeft="32px"
         paddingY="1.5rem"
         flexDirection="column"
+        sx={{
+          overflowX: 'hidden',
+          overflowY: 'auto',
+          scrollbarWidth: 'thin',
+          '&::-webkit-scrollbar': {
+            width: '0.4em',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: 'invisible',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#ffffff21',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            background: '#7E000041',
+          },
+        }}
       >
         <Info />
       </Box>
