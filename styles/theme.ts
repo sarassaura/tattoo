@@ -11,6 +11,8 @@ declare module '@mui/material/Button' {
 const colors = {
   footerwhite: 'rgba(255,255,255,0.32)',
   footerice: 'rgba(218, 228, 233, 0.32)',
+  input: 'rgba(255,255,255,0.50)',
+  inputactive: 'rgba(255,255,255,0.70)',
   white: '#fff',
   ice: '#DAE4E9',
   shadow: '#202020',
@@ -40,6 +42,27 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& label.Mui-focused': {
+            color: colors.inputactive,
+          },
+          '& label': {
+            color: colors.input,
+          },
+          '& .MuiInput-underline:after': {
+            borderBottomColor: colors.red,
+          },
+          '& .MuiInput-underline:hover': {
+            borderBottomColor: colors.wine,
+          },
+          '& .MuiInput-underline:before': {
+            borderBottomColor: colors.wine,
+          },
+        },
+      },
+    },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
@@ -59,6 +82,7 @@ const theme = createTheme(tempTheme, {
         root: {
           textDecorationThickness: '3px',
           textDecorationColor: colors.white,
+          textUnderlineOffset: '3px',
           cursor: 'pointer',
           '&:hover': { textDecorationThickness: '3px' },
         },
@@ -84,6 +108,8 @@ const theme = createTheme(tempTheme, {
           props: { variant: 'input' },
           style: {
             backgroundColor: colors.red,
+            fontWeight: 'bold',
+            marginBottom: '8px',
           },
         },
       ],
@@ -102,11 +128,7 @@ const theme = createTheme(tempTheme, {
     },
     primary: {
       main: colors.white,
-      contrastText: colors.ice,
-    },
-    secondary: {
-      main: colors.wine,
-      contrastText: colors.ice,
+      textContrast: colors.white,
     },
     action: {
       disabled: colors.ice,

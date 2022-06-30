@@ -92,14 +92,29 @@ function Layout({
           display="flex"
           bgcolor="#0125d4"
           flexGrow={1}
+          flexShrink={1}
           marginRight={{ xs: '32px', lg: '32px' }}
           marginLeft={{ xs: '32px', lg: '0px' }}
           paddingLeft={{ xs: '0px', lg: '20px' }}
-          justifyContent="center"
           alignItems="center"
           flexDirection="column"
-          height="100%"
-          width="100%"
+          sx={{
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            scrollbarWidth: 'thin',
+            '&::-webkit-scrollbar': {
+              width: '0.4em',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: 'invisible',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: '#ffffff21',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+              background: '#7E000041',
+            },
+          }}
         >
           {children}
         </Box>
