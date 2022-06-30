@@ -53,13 +53,17 @@ const theme = createTheme(tempTheme, {
           },
           '& .MuiInput-underline:after': {
             borderBottomColor: colors.red,
+            borderWidth: '2px',
           },
           '& .MuiInput-underline:hover': {
             borderBottomColor: colors.wine,
+            borderWidth: '2px',
           },
           '& .MuiInput-underline:before': {
             borderBottomColor: colors.wine,
+            borderWidth: '2px',
           },
+          marginTop: '24px',
         },
       },
     },
@@ -110,6 +114,9 @@ const theme = createTheme(tempTheme, {
             backgroundColor: colors.red,
             fontWeight: 'bold',
             marginBottom: '8px',
+            marginTop: '32px',
+            width: '10%',
+            height: '2rem',
           },
         },
       ],
