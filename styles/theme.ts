@@ -42,6 +42,13 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          borderRadius: 4,
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {

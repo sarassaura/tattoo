@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "eslint ."
   },
@@ -14,7 +15,9 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.88",
     "@mui/material": "^5.8.5",
+    "dotenv": "^16.0.1",
     "next": "12.1.6",
+    "nodemailer": "^6.7.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.0",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "18.0.0",
+    "@types/nodemailer": "^6.4.4",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "@typescript-eslint/eslint-plugin": "latest",

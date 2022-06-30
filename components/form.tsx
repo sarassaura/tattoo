@@ -1,6 +1,14 @@
-import { Box, FormControl, TextField } from '@mui/material'
+import {
+  Alert,
+  Box,
+  FormControl,
+  TextField,
+  Snackbar,
+  AlertTitle,
+} from '@mui/material'
 import LoadingButton from '@mui/lab/LoadingButton'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import React from 'react'
 
 type Inputs = {
   nome: string
@@ -10,6 +18,19 @@ type Inputs = {
 }
 
 function Form() {
+  const [open, setOpen] = React.useState(false)
+  const handleClick = () => {
+    setOpen(true)
+  }
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
   const {
     register,
     handleSubmit,
@@ -17,7 +38,11 @@ function Form() {
     formState: { errors, isSubmitting },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
+    fetch('api/mail', {
+      method: 'post',
+      body: JSON.stringify(data),
+    })
+    handleClick()
     reset()
   }
   return (
@@ -107,6 +132,22 @@ function Form() {
       <LoadingButton variant="input" type="submit" loading={isSubmitting}>
         Enviar
       </LoadingButton>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          <AlertTitle>Mensagem Enviada com Sucesso!</AlertTitle>
+          Entraremos em contato em breve.
+        </Alert>
+      </Snackbar>
     </Box>
   )
 }

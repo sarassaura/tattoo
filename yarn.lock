@@ -941,10 +941,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.0.0":
+"@types/node@npm:*, @types/node@npm:18.0.0":
   version: 18.0.0
   resolution: "@types/node@npm:18.0.0"
   checksum: aab2b325727a2599f6d25ebe0dedf58c40fb66a51ce4ca9c0226ceb70fcda2d3afccdca29db5942eb48b158ee8585a274a1e3750c718bbd5399d7f41d62dfdcc
+  languageName: node
+  linkType: hard
+
+"@types/nodemailer@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "@types/nodemailer@npm:6.4.4"
+  dependencies:
+    "@types/node": "*"
+  checksum: 16ed1bad2cd8471fd3b026471e234da33ba3b65935dc44b31be3145eff7bdb067eb4d08ec4b41d23339b988075299abc1a0c0fe77b99f04ca235827bca95af81
   languageName: node
   linkType: hard
 
@@ -1531,6 +1540,13 @@ __metadata:
     "@babel/runtime": ^7.8.7
     csstype: ^3.0.2
   checksum: 863ba9e086f7093df3376b43e74ce4422571d404fc9828bf2c56140963d5edf0e56160f9b2f3bb61b282c07f8fc8134f023c98fd684bddcb12daf7b0f14d951c
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.1":
+  version: 16.0.1
+  resolution: "dotenv@npm:16.0.1"
+  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
   languageName: node
   linkType: hard
 
@@ -2683,6 +2699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nodemailer@npm:^6.7.6":
+  version: 6.7.6
+  resolution: "nodemailer@npm:6.7.6"
+  checksum: 60f59e6525656b95506092c0928c40e3b2997588b220c897515f1614c23c76318a4a71c96e1a83900f43153fab8baabfe7e9558608fafd3f74c9c5c634732731
+  languageName: node
+  linkType: hard
+
 "object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
@@ -3440,10 +3463,12 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.88
     "@mui/material": ^5.8.5
     "@types/node": 18.0.0
+    "@types/nodemailer": ^6.4.4
     "@types/react": 18.0.14
     "@types/react-dom": 18.0.5
     "@typescript-eslint/eslint-plugin": latest
     "@typescript-eslint/parser": latest
+    dotenv: ^16.0.1
     eslint: ^7.32.0 || ^8.2.0
     eslint-config-airbnb: latest
     eslint-config-next: 12.1.6
@@ -3453,6 +3478,7 @@ __metadata:
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
     next: 12.1.6
+    nodemailer: ^6.7.6
     prettier: ^2.7.1
     react: 18.2.0
     react-dom: 18.2.0
