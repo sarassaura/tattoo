@@ -1,12 +1,13 @@
 import {
   Alert,
   Box,
+  Button,
   FormControl,
   TextField,
   Snackbar,
   AlertTitle,
+  CircularProgress,
 } from '@mui/material'
-import LoadingButton from '@mui/lab/LoadingButton'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
 
@@ -19,7 +20,9 @@ type Inputs = {
 
 function Form() {
   const [open, setOpen] = React.useState(false)
+  const loading = React.useRef(false)
   const handleClick = () => {
+    loading.current = true
     setOpen(true)
   }
   const handleClose = (
@@ -35,15 +38,16 @@ function Form() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    handleClick()
     fetch('api/mail', {
       method: 'post',
       body: JSON.stringify(data),
     })
-    handleClick()
     reset()
+    loading.current = false
   }
   return (
     <Box
@@ -129,9 +133,13 @@ function Form() {
           fullWidth
         />
       </FormControl>
-      <LoadingButton variant="input" type="submit" loading={isSubmitting}>
-        Enviar
-      </LoadingButton>
+      <Button variant="input" type="submit" title="submit">
+        {loading.current ? (
+          <CircularProgress size={20} title="loading" />
+        ) : (
+          'Enviar'
+        )}
+      </Button>
       <Snackbar
         open={open}
         autoHideDuration={6000}
@@ -141,10 +149,10 @@ function Form() {
         <Alert
           onClose={handleClose}
           severity="success"
-          variant="filled"
-          sx={{ width: '100%' }}
+          variant="outlined"
+          sx={{ width: '100%', bgcolor: 'teal' }}
         >
-          <AlertTitle>Mensagem Enviada com Sucesso!</AlertTitle>
+          <AlertTitle color="success">Mensagem Enviada com Sucesso!</AlertTitle>
           Entraremos em contato em breve.
         </Alert>
       </Snackbar>
