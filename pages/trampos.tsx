@@ -4,21 +4,24 @@ import ImageListItem, {
   imageListItemClasses,
 } from '@mui/material/ImageListItem'
 import Image from 'next/image'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import { ImageProp } from '../interfaces/trampos'
-import { search, mapImageResources } from '../utils/cloudinary'
+import { search, mapImageResources, getFolders } from '../utils/cloudinary'
 
 function trampos({
   images: defaultImages,
   nextCursor: defaultNextCursor,
+  folders,
 }: {
   images: any
-  nextCursor: string
+  nextCursor?: string
+  folders: any
 }) {
   const [images, setImages] = useState(defaultImages)
   const [nextCursor, setNextCursor] = useState(defaultNextCursor)
-  async function handleLoadMore(e: Event) {
-    e.preventDefault()
+  const [activeFolder, setActiveFolder] = useState('')
+  const handleLoadMore = React.useCallback(async () => {
     const results = await fetch('/api/search', {
       method: 'POST',
       body: JSON.stringify({
@@ -29,7 +32,30 @@ function trampos({
     const newimages = mapImageResources(resources)
     setImages((prev: any) => [...prev, ...newimages])
     setNextCursor(updatedNextCursor)
+  }, [nextCursor])
+  function handleOnFolderClick(
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) {
+    const { folderPath } = event.target.dataset
+    setActiveFolder(folderPath)
+    setNextCursor(undefined)
+    setImages([])
   }
+  useEffect(() => {
+    ;(async function run() {
+      const results = await fetch('/api/search', {
+        method: 'POST',
+        body: JSON.stringify({
+          nextCursor,
+          expression: `folder="${activeFolder}"`,
+        }),
+      }).then((r) => r.json())
+      const { resources, next_cursor: updatedNextCursor } = results
+      const newimages = mapImageResources(resources)
+      setImages((prev: any) => [...prev, ...newimages])
+      setNextCursor(updatedNextCursor)
+    })()
+  }, [activeFolder])
   return (
     <>
       <Grid
@@ -39,28 +65,15 @@ function trampos({
         paddingY="24px"
         paddingX={{ xs: 0, sm: 8, md: 8, lg: 0, xl: 0 }}
         justifyContent="center"
+        onClick={(event) => handleOnFolderClick(event)}
       >
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">Lápis</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">Color</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">Ink</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">Oléo</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">digital</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">tatu</Button>
-        </Grid>
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7}>
-          <Button variant="nav">mural</Button>
-        </Grid>
+        {folders.map((folder: any) => (
+          <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
+            <Button data-folder-path={folder.path} variant="nav">
+              {folder.name}
+            </Button>
+          </Grid>
+        ))}
       </Grid>
       <Box display="flex" flexGrow={1} bgcolor="#1145f4" width="100%">
         <Box
@@ -98,21 +111,27 @@ function trampos({
           ))}
         </Box>
       </Box>
-      <Button variant="nav" onClick={() => handleLoadMore}>
-        Ver Mais
-      </Button>
+      {images.length > 50 && (
+        <Button variant="nav" onClick={() => handleLoadMore()}>
+          Ver Mais
+        </Button>
+      )}
     </>
   )
 }
 
 export async function getStaticProps() {
-  const results = await search()
+  const results = await search({
+    expression: 'folder=""',
+  })
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
+  const { folders } = await getFolders()
   return {
     props: {
       images,
-      nextCursor,
+      nextCursor: nextCursor || null,
+      folders,
     },
   }
 }
