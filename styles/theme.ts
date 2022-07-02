@@ -112,7 +112,9 @@ const theme = createTheme(tempTheme, {
           props: { variant: 'nav' },
           style: {
             backgroundColor: colors.wine,
-            padding: '4px 12px',
+            padding: '0px',
+            width: '100%',
+            fontWeight: 'bold',
           },
         },
         {
