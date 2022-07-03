@@ -18,7 +18,9 @@ Select Language Mode: Typescript React
 Environmental variables(.env.local):
 
 ```bash
-LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release - Canvas
+CLOUDINARY_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
 EMAIL - GMAIL
 PASSWORD - Gerar senha de APP
 ```

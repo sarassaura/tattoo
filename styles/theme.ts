@@ -175,13 +175,13 @@ const theme = createTheme(tempTheme, {
     fontFamily: fonts.text,
     h1: {
       fontFamily: fonts.custom,
-      fontSize: '3rem',
+      fontSize: '1.5rem',
       color: colors.white,
       letterSpacing: '0.04rem',
       textTransform: 'uppercase',
-      [tempTheme.breakpoints.up('sm')]: {
+      [tempTheme.breakpoints.up('md')]: {
         color: colors.ice,
-        fontSize: '1.5rem',
+        fontSize: '2.5rem',
       },
     },
     h2: {
