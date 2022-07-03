@@ -42,6 +42,19 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiImageListItem: {
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          breakInside: 'avoid',
+          margin: 0,
+          marginBottom: '10px',
+          '& img': {
+            borderRadius: 8,
+          },
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         root: {
@@ -95,7 +108,9 @@ const theme = createTheme(tempTheme, {
           textDecorationColor: colors.white,
           textUnderlineOffset: '3px',
           cursor: 'pointer',
-          '&:hover': { textDecorationThickness: '3px' },
+          '&:hover': {
+            textDecorationThickness: '3px',
+          },
         },
       },
     },

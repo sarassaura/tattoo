@@ -1,11 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Button, Grid } from '@mui/material'
-import ImageListItem, {
-  imageListItemClasses,
-} from '@mui/material/ImageListItem'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-
+import { Box, Button, Grid, ImageListItem } from '@mui/material'
+import Image from 'next/image'
 import { ImageProp } from '../interfaces/trampos'
 import { search, mapImageResources, getFolders } from '../utils/cloudinary'
 
@@ -36,14 +32,15 @@ function trampos({
   function handleOnFolderClick(
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) {
-    const { folderPath } = event.target.dataset
-    setActiveFolder(folderPath)
+    const element = event.target as HTMLElement
+    const { folderPath } = element.dataset
+    setActiveFolder(folderPath!)
     setNextCursor(undefined)
     setImages([])
   }
   useEffect(() => {
     ;(async function run() {
-      const results = await fetch('/api/search', {
+      const results: any = await fetch('/api/search', {
         method: 'POST',
         body: JSON.stringify({
           nextCursor,
@@ -52,9 +49,12 @@ function trampos({
       }).then((r) => r.json())
       const { resources, next_cursor: updatedNextCursor } = results
       const newimages = mapImageResources(resources)
-      setImages((prev: any) => [...prev, ...newimages])
+      if (activeFolder !== '') {
+        setImages((prev: any) => [...prev, ...newimages])
+      }
       setNextCursor(updatedNextCursor)
     })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeFolder])
   return (
     <>
@@ -62,7 +62,7 @@ function trampos({
         container
         direction="row"
         spacing={1}
-        paddingY="24px"
+        paddingBottom="24px"
         paddingX={{ xs: 0, sm: 8, md: 8, lg: 0, xl: 0 }}
         justifyContent="center"
         onClick={(event) => handleOnFolderClick(event)}
@@ -75,11 +75,34 @@ function trampos({
           </Grid>
         ))}
       </Grid>
-      <Box display="flex" flexGrow={1} bgcolor="#1145f4" width="100%">
+      <Box
+        display="flex"
+        flexGrow={1}
+        bgcolor="#1145f4"
+        width="100%"
+        sx={{
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          scrollbarWidth: 'thin',
+          '&::-webkit-scrollbar': {
+            width: '0.4em',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: 'invisible',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#ffffff21',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            background: '#7E000041',
+          },
+        }}
+      >
         <Box
           component="ul"
           padding={0}
           margin={0}
+          height="fit-content"
           sx={{
             backgroundColor: 'pink',
             columnGap: '10px',
@@ -89,12 +112,6 @@ function trampos({
               md: 4,
               lg: 5,
               xl: 5,
-            },
-            [`& .${imageListItemClasses.root}`]: {
-              display: 'flex',
-              breakInside: 'avoid',
-              margin: 0,
-              marginBottom: '10px',
             },
           }}
         >
