@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:7.30.1"],\
             ["eslint-plugin-react-hooks", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:4.6.0"],\
             ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.1.6"],\
+            ["next-seo", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.4.0"],\
             ["nodemailer", "npm:6.7.6"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
@@ -3357,6 +3358,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["next-seo", [\
+        ["npm:5.4.0", {\
+          "packageLocation": "./.yarn/cache/next-seo-npm-5.4.0-39d773cd1a-fe19b4f723.zip/node_modules/next-seo/",\
+          "packageDependencies": [\
+            ["next-seo", "npm:5.4.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/next-seo-virtual-10006bf1a9/0/cache/next-seo-npm-5.4.0-39d773cd1a-fe19b4f723.zip/node_modules/next-seo/",\
+          "packageDependencies": [\
+            ["next-seo", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.4.0"],\
+            ["@types/next", null],\
+            ["@types/react", "npm:18.0.14"],\
+            ["@types/react-dom", "npm:18.0.5"],\
+            ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.1.6"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/next",\
+            "@types/react-dom",\
+            "@types/react",\
+            "next",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["nodemailer", [\
         ["npm:6.7.6", {\
           "packageLocation": "./.yarn/cache/nodemailer-npm-6.7.6-5abf2b6914-60f59e6525.zip/node_modules/nodemailer/",\
@@ -4262,6 +4293,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:7.30.1"],\
             ["eslint-plugin-react-hooks", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:4.6.0"],\
             ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.1.6"],\
+            ["next-seo", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.4.0"],\
             ["nodemailer", "npm:6.7.6"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
