@@ -2,8 +2,8 @@ const SEO = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://www.undergroundtattoo.com.br/',
-    site_name: 'Underground',
+    url: process.env.SITE_NAME,
+    site_name: process.env.SITE_URL,
     images: [
       {
         url: './profile.webp',

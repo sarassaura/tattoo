@@ -8,7 +8,7 @@ type Data = {
   status: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -22,6 +22,15 @@ export default function handler(
       pass: process.env.PASSWORD,
     },
   })
+  await new Promise((resolve, reject) => {
+    transporter.verify((error, success) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(success)
+      }
+    })
+  })
   const mailOption = {
     from: `${process.env.EMAIL}`,
     to: `${process.env.EMAIL}`,
@@ -33,6 +42,14 @@ export default function handler(
     mensagem: ${textarea}
     `,
   }
-  transporter.sendMail(mailOption)
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailOption, (err, info) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(info)
+      }
+    })
+  })
   res.status(200).json({ status: 'Ok' })
 }
