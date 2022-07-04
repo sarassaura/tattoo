@@ -4,6 +4,7 @@ import { Shadows } from '@mui/material/styles/shadows'
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     nav: true
+    active: true
     input: true
   }
 }
@@ -133,13 +134,24 @@ const theme = createTheme(tempTheme, {
           },
         },
         {
+          props: { variant: 'active' },
+          style: {
+            backgroundColor: colors.red,
+            padding: '0px',
+            width: '100%',
+            fontWeight: 'bold',
+          },
+        },
+        {
           props: { variant: 'input' },
           style: {
             backgroundColor: colors.red,
             fontWeight: 'bold',
             marginBottom: '8px',
             marginTop: '32px',
+            minWidth: '72px',
             width: '10%',
+            maxWidth: '80px',
             height: '2rem',
           },
         },

@@ -69,7 +69,10 @@ function trampos({
       >
         {folders.map((folder: any) => (
           <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
-            <Button data-folder-path={folder.path} variant="nav">
+            <Button
+              data-folder-path={folder.path}
+              variant={folder.path === activeFolder ? 'active' : 'nav'}
+            >
               {folder.name}
             </Button>
           </Grid>
