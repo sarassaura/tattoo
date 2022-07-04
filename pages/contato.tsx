@@ -1,10 +1,11 @@
 import { Typography } from '@mui/material'
 import Form from '../components/form'
+import { textContact } from '../constants/text'
 
 function contato() {
   return (
     <>
-      <Typography mt="24px">Qualquer dúvida chame pelo whatsapp!</Typography>
+      <Typography mt="24px">{textContact}</Typography>
       <Form />
     </>
   )

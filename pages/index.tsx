@@ -1,4 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material'
+import Slider from '../components/slider'
+import { textFacts } from '../constants/text'
 
 function home() {
   return (
@@ -10,153 +12,56 @@ function home() {
         columnSpacing="10px"
         paddingBottom={{ xs: '12px', lg: '24px' }}
       >
-        <Grid
-          item
-          xs={6}
-          xl={3}
-          display="flex"
-          flexDirection="column"
-          justifyContent={{ xs: 'center', sm: 'flex-start', lg: 'center' }}
-          alignItems={{ xs: 'center', sm: 'flex-start', lg: 'center' }}
-        >
-          <Typography variant="h1" display={{ xs: 'none', sm: 'flex' }}>
-            Clientes
-          </Typography>
-          <Box
-            height="96px"
-            width={{ xs: '152px', xl: '180px' }}
-            bgcolor="cadetblue"
+        {textFacts.map((fact) => (
+          <Grid
+            item
+            xs={6}
+            xl={3}
             display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            marginBottom={2}
-            boxShadow="8px 8px 0px #7E0000"
+            flexDirection={fact.id % 2 === 0 ? 'column' : 'column-reverse'}
+            justifyContent={
+              fact.id < 2
+                ? { xs: 'center', sm: 'flex-start', lg: 'center' }
+                : { xs: 'center', sm: 'flex-end', lg: 'center' }
+            }
+            alignItems={
+              fact.id < 2
+                ? { xs: 'center', sm: 'flex-start', lg: 'center' }
+                : { xs: 'center', sm: 'flex-end', lg: 'center' }
+            }
+            key={fact.id}
           >
-            <Typography variant="h1" display={{ sm: 'none' }}>
-              Clientes
+            <Typography variant="h1" display={{ xs: 'none', sm: 'flex' }}>
+              {fact.name}
             </Typography>
-            <Typography variant="h2">236</Typography>
-          </Box>
-          <Typography
-            variant="h1"
-            display={{ xs: 'none', xl: 'flex' }}
-            visibility="hidden"
-          >
-            Clientes
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          xl={3}
-          display="flex"
-          flexDirection="column-reverse"
-          justifyContent={{ xs: 'center', sm: 'flex-start', lg: 'center' }}
-          alignItems={{ xs: 'center', sm: 'flex-start', lg: 'center' }}
-        >
-          <Typography variant="h1" display={{ xs: 'none', sm: 'flex' }}>
-            Tatuagens
-          </Typography>
-          <Box
-            height="96px"
-            width={{ xs: '152px', xl: '180px' }}
-            bgcolor="purple"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            marginBottom={2}
-            boxShadow="8px 8px 0px #7E0000"
-          >
-            <Typography variant="h1" display={{ sm: 'none' }}>
-              Tatuagens
+            <Box
+              height="96px"
+              width={{ xs: '152px', xl: '180px' }}
+              bgcolor="cadetblue"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              flexDirection="column"
+              marginBottom={2}
+              boxShadow="8px 8px 0px #7E0000"
+            >
+              <Typography variant="h1" display={{ sm: 'none' }}>
+                {fact.name}
+              </Typography>
+              <Typography variant="h2">{fact.number}</Typography>
+            </Box>
+            <Typography
+              variant="h1"
+              display={{ xs: 'none', xl: 'flex' }}
+              visibility="hidden"
+            >
+              {fact.name}
             </Typography>
-            <Typography variant="h2">1024</Typography>
-          </Box>
-          <Typography
-            variant="h1"
-            display={{ xs: 'none', xl: 'flex' }}
-            visibility="hidden"
-          >
-            Tatuagens
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          xl={3}
-          display="flex"
-          flexDirection="column"
-          justifyContent={{ xs: 'center', md: 'flex-end', lg: 'center' }}
-          alignItems={{ xs: 'center', md: 'flex-end', lg: 'center' }}
-        >
-          <Typography variant="h1" display={{ xs: 'none', sm: 'flex' }}>
-            Desenhos
-          </Typography>
-          <Box
-            height="96px"
-            width={{ xs: '152px', xl: '180px' }}
-            bgcolor="fuchsia"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            marginBottom={2}
-            boxShadow="8px 8px 0px #7E0000"
-          >
-            <Typography variant="h1" display={{ sm: 'none' }}>
-              Desenhos
-            </Typography>
-            <Typography variant="h2">768</Typography>
-          </Box>
-          <Typography
-            variant="h1"
-            display={{ xs: 'none', xl: 'flex' }}
-            visibility="hidden"
-          >
-            Desenhos
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          xl={3}
-          display="flex"
-          flexDirection="column-reverse"
-          justifyContent={{ xs: 'center', md: 'flex-end', lg: 'center' }}
-          alignItems={{ xs: 'center', md: 'flex-end', lg: 'center' }}
-        >
-          <Typography variant="h1" display={{ xs: 'none', sm: 'flex' }}>
-            Pinturas
-          </Typography>
-          <Box
-            height="96px"
-            width={{ xs: '152px', xl: '180px' }}
-            bgcolor="violet"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            marginBottom={2}
-            boxShadow="8px 8px 0px #7E0000"
-          >
-            <Typography variant="h1" display={{ sm: 'none' }}>
-              Pinturas
-            </Typography>
-            <Typography variant="h2">95</Typography>
-          </Box>
-          <Typography
-            variant="h1"
-            display={{ xs: 'none', xl: 'flex' }}
-            visibility="hidden"
-          >
-            Pinturas
-          </Typography>
-        </Grid>
+          </Grid>
+        ))}
       </Grid>
       <Box display="flex" flexGrow={1} bgcolor="silver" width="100%">
-        ok
+        <Slider />
       </Box>
     </>
   )
