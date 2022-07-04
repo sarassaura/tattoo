@@ -16,7 +16,7 @@ function Info() {
         <Link href="/">
           <Box display="flex" sx={{ cursor: 'pointer' }}>
             <Typography variant="h3">Under</Typography>
-            <Typography variant="h3">|</Typography>
+            <Typography variant="h3">\</Typography>
             <Typography variant="h3">Ground</Typography>
           </Box>
         </Link>
