@@ -10,6 +10,7 @@ import {
 } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
+import { textForm, textAlert } from '../constants/text'
 
 type Inputs = {
   nome: string
@@ -26,7 +27,7 @@ function Form() {
     setOpen(true)
   }
   const handleClose = (
-    event?: React.SyntheticEvent | Event,
+    _event?: React.SyntheticEvent | Event,
     reason?: string
   ) => {
     if (reason === 'clickaway') {
@@ -61,78 +62,34 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <FormControl sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}>
-        <TextField
-          error={!!errors.nome}
-          helperText={errors.nome && errors.nome.message}
-          label="Nome"
-          type="text"
-          variant="standard"
-          {...register('nome', {
-            required: 'Campo obrigatório',
-            maxLength: {
-              value: 255,
-              message: 'Muito longo',
-            },
-          })}
-          required
-          fullWidth
-        />
-      </FormControl>
-      <FormControl sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}>
-        <TextField
-          error={!!errors.email}
-          helperText={errors.email && errors.email.message}
-          label="Email"
-          type="email"
-          variant="standard"
-          {...register('email', {
-            required: 'Campo obrigatório',
-            maxLength: {
-              value: 255,
-              message: 'Muito longo',
-            },
-          })}
-          required
-          fullWidth
-        />
-      </FormControl>
-      <FormControl sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}>
-        <TextField
-          error={!!errors.telefone}
-          helperText={errors.telefone && errors.telefone.message}
-          label="Telefone"
-          type="tel"
-          variant="standard"
-          {...register('telefone', {
-            required: 'Campo obrigatório',
-            maxLength: {
-              value: 30,
-              message: 'Muito longo',
-            },
-          })}
-          required
-          fullWidth
-        />
-      </FormControl>
-      <FormControl sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}>
-        <TextField
-          error={!!errors.textarea}
-          helperText={errors.textarea && errors.textarea.message}
-          label="Escreva pedido aqui"
-          type="text"
-          variant="standard"
-          multiline
-          maxRows={3}
-          {...register('textarea', {
-            maxLength: {
-              value: 2000,
-              message: 'Muito longo',
-            },
-          })}
-          fullWidth
-        />
-      </FormControl>
+      {textForm.map((input) => (
+        <FormControl
+          sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
+          key={input.id}
+        >
+          <TextField
+            error={!!errors[input.name as keyof Inputs]}
+            helperText={
+              errors[input.name as keyof Inputs] &&
+              errors[input.name as keyof Inputs]!.message
+            }
+            label={input.label}
+            type={input.type}
+            variant="standard"
+            multiline={input.multi}
+            maxRows={3}
+            {...register(input.name as keyof Inputs, {
+              required: input.maxText,
+              maxLength: {
+                value: input.value,
+                message: input.message,
+              },
+            })}
+            required={input.required}
+            fullWidth
+          />
+        </FormControl>
+      ))}
       <Button variant="input" type="submit" title="submit">
         {loading.current ? (
           <CircularProgress size={20} title="loading" />
@@ -152,8 +109,8 @@ function Form() {
           variant="outlined"
           sx={{ width: '100%', bgcolor: 'teal' }}
         >
-          <AlertTitle color="success">Mensagem Enviada com Sucesso!</AlertTitle>
-          Entraremos em contato em breve.
+          <AlertTitle color="success">{textAlert.title}</AlertTitle>
+          {textAlert.body}
         </Alert>
       </Snackbar>
     </Box>

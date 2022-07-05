@@ -1,7 +1,6 @@
 import { Avatar, Box, Stack, Typography, Link as MuiLink } from '@mui/material'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import InstagramIcon from '@mui/icons-material/Instagram'
 import Link from 'next/link'
+import { textIcons, textInfo } from '../constants/text'
 
 function Info() {
   return (
@@ -15,9 +14,9 @@ function Info() {
       >
         <Link href="/">
           <Box display="flex" sx={{ cursor: 'pointer' }}>
-            <Typography variant="h3">Under</Typography>
-            <Typography variant="h3">\</Typography>
-            <Typography variant="h3">Ground</Typography>
+            <Typography variant="h3">{textInfo.logo.start}</Typography>
+            <Typography variant="h3">{textInfo.logo.mid}</Typography>
+            <Typography variant="h3">{textInfo.logo.end}</Typography>
           </Box>
         </Link>
       </Box>
@@ -27,7 +26,7 @@ function Info() {
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Avatar
-          alt="Vitor Valentim"
+          alt={textInfo.name}
           src="./profile.webp"
           sx={{ width: '6rem', height: '6rem' }}
         />
@@ -39,9 +38,9 @@ function Info() {
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        <Typography variant="h5">Vitor Valentim</Typography>
+        <Typography variant="h5">{textInfo.name}</Typography>
       </Box>
-      <Typography>Desenhista, tatuador, pintor, grafiteiro e CEO</Typography>
+      <Typography>{textInfo.description}</Typography>
       <Box
         height="1.5rem"
         display="flex"
@@ -49,33 +48,28 @@ function Info() {
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        <MuiLink
-          href="https://wa.me/5511999999999"
-          target="_blank"
-          rel="noopener"
-          title="whatsapp"
-        >
-          <WhatsAppIcon />
-        </MuiLink>
-        <Box height="100%" width="12px" />
-        <MuiLink
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noreferrer"
-          title="instragram"
-        >
-          <InstagramIcon />
-        </MuiLink>
+        {textIcons.map((icon) => (
+          <MuiLink
+            href={icon.href}
+            target="_blank"
+            rel="noopener"
+            title={icon.title}
+            marginX="6px"
+            key={icon.id}
+          >
+            {icon.icon}
+          </MuiLink>
+        ))}
       </Box>
       <Stack spacing="0.5rem">
-        <Typography>Endereço: R. Pe. Manuel Luís de Vergueiro, 850A</Typography>
-        <Typography>Fone: +55 11 99123-4567</Typography>
-        <Typography>What’s: +55 11 99123-4567</Typography>
-        <Typography>Gmail: vitor.underground</Typography>
+        <Typography>{textInfo.address}</Typography>
+        <Typography>{textInfo.phone}</Typography>
+        <Typography>{textInfo.cell}</Typography>
+        <Typography>{textInfo.gmail}</Typography>
       </Stack>
       <Box display="flex" flexGrow={1} />
       <Typography variant="subtitle1" mt={3} sx={{ userSelect: 'none' }}>
-        ©Copyright 2022 Todos os direitos reservados
+        {textInfo.copyright}
       </Typography>
     </>
   )
