@@ -16,6 +16,7 @@ function Layout({
   return (
     <Box bgcolor="#00126a" height="100vh" display="flex" {...ScrollProps}>
       <Box
+        component="aside"
         bgcolor="#000c46"
         display={{ xs: 'none', lg: 'flex' }}
         width="calc(((100% - 220px) / 4) + 40px)"
@@ -37,6 +38,7 @@ function Layout({
         width={{ xs: '100%', lg: 'calc(((100% - 220px) * 0.75) + 180px)' }}
       >
         <Box
+          component="header"
           bgcolor="#011eb1"
           height="3rem"
           marginBottom={3}
@@ -53,6 +55,7 @@ function Layout({
           <MenuComponent path={router.asPath} />
         </Box>
         <Box
+          component="main"
           display="flex"
           bgcolor="#0125d4"
           flexGrow={1}
