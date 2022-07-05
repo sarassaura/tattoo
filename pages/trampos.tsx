@@ -4,6 +4,7 @@ import { Box, Button, Grid, ImageListItem } from '@mui/material'
 import Image from 'next/image'
 import { ImageProp } from '../interfaces/trampos'
 import { search, mapImageResources, getFolders } from '../utils/cloudinary'
+import ScrollProps from '../helpers/scroll'
 
 function trampos({
   images: defaultImages,
@@ -83,23 +84,7 @@ function trampos({
         flexGrow={1}
         bgcolor="#1145f4"
         width="100%"
-        sx={{
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          scrollbarWidth: 'thin',
-          '&::-webkit-scrollbar': {
-            width: '0.4em',
-          },
-          '&::-webkit-scrollbar-track': {
-            background: 'invisible',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#ffffff21',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-            background: '#7E000041',
-          },
-        }}
+        {...ScrollProps}
       >
         <Box
           component="ul"

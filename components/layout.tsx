@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { Router } from 'next/router'
 import React from 'react'
+import ScrollProps from '../helpers/scroll'
 import About from './about'
 import Info from './Info'
 import MenuComponent from './menu'
@@ -13,28 +14,7 @@ function Layout({
   router: Router
 }) {
   return (
-    <Box
-      bgcolor="#00126a"
-      height="100vh"
-      display="flex"
-      sx={{
-        overflowY: 'auto',
-        overflowX: 'hidden',
-        scrollbarWidth: 'thin',
-        '&::-webkit-scrollbar': {
-          width: '0.4em',
-        },
-        '&::-webkit-scrollbar-track': {
-          background: 'invisible',
-        },
-        '&::-webkit-scrollbar-thumb': {
-          backgroundColor: '#ffffff21',
-        },
-        '&::-webkit-scrollbar-thumb:hover': {
-          background: '#7E000041',
-        },
-      }}
-    >
+    <Box bgcolor="#00126a" height="100vh" display="flex" {...ScrollProps}>
       <Box
         bgcolor="#000c46"
         display={{ xs: 'none', lg: 'flex' }}
@@ -44,23 +24,7 @@ function Layout({
         paddingLeft="32px"
         paddingY="1.5rem"
         flexDirection="column"
-        sx={{
-          overflowX: 'hidden',
-          overflowY: 'auto',
-          scrollbarWidth: 'thin',
-          '&::-webkit-scrollbar': {
-            width: '0.4em',
-          },
-          '&::-webkit-scrollbar-track': {
-            background: 'invisible',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#ffffff21',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-            background: '#7E000041',
-          },
-        }}
+        {...ScrollProps}
       >
         <Info />
       </Box>
@@ -98,23 +62,7 @@ function Layout({
           paddingLeft={{ xs: '0px', lg: '20px' }}
           alignItems="center"
           flexDirection="column"
-          sx={{
-            overflowY: 'auto',
-            overflowX: 'hidden',
-            scrollbarWidth: 'thin',
-            '&::-webkit-scrollbar': {
-              width: '0.4em',
-            },
-            '&::-webkit-scrollbar-track': {
-              background: 'invisible',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: '#ffffff21',
-            },
-            '&::-webkit-scrollbar-thumb:hover': {
-              background: '#7E000041',
-            },
-          }}
+          {...ScrollProps}
         >
           {children}
         </Box>
