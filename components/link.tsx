@@ -14,11 +14,7 @@ function LinkItem({
   const active = path === href
   return (
     <Link href={href}>
-      <MuiLink
-        variant="h4"
-        underline={active ? 'always' : 'hover'}
-        component="menuitem"
-      >
+      <MuiLink variant="h4" underline={active ? 'always' : 'hover'}>
         {name}
       </MuiLink>
     </Link>

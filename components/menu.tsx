@@ -3,7 +3,7 @@ import LinkItem from './link'
 
 function MenuComponent({ path }: { path: string }) {
   return (
-    <Stack direction="row" spacing="24px" component="menu">
+    <Stack direction="row" spacing="24px">
       <LinkItem href="/" name="Start" path={path} />
       <LinkItem href="/trampos" name="Trampos" path={path} />
       <LinkItem href="/contato" name="Contato" path={path} />
