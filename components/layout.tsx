@@ -14,10 +14,10 @@ function Layout({
   router: Router
 }) {
   return (
-    <Box bgcolor="#00126a" height="100vh" display="flex" {...ScrollProps}>
+    <Box height="100vh" display="flex" {...ScrollProps}>
       <Box
         component="aside"
-        bgcolor="#000c46"
+        bgcolor="#151616"
         display={{ xs: 'none', lg: 'flex' }}
         width="calc(((100% - 220px) / 4) + 40px)"
         height="100%"
@@ -30,7 +30,6 @@ function Layout({
         <Info />
       </Box>
       <Box
-        bgcolor="#00188"
         height="calc(100%-3rem)"
         display="flex"
         flexDirection="column"
@@ -39,7 +38,7 @@ function Layout({
       >
         <Box
           component="header"
-          bgcolor="#011eb1"
+          bgcolor="#202020"
           height="3rem"
           marginBottom={3}
           paddingRight={{ xs: '32px', lg: '32px' }}
@@ -57,7 +56,6 @@ function Layout({
         <Box
           component="main"
           display="flex"
-          bgcolor="#0125d4"
           flexGrow={1}
           flexShrink={1}
           marginRight={{ xs: '32px', lg: '32px' }}

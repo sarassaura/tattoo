@@ -79,20 +79,13 @@ function trampos({
           </Grid>
         ))}
       </Grid>
-      <Box
-        display="flex"
-        flexGrow={1}
-        bgcolor="#1145f4"
-        width="100%"
-        {...ScrollProps}
-      >
+      <Box display="flex" flexGrow={1} width="100%" {...ScrollProps}>
         <Box
           component="ul"
           padding={0}
           margin={0}
           height="fit-content"
           sx={{
-            backgroundColor: 'pink',
             columnGap: '10px',
             columnCount: {
               xs: 2,

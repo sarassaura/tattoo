@@ -5,7 +5,6 @@ function Facts() {
   return (
     <Grid
       container
-      bgcolor="black"
       rowSpacing="10px"
       columnSpacing="10px"
       paddingBottom={{ xs: '12px', lg: '24px' }}
@@ -35,7 +34,7 @@ function Facts() {
           <Box
             height="96px"
             width={{ xs: '152px', xl: '180px' }}
-            bgcolor="cadetblue"
+            bgcolor="#202020"
             display="flex"
             justifyContent="center"
             alignItems="center"

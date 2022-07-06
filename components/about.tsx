@@ -18,7 +18,7 @@ function About() {
         onOpen={() => setState(true)}
       >
         <Box
-          bgcolor="#000c46"
+          bgcolor="#151616"
           display={{ xs: 'flex', lg: 'none' }}
           width="285px"
           height="auto"
