@@ -3,6 +3,20 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
 function Slider() {
+  const slides = [
+    { id: 0 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 },
+    { id: 11 },
+  ]
   return (
     <Splide
       className="my-carousel"
@@ -13,90 +27,37 @@ function Slider() {
         perPage: 3,
         gap: 10,
         breakpoints: {
-          1536: {
-            perpage: 4,
+          1400: {
+            perpage: 5,
           },
-          1280: {
+          1200: {
+            perPage: 4,
+          },
+          1015: {
             perPage: 3,
           },
-          990: {
+          768: {
             perPage: 2,
           },
-          768: {
-            perPage: 1,
-          },
-          526: {
+          576: {
             perPage: 1,
           },
         },
       }}
     >
-      <SplideSlide>
-        <Box
-          bgcolor="lightslategray"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          1
-        </Box>
-      </SplideSlide>
-      <SplideSlide>
-        <Box
-          bgcolor="blueviolet"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          2
-        </Box>
-      </SplideSlide>
-      <SplideSlide>
-        <Box
-          bgcolor="darkred"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          3
-        </Box>
-      </SplideSlide>
-      <SplideSlide>
-        <Box
-          bgcolor="violet"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          4
-        </Box>
-      </SplideSlide>
-      <SplideSlide>
-        <Box
-          bgcolor="deepskyblue"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          5
-        </Box>
-      </SplideSlide>
-      <SplideSlide>
-        <Box
-          bgcolor="chocolate"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          6
-        </Box>
-      </SplideSlide>
+      {slides.map((slide) => (
+        <SplideSlide key={slide.id}>
+          <Box
+            bgcolor="lightslategray"
+            width="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            {slide.id}
+          </Box>
+        </SplideSlide>
+      ))}
     </Splide>
   )
 }
