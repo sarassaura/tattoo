@@ -711,6 +711,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@splidejs/splide-extension-grid@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@splidejs/splide-extension-grid@npm:0.4.1"
+  checksum: 1067af8da459f065eb49bb9f3404b8b3af809f5a190c927f84df1812a0d5b13db5de4d67b270c218f7bbd627dfb5b8eb7b98d41e77430caa89898952ca782ef8
+  languageName: node
+  linkType: hard
+
 "@splidejs/splide@npm:^4.0.7":
   version: 4.0.7
   resolution: "@splidejs/splide@npm:4.0.7"
@@ -3255,6 +3262,7 @@ __metadata:
     "@mui/icons-material": ^5.8.4
     "@mui/material": ^5.8.5
     "@splidejs/react-splide": ^0.7.8
+    "@splidejs/splide-extension-grid": ^0.4.1
     "@types/node": 18.0.0
     "@types/nodemailer": ^6.4.4
     "@types/react": 18.0.14

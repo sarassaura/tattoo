@@ -6,7 +6,13 @@ function home() {
   return (
     <>
       <Facts />
-      <Box display="flex" flexGrow={1} bgcolor="teal" width="100%">
+      <Box
+        display="flex"
+        flexGrow={1}
+        flexShrink={0}
+        bgcolor="teal"
+        width="100%"
+      >
         <Slider />
       </Box>
     </>

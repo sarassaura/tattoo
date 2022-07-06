@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.8.4"],\
             ["@mui/material", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.8.5"],\
             ["@splidejs/react-splide", "npm:0.7.8"],\
+            ["@splidejs/splide-extension-grid", "npm:0.4.1"],\
             ["@types/node", "npm:18.0.0"],\
             ["@types/nodemailer", "npm:6.4.4"],\
             ["@types/react", "npm:18.0.14"],\
@@ -1102,6 +1103,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@splidejs-splide-npm-4.0.7-e823ee1ee5-0e95bbb59d.zip/node_modules/@splidejs/splide/",\
           "packageDependencies": [\
             ["@splidejs/splide", "npm:4.0.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@splidejs/splide-extension-grid", [\
+        ["npm:0.4.1", {\
+          "packageLocation": "./.yarn/cache/@splidejs-splide-extension-grid-npm-0.4.1-c25cb5c8f9-1067af8da4.zip/node_modules/@splidejs/splide-extension-grid/",\
+          "packageDependencies": [\
+            ["@splidejs/splide-extension-grid", "npm:0.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4277,6 +4287,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.8.4"],\
             ["@mui/material", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.8.5"],\
             ["@splidejs/react-splide", "npm:0.7.8"],\
+            ["@splidejs/splide-extension-grid", "npm:0.4.1"],\
             ["@types/node", "npm:18.0.0"],\
             ["@types/nodemailer", "npm:6.4.4"],\
             ["@types/react", "npm:18.0.14"],\
