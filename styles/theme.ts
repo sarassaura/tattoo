@@ -193,7 +193,7 @@ const theme = createTheme(tempTheme, {
       textTransform: 'uppercase',
       [tempTheme.breakpoints.up('md')]: {
         color: colors.ice,
-        fontSize: '2rem',
+        fontSize: '2.11rem',
       },
     },
     h2: {
