@@ -18,9 +18,11 @@ Select Language Mode: Typescript React
 Environmental variables(.env.local):
 
 ```bash
+SITE_NAME
+SITE_URL
 CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
 EMAIL - GMAIL
-PASSWORD - Gerar senha de APP
+PASSWORD - Generate APP password
 ```

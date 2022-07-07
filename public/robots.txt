@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.undergroundtattoo.com.br
+
+# Sitemaps
+Sitemap: https://www.undergroundtattoo.com.br/sitemap.xml

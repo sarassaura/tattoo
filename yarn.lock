@@ -88,6 +88,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@corex/deepmerge@npm:^4.0.29":
+  version: 4.0.29
+  resolution: "@corex/deepmerge@npm:4.0.29"
+  checksum: 78626fd29cb9cbd2953ce5a06f963132c9b4837bb76397982d255131533b61c3ef447f0d295f300aa6b2c3ead182a6fe2e4763181e06a2124df28c08205de1d2
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.7.1":
   version: 11.9.2
   resolution: "@emotion/babel-plugin@npm:11.9.2"
@@ -434,6 +441,13 @@ __metadata:
   version: 12.1.6
   resolution: "@next/env@npm:12.1.6"
   checksum: e6a4f189f0d653d13dc7ad510f6c9d2cf690bfd9e07c554bd501b840f8dabc3da5adcab874b0bc01aab86c3647cff4fb84692e3c3b28125af26f0b05cd4c7fcf
+  languageName: node
+  linkType: hard
+
+"@next/env@npm:^12.2.0":
+  version: 12.2.0
+  resolution: "@next/env@npm:12.2.0"
+  checksum: 5fb317bdb5eb2d5df12ff55e335368792dba21874c5ece3cabf8cd312cec911a1d54ecf368e69dc08640b0244669b8a98c86cd035c7874b17640602e67c1b9d9
   languageName: node
   linkType: hard
 
@@ -2444,6 +2458,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-sitemap@npm:^3.1.10":
+  version: 3.1.10
+  resolution: "next-sitemap@npm:3.1.10"
+  dependencies:
+    "@corex/deepmerge": ^4.0.29
+    minimist: ^1.2.6
+  peerDependencies:
+    "@next/env": "*"
+    next: "*"
+  bin:
+    next-sitemap: bin/next-sitemap.mjs
+    next-sitemap-cjs: bin/next-sitemap.cjs
+  checksum: 029b8c39686de9b5d96523cba53b66f0e5ce9e4c28702938a242986f8710116e405ac6ef61721e5b09060269a8918ca52b02120ce5884a024216673db9e8c8e1
+  languageName: node
+  linkType: hard
+
 "next@npm:12.1.6":
   version: 12.1.6
   resolution: "next@npm:12.1.6"
@@ -3261,6 +3291,7 @@ __metadata:
     "@emotion/styled": ^11.9.3
     "@mui/icons-material": ^5.8.4
     "@mui/material": ^5.8.5
+    "@next/env": ^12.2.0
     "@splidejs/react-splide": ^0.7.8
     "@splidejs/splide-extension-grid": ^0.4.1
     "@types/node": 18.0.0
@@ -3280,6 +3311,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.3.0
     next: 12.1.6
     next-seo: ^5.4.0
+    next-sitemap: ^3.1.10
     nodemailer: ^6.7.6
     prettier: ^2.7.1
     react: 18.2.0
