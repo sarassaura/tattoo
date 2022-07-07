@@ -12,17 +12,19 @@ interface navigationProps {
   folders: FolderProps[]
   setNextCursor: React.Dispatch<React.SetStateAction<string | false>>
   setImages: React.Dispatch<React.SetStateAction<false | ImageProp[]>>
-  // images: false | ImageProp[]
-  // nextCursor: string | false
+  images: false | ImageProp[]
+  nextCursor: string | false
 }
 
 function Navigation({
   folders,
   setNextCursor,
   setImages,
-}: // images,
-// nextCursor,
-navigationProps) {
+  images,
+  nextCursor,
+}: navigationProps) {
+  console.log('images', images)
+  console.log('nextCursor', nextCursor)
   const [activeFolder, setActiveFolder] = useState('')
   /* useEffect(() => {
     ;(async () => {
