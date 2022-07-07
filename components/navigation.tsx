@@ -1,5 +1,5 @@
 import React, { /* useEffect */ useState } from 'react'
-import { /* Button,  */ Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import { ImageProp /* Result */ } from '../interfaces/trampos'
 // import { mapImageResources } from '../utils/cloudinary'
 
@@ -66,16 +66,18 @@ function Navigation({
       justifyContent="center"
       onClick={(event) => handleOnFolderClick(event)}
     >
-      {/* {folders.map((folder) => (
-        <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
-          <Button
-            data-folder-path={folder.path}
-            variant={folder.path === activeFolder ? 'active' : 'nav'}
-          >
-            {folder.name}
-          </Button>
-        </Grid>
-      ))} */}
+      {folders
+        ? folders.map((folder) => (
+            <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
+              <Button
+                data-folder-path={folder.path}
+                variant={folder.path === activeFolder ? 'active' : 'nav'}
+              >
+                {folder.name}
+              </Button>
+            </Grid>
+          ))
+        : ''}
     </Grid>
   )
 }
