@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { /* useEffect */ useState } from 'react'
 import { Button, Grid } from '@mui/material'
-import { ImageProp, Result } from '../interfaces/trampos'
-import { mapImageResources } from '../utils/cloudinary'
+import { ImageProp /* Result */ } from '../interfaces/trampos'
+// import { mapImageResources } from '../utils/cloudinary'
 
 interface FolderProps {
   path: string
@@ -12,19 +12,19 @@ interface navigationProps {
   folders: FolderProps[]
   setNextCursor: React.Dispatch<React.SetStateAction<string | false>>
   setImages: React.Dispatch<React.SetStateAction<false | ImageProp[]>>
-  images: false | ImageProp[]
-  nextCursor: string | false
+  // images: false | ImageProp[]
+  // nextCursor: string | false
 }
 
 function Navigation({
   folders,
   setNextCursor,
   setImages,
-  images,
-  nextCursor,
-}: navigationProps) {
+}: // images,
+// nextCursor,
+navigationProps) {
   const [activeFolder, setActiveFolder] = useState('')
-  useEffect(() => {
+  /* useEffect(() => {
     ;(async () => {
       const results: Result = await fetch('/api/search', {
         method: 'POST',
@@ -42,7 +42,7 @@ function Navigation({
       setNextCursor(updatedNextCursor)
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFolder])
+  }, [activeFolder]) */
   function handleOnFolderClick(
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) {
