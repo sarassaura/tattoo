@@ -26,7 +26,7 @@ export async function search(options: any = {}) {
 }
 
 export function mapImageResources(resources: ResourceProp[]) {
-  return resources.map((resource: ResourceProp) => {
+  return resources?.map((resource: ResourceProp) => {
     const { width, height } = resource
     return {
       id: resource.asset_id,

@@ -103,7 +103,6 @@ function trampos({
                 alt={image.title}
                 width={image.width}
                 height={image.height}
-                loading="lazy"
               />
             </ImageListItem>
           ))}
@@ -128,7 +127,7 @@ export async function getStaticProps() {
   return {
     props: {
       images,
-      nextCursor: nextCursor || null,
+      nextCursor: nextCursor || false,
       folders,
     },
   }
