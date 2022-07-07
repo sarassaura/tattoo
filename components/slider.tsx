@@ -14,6 +14,11 @@ function Slider() {
       extensions={{ Grid }}
       css={{
         width: '100%',
+        '& .splide__pagination__page': {
+          height: '12px',
+          width: '12px',
+          margin: '10px 15px',
+        },
         '& .splide__pagination__page.is-active': {
           background: '#7E0000',
         },

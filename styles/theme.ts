@@ -10,8 +10,8 @@ declare module '@mui/material/Button' {
 }
 
 const colors = {
-  footerwhite: 'rgba(255,255,255,0.32)',
-  footerice: 'rgba(218, 228, 233, 0.32)',
+  footerwhite: 'rgba(255,255,255,0.52)',
+  footerice: 'rgba(218, 228, 233, 0.52)',
   input: 'rgba(255,255,255,0.50)',
   inputactive: 'rgba(255,255,255,0.70)',
   white: '#fff',
@@ -43,6 +43,20 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h1',
+          h4: 'h4',
+          h5: 'h2',
+          h6: 'h3',
+          subtitle1: 'span',
+          subtitle2: 'span',
+        },
+      },
+    },
     MuiImageListItem: {
       styleOverrides: {
         root: {

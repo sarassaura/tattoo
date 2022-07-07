@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link as MuiLink } from '@mui/material'
-import Link from 'next/link'
 
 function LinkItem({
   href,
@@ -13,11 +12,9 @@ function LinkItem({
 }) {
   const active = path === href
   return (
-    <Link href={href}>
-      <MuiLink variant="h4" underline={active ? 'always' : 'hover'}>
-        {name}
-      </MuiLink>
-    </Link>
+    <MuiLink href={href} variant="h4" underline={active ? 'always' : 'hover'}>
+      {name}
+    </MuiLink>
   )
 }
 
