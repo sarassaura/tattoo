@@ -14,10 +14,26 @@ export interface ResourceProp {
   secure_url: string
 }
 
+export interface Result {
+  resources: ResourceProp[]
+  next_cursor: string | false
+}
+
 export interface ImageProp {
   id: string
   title: string
   image: string
   width: number
   height: number
+}
+
+export interface Folder {
+  name: string
+  path: string
+}
+
+export interface TramProps {
+  images: ImageProp[]
+  nextCursor: string | false
+  folders: Folder[]
 }

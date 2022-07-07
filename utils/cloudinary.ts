@@ -1,4 +1,4 @@
-import { ResourceProp } from '../interfaces/trampos'
+import { ImageProp, ResourceProp } from '../interfaces/trampos'
 
 export async function search(options: any = {}) {
   const params = {
@@ -26,16 +26,18 @@ export async function search(options: any = {}) {
 }
 
 export function mapImageResources(resources: ResourceProp[]) {
-  return resources?.map((resource: ResourceProp) => {
+  const images: ImageProp[] = []
+  resources!.map((resource) => {
     const { width, height } = resource
-    return {
+    images.push({
       id: resource.asset_id,
       title: resource.public_id,
       image: resource.secure_url,
       width,
       height,
-    }
+    })
   })
+  return images
 }
 
 export async function getFolders() {
