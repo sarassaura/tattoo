@@ -49,7 +49,7 @@ function trampos({
         }),
       }).then((r) => r.json())
       const { resources, next_cursor: updatedNextCursor } = results
-      const newimages = mapImageResources(resources)
+      const newimages: any = mapImageResources(resources)
       if (activeFolder !== '') {
         setImages((prev: any) => [...prev, ...newimages])
       }
@@ -68,7 +68,7 @@ function trampos({
         justifyContent="center"
         onClick={(event) => handleOnFolderClick(event)}
       >
-        {folders.map((folder: any) => (
+        {folders?.map((folder: any) => (
           <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
             <Button
               data-folder-path={folder.path}
@@ -96,7 +96,7 @@ function trampos({
             },
           }}
         >
-          {images.map((image: ImageProp) => (
+          {images?.map((image: ImageProp) => (
             <ImageListItem key={image.id}>
               <Image
                 src={image.image}
