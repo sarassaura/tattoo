@@ -1,5 +1,5 @@
 import React, { /* useEffect */ useState } from 'react'
-import { Button, Grid } from '@mui/material'
+import { /* Button,  */ Grid } from '@mui/material'
 import { ImageProp /* Result */ } from '../interfaces/trampos'
 // import { mapImageResources } from '../utils/cloudinary'
 
@@ -25,7 +25,9 @@ function Navigation({
 }: navigationProps) {
   console.log('images', images)
   console.log('nextCursor', nextCursor)
+  console.log('folders', folders)
   const [activeFolder, setActiveFolder] = useState('')
+  console.log('active', activeFolder)
   /* useEffect(() => {
     ;(async () => {
       const results: Result = await fetch('/api/search', {
@@ -64,7 +66,7 @@ function Navigation({
       justifyContent="center"
       onClick={(event) => handleOnFolderClick(event)}
     >
-      {folders.map((folder) => (
+      {/* {folders.map((folder) => (
         <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
           <Button
             data-folder-path={folder.path}
@@ -73,7 +75,7 @@ function Navigation({
             {folder.name}
           </Button>
         </Grid>
-      ))}
+      ))} */}
     </Grid>
   )
 }
