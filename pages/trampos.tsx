@@ -108,7 +108,7 @@ function trampos({
           ))}
         </Box>
       </Box>
-      {images.length > 50 && (
+      {images?.length > 50 && (
         <Button variant="nav" onClick={() => handleLoadMore()}>
           Ver Mais
         </Button>
