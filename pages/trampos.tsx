@@ -96,7 +96,7 @@ function trampos({
             },
           }}
         >
-          {images.map((image: ImageProp) => (
+          {images?.map((image: ImageProp) => (
             <ImageListItem key={image.id}>
               <Image
                 src={image.image}
@@ -108,7 +108,7 @@ function trampos({
           ))}
         </Box>
       </Box>
-      {images.length > 50 && (
+      {images?.length > 50 && (
         <Button variant="nav" onClick={() => handleLoadMore()}>
           Ver Mais
         </Button>
