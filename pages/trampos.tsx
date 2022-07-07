@@ -126,9 +126,9 @@ export async function getStaticProps() {
   const { folders } = await getFolders()
   return {
     props: {
-      images,
+      images: images || null,
       nextCursor: nextCursor || false,
-      folders,
+      folders: folders || null,
     },
   }
 }
