@@ -68,7 +68,7 @@ function trampos({
         justifyContent="center"
         onClick={(event) => handleOnFolderClick(event)}
       >
-        {folders?.map((folder: any) => (
+        {folders.map((folder: any) => (
           <Grid item xs={3} sm={2.5} md={1.5} xl={1.7} key={folder.path}>
             <Button
               data-folder-path={folder.path}
@@ -96,7 +96,7 @@ function trampos({
             },
           }}
         >
-          {images?.map((image: ImageProp) => (
+          {images.map((image: ImageProp) => (
             <ImageListItem key={image.id}>
               <Image
                 src={image.image}
@@ -108,7 +108,7 @@ function trampos({
           ))}
         </Box>
       </Box>
-      {images?.length > 50 && (
+      {images.length > 50 && (
         <Button variant="nav" onClick={() => handleLoadMore()}>
           Ver Mais
         </Button>
@@ -126,9 +126,9 @@ export async function getStaticProps() {
   const { folders } = await getFolders()
   return {
     props: {
-      images: images || null,
+      images: JSON.parse(JSON.stringify(images)),
       nextCursor: nextCursor || false,
-      folders: folders || null,
+      folders: JSON.parse(JSON.stringify(folders)),
     },
   }
 }
