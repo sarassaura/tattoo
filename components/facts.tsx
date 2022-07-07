@@ -7,7 +7,7 @@ function Facts() {
       container
       rowSpacing="10px"
       columnSpacing="10px"
-      paddingBottom={{ xs: '12px', lg: '24px' }}
+      paddingBottom={{ xs: '4px', lg: '16px' }}
     >
       {textFacts.map((fact) => (
         <Grid
@@ -33,7 +33,7 @@ function Facts() {
           </Typography>
           <Box
             height="96px"
-            width={{ xs: '152px', xl: '180px' }}
+            width={{ xs: '128px', xl: '164px' }}
             bgcolor="#202020"
             display="flex"
             justifyContent="center"

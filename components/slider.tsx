@@ -21,11 +21,11 @@ function Slider() {
           background: '#7E0000',
         },
         '& .splide__arrow svg': {
-          fill: '#fff',
+          fill: '#DAE4E9',
         },
         '& .splide__arrows:selection': {
-          color: '#fff',
-          background: '#fff',
+          color: '#DAE4E9',
+          background: '#DAE4E9',
         },
         '& .splide__arrow:hover:not(:disabled) svg': {
           fill: '#7E0000',
@@ -36,7 +36,7 @@ function Slider() {
           rows: 1,
           cols: 1,
           gap: {
-            row: '1rem',
+            row: '0.5rem',
             col: '1.5rem',
           },
         },

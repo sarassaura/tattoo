@@ -187,13 +187,13 @@ const theme = createTheme(tempTheme, {
     fontFamily: fonts.text,
     h1: {
       fontFamily: fonts.custom,
-      fontSize: '1.5rem',
+      fontSize: '1.2rem',
       color: colors.white,
       letterSpacing: '0.04rem',
       textTransform: 'uppercase',
       [tempTheme.breakpoints.up('md')]: {
         color: colors.ice,
-        fontSize: '2.5rem',
+        fontSize: '2rem',
       },
     },
     h2: {
