@@ -1,7 +1,7 @@
-import React, { /* useEffect */ useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Grid } from '@mui/material'
-import { ImageProp /* Result */ } from '../interfaces/trampos'
-// import { mapImageResources } from '../utils/cloudinary'
+import { ImageProp, Result } from '../interfaces/trampos'
+import { mapImageResources } from '../utils/cloudinary'
 
 interface FolderProps {
   path: string
@@ -28,7 +28,7 @@ function Navigation({
   console.log('folders', folders)
   const [activeFolder, setActiveFolder] = useState('')
   console.log('active', activeFolder)
-  /* useEffect(() => {
+  useEffect(() => {
     ;(async () => {
       const results: Result = await fetch('/api/search', {
         method: 'POST',
@@ -46,7 +46,7 @@ function Navigation({
       setNextCursor(updatedNextCursor)
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFolder]) */
+  }, [activeFolder])
   function handleOnFolderClick(
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) {
