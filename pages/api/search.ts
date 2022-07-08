@@ -5,6 +5,8 @@ import { search } from '../../utils/cloudinary'
 
 dotenv.config()
 
+console.log('unknown api key hahaha', process.env.CLOUDINARY_API_KEY)
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
