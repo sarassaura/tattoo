@@ -1,7 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import 'dotenv/config.js'
+import dotenv from 'dotenv'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { search } from '../../utils/cloudinary'
+
+dotenv.config()
 
 export default async function handler(
   req: NextApiRequest,
