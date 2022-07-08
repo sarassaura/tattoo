@@ -3,13 +3,18 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 require('dotenv').config()
 
-export async function search(options: any = {}) {
-  const params = {
-    ...options,
-  }
-  if (options.nextCursor) {
-    params.next_cursor = options.nextCursor
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const parameters = JSON.parse(req.body)
+  // start
+  const params = { ...parameters }
+  if (parameters.nextCursor) {
+    params.next_cursor = parameters.nextCursor
     delete params.nextCursor
+  } else {
+    params.next_cursor = false
   }
   const paramString = Object.keys(params)
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
@@ -25,15 +30,7 @@ export async function search(options: any = {}) {
       },
     }
   ).then((r) => r.json())
-  return results
-}
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const params = JSON.parse(req.body)
-  const results = await search(params)
+  // end
   res.status(200).json({
     ...results,
   })
