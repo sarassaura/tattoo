@@ -7,6 +7,9 @@ function trampos({
   nextCursor: defaultNextCursor,
   folders,
 }: TramProps) {
+  console.log('images', defaultImages)
+  console.log('nextCursor', defaultNextCursor)
+  console.log('folders 1', folders)
   return (
     <Gallery
       defaultimages={defaultImages}
@@ -23,13 +26,12 @@ export async function getStaticProps() {
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
   const { folders } = await getFolders()
-  const props = {
-    images,
-    nextCursor: nextCursor || false,
-    folders,
-  }
   return {
-    props: JSON.parse(JSON.stringify(props)),
+    props: {
+      images,
+      nextCursor: nextCursor || false,
+      folders,
+    },
   }
 }
 

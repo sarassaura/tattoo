@@ -18,6 +18,9 @@ interface GalProps {
 }
 
 function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
+  console.log('defaultimages', defaultimages)
+  console.log('defaultcursor', defaultcursor)
+  console.log('folders', folders)
   const [images, setImages] = useState<ImageProp[] | false>(defaultimages)
   const [nextCursor, setNextCursor] = useState(defaultcursor)
   return (
