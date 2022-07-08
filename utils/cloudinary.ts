@@ -1,7 +1,5 @@
 import { ImageProp, ResourceProp } from '../interfaces/trampos'
 
-require('dotenv').config()
-
 export async function search(options: any = {}) {
   const params = {
     ...options,
