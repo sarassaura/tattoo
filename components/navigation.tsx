@@ -23,11 +23,7 @@ function Navigation({
   images,
   nextCursor,
 }: navigationProps) {
-  console.log('images', images)
-  console.log('nextCursor', nextCursor)
-  console.log('folders', folders)
   const [activeFolder, setActiveFolder] = useState('')
-  console.log('active', activeFolder)
   useEffect(() => {
     ;(async () => {
       const results: Result = await fetch('/api/search', {
