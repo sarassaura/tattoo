@@ -26,12 +26,13 @@ export async function getStaticProps() {
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
   const { folders } = await getFolders()
+  const propina = {
+    images,
+    nextCursor: nextCursor || false,
+    folders,
+  }
   return {
-    props: {
-      images,
-      nextCursor: nextCursor || false,
-      folders,
-    },
+    props: JSON.parse(JSON.stringify(propina)),
   }
 }
 
