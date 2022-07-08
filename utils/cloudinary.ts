@@ -29,16 +29,18 @@ export async function search(options: any = {}) {
 
 export function mapImageResources(resources: ResourceProp[]) {
   const images: ImageProp[] = []
-  resources.map((resource) => {
-    const { width, height } = resource
-    images.push({
-      id: resource.asset_id,
-      title: resource.public_id,
-      image: resource.secure_url,
-      width,
-      height,
+  if (resources) {
+    resources.map((resource) => {
+      const { width, height } = resource
+      images.push({
+        id: resource.asset_id,
+        title: resource.public_id,
+        image: resource.secure_url,
+        width,
+        height,
+      })
     })
-  })
+  }
   return images
 }
 
