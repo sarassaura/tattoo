@@ -7,8 +7,6 @@ export async function search(options: any = {}) {
   if (options.nextCursor) {
     params.next_cursor = options.nextCursor
     delete params.nextCursor
-  } else {
-    params.next_cursor = false
   }
   const paramString = Object.keys(params)
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
@@ -29,18 +27,16 @@ export async function search(options: any = {}) {
 
 export function mapImageResources(resources: ResourceProp[]) {
   const images: ImageProp[] = []
-  if (resources) {
-    resources.map((resource) => {
-      const { width, height } = resource
-      images.push({
-        id: resource.asset_id,
-        title: resource.public_id,
-        image: resource.secure_url,
-        width,
-        height,
-      })
+  resources.map((resource) => {
+    const { width, height } = resource
+    images.push({
+      id: resource.asset_id,
+      title: resource.public_id,
+      image: resource.secure_url,
+      width,
+      height,
     })
-  }
+  })
   return images
 }
 

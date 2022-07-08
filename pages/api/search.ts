@@ -13,8 +13,6 @@ export default async function handler(
   if (parameters.nextCursor) {
     params.next_cursor = parameters.nextCursor
     delete params.nextCursor
-  } else {
-    params.next_cursor = false
   }
   const paramString = Object.keys(params)
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)

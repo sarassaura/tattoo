@@ -7,9 +7,6 @@ function trampos({
   nextCursor: defaultNextCursor,
   folders,
 }: TramProps) {
-  console.log('images', defaultImages)
-  console.log('nextCursor', defaultNextCursor)
-  console.log('folders 1', folders)
   return (
     <Gallery
       defaultimages={defaultImages}
