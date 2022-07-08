@@ -7,6 +7,8 @@ export async function search(options: any = {}) {
   if (options.nextCursor) {
     params.next_cursor = options.nextCursor
     delete params.nextCursor
+  } else {
+    params.next_cursor = false
   }
   const paramString = Object.keys(params)
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
