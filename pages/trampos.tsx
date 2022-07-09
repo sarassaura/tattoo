@@ -1,4 +1,4 @@
-import { search, mapImageResources } from '../utils/cloudinary'
+import { search, mapImageResources, getFolders } from '../utils/cloudinary'
 import Gallery from '../components/gallery'
 import { TramProps } from '../interfaces/trampos'
 
@@ -22,17 +22,7 @@ export async function getStaticProps() {
   })
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
-  const exist = await fetch(
-    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_NAME}/folders`,
-    {
-      headers: {
-        Authorization: `Basic ${Buffer.from(
-          `${process.env.CLOUDINARY_API_KEY}:${process.env.CLOUDINARY_API_SECRET}`
-        ).toString('base64')}`,
-      },
-    }
-  )
-  const { folders } = await exist.json()
+  const { folders } = await getFolders()
   const propina = {
     images,
     nextCursor: nextCursor || false,
