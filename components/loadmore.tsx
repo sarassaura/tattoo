@@ -17,7 +17,7 @@ function Loadmore({ images, nextCursor, setImages, setNextCursor }: LoadProps) {
       body: JSON.stringify({
         nextCursor,
       }),
-    }).then((r) => r.json())
+    })
     const definitive = await results.json()
     const { resources, next_cursor: updatedNextCursor } = definitive
     const newimages: ImageProp[] = mapImageResources(resources)
