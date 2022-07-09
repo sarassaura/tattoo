@@ -22,7 +22,9 @@ export async function getStaticProps() {
   })
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
-  const { folders } = await getFolders()
+  const exist = await getFolders()
+  console.log(exist)
+  const { folders } = exist
   const propina = {
     images,
     nextCursor: nextCursor || false,
