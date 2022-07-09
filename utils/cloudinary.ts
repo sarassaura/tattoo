@@ -18,7 +18,6 @@ export async function search(options: any = {}) {
         Authorization: `Basic ${Buffer.from(
           `${process.env.CLOUDINARY_API_KEY}:${process.env.CLOUDINARY_API_SECRET}`
         ).toString('base64')}`,
-        'Content-Type': 'application/json; charset=utf-8',
       },
     }
   )
