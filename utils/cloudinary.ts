@@ -28,7 +28,7 @@ export async function search(options: any = {}) {
 
 export function mapImageResources(resources: ResourceProp[]) {
   const images: ImageProp[] = []
-  resources.map((resource) => {
+  resources?.map((resource) => {
     const { width, height } = resource
     images.push({
       id: resource.asset_id,
