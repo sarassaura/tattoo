@@ -40,6 +40,7 @@ export async function getStaticProps() {
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),
+    revalidate: 60,
   }
 }
 
