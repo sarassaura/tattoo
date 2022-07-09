@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Grid } from '@mui/material'
-import { ImageProp, Result } from '../interfaces/trampos'
+import { ImageProp } from '../interfaces/trampos'
 import { mapImageResources } from '../utils/cloudinary'
 
 interface FolderProps {
@@ -26,14 +26,15 @@ function Navigation({
   const [activeFolder, setActiveFolder] = useState('')
   useEffect(() => {
     ;(async () => {
-      const results: Result = await fetch('/api/search', {
+      const results: any = await fetch('/api/search', {
         method: 'POST',
         body: JSON.stringify({
           nextCursor,
           expression: `folder="${activeFolder}"`,
         }),
-      }).then((r) => r.json())
-      const { resources, next_cursor: updatedNextCursor } = results
+      })
+      const definitive = await results.json()
+      const { resources, next_cursor: updatedNextCursor } = definitive
       const newimages: ImageProp[] = mapImageResources(resources)
       if (activeFolder !== '') {
         const tempo = images ? [...images, ...newimages] : [...newimages]

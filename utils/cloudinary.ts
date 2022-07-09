@@ -21,8 +21,9 @@ export async function search(options: any = {}) {
         'Content-Type': 'application/json; charset=utf-8',
       },
     }
-  ).then((r) => r.json())
-  return results
+  )
+  const images = await results.json()
+  return images
 }
 
 export function mapImageResources(resources: ResourceProp[]) {
@@ -50,6 +51,7 @@ export async function getFolders() {
         ).toString('base64')}`,
       },
     }
-  ).then((r) => r.json())
-  return results
+  )
+  const folders = await results.json()
+  return folders
 }

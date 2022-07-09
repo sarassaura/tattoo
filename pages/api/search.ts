@@ -27,9 +27,10 @@ export default async function handler(
         'Content-Type': 'application/json; charset=utf-8',
       },
     }
-  ).then((r) => r.json())
+  )
+  const definitive = await results.json()
   // end
   res.status(200).json({
-    ...results,
+    ...definitive,
   })
 }
