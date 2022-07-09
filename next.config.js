@@ -23,10 +23,6 @@ const nextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-          {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
