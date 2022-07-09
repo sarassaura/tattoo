@@ -33,7 +33,6 @@ export async function getStaticProps() {
     }
   )
   const { folders } = await exist.json()
-  console.log(folders)
   const propina = {
     images,
     nextCursor: nextCursor || false,
