@@ -66,9 +66,9 @@ export const textInfo = {
   logo: { start: 'Under', mid: '\u005C', end: 'Ground' },
   name: 'Vitor Valentim',
   description: 'Desenhista, tatuador, pintor, grafiteiro e CEO',
-  address: 'Endereço: R. Pe. Manuel Luís de Vergueiro, 850A',
-  phone: 'Fone: +55 11 99123-4567',
-  cell: 'What\u0060s: +55 11 99123-4567',
+  address: 'Endereço: R. Pe. Vieira Machado de uvas, 200A',
+  phone: 'Fone: +20 11 99123-4567',
+  cell: 'What\u0060s: +20 11 99123-4567',
   gmail: 'Gmail: vitor.underground',
   copyright: '©Copyright 2022 Todos os direitos reservados',
 }
