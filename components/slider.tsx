@@ -64,27 +64,32 @@ function Slider() {
           1200: {
             perPage: 3,
             grid: {
-              rows: 2,
+              rows: 3,
             },
           },
           1015: {
             perPage: 3,
             grid: {
-              rows: 2,
+              rows: 3,
             },
           },
           768: {
             perPage: 2,
+            grid: {
+              rows: 3,
+            },
           },
           576: {
             perPage: 1,
             grid: {
-              rows: 2,
+              rows: 3,
             },
           },
           400: {
             perPage: 1,
-            grid: false,
+            grid: {
+              rows: 2,
+            },
           },
         },
       }}
@@ -92,7 +97,7 @@ function Slider() {
     >
       <SplideTrack
         css={css`
-          height: calc(100% - 28px);
+          height: calc(100% - 64px);
         `}
       >
         {textCards.map((slide) => (

@@ -107,7 +107,7 @@ export const textCards = [
   { id: 10, text: 'Trampo surreal slc' },
   {
     id: 11,
-    text: ' Imagina olhar pro seu braço todo dia e ver uma arte que você nunca vai se arrepender',
+    text: 'Todo dia ver uma arte que você nunca vai se arrepender',
   },
   { id: 12, text: 'Uma mais top q a outra' },
 ]

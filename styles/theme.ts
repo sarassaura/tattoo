@@ -201,7 +201,7 @@ const theme = createTheme(tempTheme, {
     fontFamily: fonts.text,
     h1: {
       fontFamily: fonts.custom,
-      fontSize: '1.2rem',
+      fontSize: '2rem', // 1.2rem
       color: colors.white,
       letterSpacing: '0.04rem',
       textTransform: 'uppercase',

@@ -1,11 +1,11 @@
-import { Box } from '@mui/material'
-import Facts from '../components/facts'
+import { Box, Typography } from '@mui/material'
 import Slider from '../components/slider'
 
 function home() {
   return (
     <>
-      <Facts />
+      <Typography variant="h1">Under\ground</Typography>
+      <Typography marginBottom={3}>Tattoos - Desenhos - Pinturas</Typography>
       <Box display="flex" flexGrow={1} flexShrink={0} width="100%">
         <Slider />
       </Box>
