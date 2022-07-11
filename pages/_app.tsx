@@ -5,6 +5,7 @@ import { DefaultSeo } from 'next-seo'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 import Layout from '../components/layout'
+import Speed from '../components/speedial'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           {...SEO}
         />
         <Component {...pageProps} key={router.route} />
+        <Speed />
       </Layout>
     </ThemeProvider>
   )

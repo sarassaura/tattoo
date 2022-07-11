@@ -6,7 +6,6 @@ import ScrollProps from '../helpers/scroll'
 import About from './about'
 import Info from './Info'
 import MenuComponent from './menu'
-import Speed from './speedial'
 
 function Layout({
   children,
@@ -89,7 +88,6 @@ function Layout({
             )
         )}
       </Box>
-      <Speed />
     </Box>
   )
 }

@@ -2,7 +2,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
-import LoupeIcon from '@mui/icons-material/Loupe'
 
 export const textContact = 'Qualquer dúvida chame pelo whatsapp!'
 
@@ -143,5 +142,5 @@ export const actions = [
 
 export const textSpeed = {
   aria: 'Social media',
-  icon: <LoupeIcon />,
+  icon: <WhatsAppIcon />,
 }
