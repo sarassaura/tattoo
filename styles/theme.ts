@@ -43,6 +43,22 @@ const tempTheme = createTheme({
 const theme = createTheme(tempTheme, {
   ...tempTheme,
   components: {
+    MuiSpeedDial: {
+      styleOverrides: {
+        root: {
+          '& .MuiSpeedDial-fab:hover': {
+            backgroundColor: colors.red,
+          },
+        },
+      },
+    },
+    MuiFab: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.wine,
+        },
+      },
+    },
     MuiTypography: {
       defaultProps: {
         variantMapping: {

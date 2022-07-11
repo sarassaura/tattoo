@@ -134,7 +134,11 @@ export const actions = [
     name: 'Instagram',
     href: 'https://www.instagram.com/',
   },
-  { icon: <YouTubeIcon />, name: 'Youtube', href: 'https://www.youtube.com/' },
+  {
+    icon: <YouTubeIcon />,
+    name: 'Youtube',
+    href: 'https://www.youtube.com/',
+  },
 ]
 
 export const textSpeed = {
