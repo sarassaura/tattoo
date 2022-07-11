@@ -7,10 +7,11 @@ import {
   Snackbar,
   AlertTitle,
   CircularProgress,
+  Typography,
 } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
-import { textForm, textAlert } from '../constants/text'
+import { textForm, textAlert, textButton } from '../constants/text'
 
 type Inputs = {
   nome: string
@@ -94,7 +95,7 @@ function Form() {
         {loading.current ? (
           <CircularProgress size={20} title="loading" />
         ) : (
-          'Enviar'
+          <Typography variant="h4">{textButton}</Typography>
         )}
       </Button>
       <Snackbar

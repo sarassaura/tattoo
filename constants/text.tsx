@@ -111,3 +111,10 @@ export const textCards = [
   },
   { id: 12, text: 'Uma mais top q a outra' },
 ]
+
+export const textButton = 'Enviar'
+
+export const textMain = {
+  title: 'Under\u005Cground',
+  subtitle: 'Tattoos - Desenhos - Pinturas',
+}
