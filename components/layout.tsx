@@ -82,6 +82,7 @@ function Layout({
                 paddingLeft={{ xs: '0px', lg: '20px' }}
                 alignItems="center"
                 flexDirection="column"
+                {...ScrollProps}
               >
                 {children}
               </AniBox>
