@@ -1,5 +1,8 @@
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import YouTubeIcon from '@mui/icons-material/YouTube'
+import LoupeIcon from '@mui/icons-material/Loupe'
 
 export const textContact = 'Qualquer dúvida chame pelo whatsapp!'
 
@@ -117,4 +120,24 @@ export const textButton = 'Enviar'
 export const textMain = {
   title: 'Under\u005Cground',
   subtitle: 'Tattoos - Desenhos - Pinturas',
+}
+
+export const actions = [
+  {
+    icon: <WhatsAppIcon />,
+    name: 'Whatsapp',
+    href: 'https://wa.me/5511999999999',
+  },
+  { icon: <TwitterIcon />, name: 'Twitter', href: 'https://twitter.com/' },
+  {
+    icon: <InstagramIcon />,
+    name: 'Instagram',
+    href: 'https://www.instagram.com/',
+  },
+  { icon: <YouTubeIcon />, name: 'Youtube', href: 'https://www.youtube.com/' },
+]
+
+export const textSpeed = {
+  aria: 'Social media',
+  icon: <LoupeIcon />,
 }
