@@ -13,13 +13,8 @@ function LinkItem({
 }) {
   const active = path === href
   return (
-    <Link href={href}>
-      <MuiLink
-        href={href}
-        variant="h4"
-        underline={active ? 'always' : 'hover'}
-        component="span"
-      >
+    <Link href={href} passHref>
+      <MuiLink variant="h4" underline={active ? 'always' : 'hover'}>
         {name}
       </MuiLink>
     </Link>
