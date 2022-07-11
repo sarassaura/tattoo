@@ -15,12 +15,13 @@ function Layout({
   router: Router
 }) {
   const AniBox = animated(Box)
-  const transitions = useTransition(router, {
+  const transitions = useTransition(router.pathname, {
     key: router.asPath,
-    from: { opacity: 0 },
-    initial: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0, y: 40 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: -40 },
+    exitBeforeEnter: true,
+    reset: true,
   })
   return (
     <Box height="100vh" display="flex" {...ScrollProps}>
@@ -44,6 +45,10 @@ function Layout({
         flexDirection="column"
         marginY="1.5rem"
         width={{ xs: '100%', lg: 'calc(((100% - 220px) * 0.75) + 180px)' }}
+        sx={{
+          overflowY: 'hidden',
+          overflowX: 'hidden',
+        }}
       >
         <Box
           component="header"
@@ -62,23 +67,25 @@ function Layout({
           </Box>
           <MenuComponent path={router.asPath} />
         </Box>
-        {transitions((style) => (
-          <AniBox
-            style={style}
-            component="main"
-            display="flex"
-            flexGrow={1}
-            flexShrink={1}
-            marginRight={{ xs: '32px', lg: '32px' }}
-            marginLeft={{ xs: '32px', lg: '0px' }}
-            paddingLeft={{ xs: '0px', lg: '20px' }}
-            alignItems="center"
-            flexDirection="column"
-            {...ScrollProps}
-          >
-            {children}
-          </AniBox>
-        ))}
+        {transitions(
+          (style, item) =>
+            item && (
+              <AniBox
+                style={style}
+                component="main"
+                display="flex"
+                flexGrow={1}
+                flexShrink={1}
+                marginRight={{ xs: '32px', lg: '32px' }}
+                marginLeft={{ xs: '32px', lg: '0px' }}
+                paddingLeft={{ xs: '0px', lg: '20px' }}
+                alignItems="center"
+                flexDirection="column"
+              >
+                {children}
+              </AniBox>
+            )
+        )}
       </Box>
     </Box>
   )
