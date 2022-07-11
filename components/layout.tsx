@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { Router } from 'next/router'
 import React from 'react'
+import { useTransition, animated } from 'react-spring'
 import ScrollProps from '../helpers/scroll'
 import About from './about'
 import Info from './Info'
@@ -13,6 +14,14 @@ function Layout({
   children: React.ReactNode
   router: Router
 }) {
+  const AniBox = animated(Box)
+  const transitions = useTransition(router, {
+    key: router.asPath,
+    from: { opacity: 0 },
+    initial: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  })
   return (
     <Box height="100vh" display="flex" {...ScrollProps}>
       <Box
@@ -53,20 +62,23 @@ function Layout({
           </Box>
           <MenuComponent path={router.asPath} />
         </Box>
-        <Box
-          component="main"
-          display="flex"
-          flexGrow={1}
-          flexShrink={1}
-          marginRight={{ xs: '32px', lg: '32px' }}
-          marginLeft={{ xs: '32px', lg: '0px' }}
-          paddingLeft={{ xs: '0px', lg: '20px' }}
-          alignItems="center"
-          flexDirection="column"
-          {...ScrollProps}
-        >
-          {children}
-        </Box>
+        {transitions((style) => (
+          <AniBox
+            style={style}
+            component="main"
+            display="flex"
+            flexGrow={1}
+            flexShrink={1}
+            marginRight={{ xs: '32px', lg: '32px' }}
+            marginLeft={{ xs: '32px', lg: '0px' }}
+            paddingLeft={{ xs: '0px', lg: '20px' }}
+            alignItems="center"
+            flexDirection="column"
+            {...ScrollProps}
+          >
+            {children}
+          </AniBox>
+        ))}
       </Box>
     </Box>
   )
