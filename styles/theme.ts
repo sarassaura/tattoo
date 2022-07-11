@@ -77,6 +77,13 @@ const theme = createTheme(tempTheme, {
         },
       },
     },
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          color: 'white',
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {
