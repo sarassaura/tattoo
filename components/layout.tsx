@@ -17,12 +17,10 @@ function Layout({
 }) {
   const AniBox = animated(Box)
   const transitions = useTransition(router.pathname, {
-    key: router.asPath,
-    from: { opacity: 0, y: 40 },
-    enter: { opacity: 1, y: 0 },
-    leave: { opacity: 0, y: -40 },
+    from: { opacity: 1, x: 120 },
+    enter: { opacity: 1, y: 0, x: 0 },
+    leave: { opacity: 0, y: 40 },
     exitBeforeEnter: true,
-    reset: true,
   })
   return (
     <>
