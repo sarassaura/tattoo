@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
-import { textForm, textAlert, textButton } from '../constants/text'
+import { useTranslation } from 'next-i18next'
 
 type Inputs = {
   nome: string
@@ -20,7 +20,21 @@ type Inputs = {
   textarea: string
 }
 
+interface InputProps {
+  id: number
+  name: string
+  label: string
+  type: string
+  multi: boolean
+  value: number
+  message: string
+  maxText: string | boolean
+  required: boolean
+}
+
 function Form() {
+  const { t } = useTranslation('form')
+  const inputs = t<string, InputProps[]>('input', { returnObjects: true })
   const [open, setOpen] = React.useState(false)
   const loading = React.useRef(false)
   const handleClick = () => {
@@ -63,7 +77,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {textForm.map((input) => (
+      {inputs.map((input) => (
         <FormControl
           sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
           key={input.id}
@@ -95,7 +109,7 @@ function Form() {
         {loading.current ? (
           <CircularProgress size={20} title="loading" />
         ) : (
-          <Typography variant="h4">{textButton}</Typography>
+          <Typography variant="h4">{t('button')}</Typography>
         )}
       </Button>
       <Snackbar
@@ -110,8 +124,8 @@ function Form() {
           variant="outlined"
           sx={{ width: '100%', bgcolor: 'teal' }}
         >
-          <AlertTitle color="success">{textAlert.title}</AlertTitle>
-          {textAlert.body}
+          <AlertTitle color="success">{t('alert.title')}</AlertTitle>
+          {t('alert.body')}
         </Alert>
       </Snackbar>
     </Box>

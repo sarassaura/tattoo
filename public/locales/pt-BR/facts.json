@@ -1,0 +1,8 @@
+{
+  "facts": [
+    { "id": 0, "name": "Clientes", "number": 236 },
+    { "id": 1, "name": "Tatuagens", "number": 578 },
+    { "id": 2, "name": "Desenhos", "number": 1024 },
+    { "id": 3, "name": "Pinturas", "number": 95 }
+  ]
+}

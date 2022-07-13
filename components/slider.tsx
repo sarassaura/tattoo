@@ -4,9 +4,16 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
 import { css } from '@emotion/react'
 import '@splidejs/react-splide/css/skyblue'
-import { textCards } from '../constants/text'
+import { useTranslation } from 'next-i18next'
+
+interface CardProps {
+  id: number
+  text: string
+}
 
 function Slider() {
+  const { t } = useTranslation('slider')
+  const cards = t<string, CardProps[]>('cards', { returnObjects: true })
   return (
     <Splide
       className="my-carousel"
@@ -100,7 +107,7 @@ function Slider() {
           height: calc(100% - 64px);
         `}
       >
-        {textCards.map((slide) => (
+        {cards.map((slide) => (
           <SplideSlide key={slide.id}>
             <Box
               width="100%"

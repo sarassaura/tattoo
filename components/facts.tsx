@@ -1,8 +1,15 @@
 import { Box, Typography, Grid } from '@mui/material'
-import { textFacts } from '../constants/text'
+import { useTranslation } from 'next-i18next'
+
+interface FactProps {
+  id: number
+  name: string
+  number: number
+}
 
 function Facts() {
-  const t = textFacts
+  const { t } = useTranslation('facts')
+  const facts = t<string, FactProps[]>('facts', { returnObjects: true })
   return (
     <Grid
       container
@@ -10,7 +17,7 @@ function Facts() {
       columnSpacing="10px"
       paddingBottom={{ xs: '4px', lg: '16px' }}
     >
-      {t.map((fact) => (
+      {facts.map((fact) => (
         <Grid
           item
           xs={6}

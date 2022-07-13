@@ -1,14 +1,13 @@
 /** @type {import('next').NextConfig} */
+const { i18n } = require('./next-i18next.config')
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
   },
-  i18n: {
-    locales: ['pt-BR', 'en'],
-    defaultLocale: 'pt-BR',
-  },
+  i18n,
   async headers() {
     return [
       {
