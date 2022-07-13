@@ -2,6 +2,7 @@ import { Box, Typography, Grid } from '@mui/material'
 import { textFacts } from '../constants/text'
 
 function Facts() {
+  const t = textFacts
   return (
     <Grid
       container
@@ -9,7 +10,7 @@ function Facts() {
       columnSpacing="10px"
       paddingBottom={{ xs: '4px', lg: '16px' }}
     >
-      {textFacts.map((fact) => (
+      {t.map((fact) => (
         <Grid
           item
           xs={6}

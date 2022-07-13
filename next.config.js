@@ -5,6 +5,10 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
   },
+  i18n: {
+    locales: ['pt-BR', 'en'],
+    defaultLocale: 'pt-BR',
+  },
   async headers() {
     return [
       {
