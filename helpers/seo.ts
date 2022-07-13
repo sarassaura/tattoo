@@ -14,6 +14,12 @@ const SEO = {
       },
     ],
   },
+  languageAlternates: [
+    {
+      hrefLang: 'en',
+      href: `${process.env.SITE_URL}/en`,
+    },
+  ],
   twitter: {
     handle: '@victorvalentim',
     site: '@undergroundtattoo',
