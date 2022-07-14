@@ -12,9 +12,8 @@ interface CardProps {
 }
 
 function Slider() {
-  const { t } = useTranslation('slider')
+  const { t, ready } = useTranslation('slider')
   const cards = t<string, CardProps[]>('cards', { returnObjects: true })
-  console.log(cards)
   return (
     <Splide
       className="my-carousel"
@@ -108,7 +107,7 @@ function Slider() {
           height: calc(100% - 64px);
         `}
       >
-        {1 === 2 &&
+        {!!ready &&
           cards.map((slide) => (
             <SplideSlide key={slide.id}>
               <Box

@@ -33,9 +33,8 @@ interface InputProps {
 }
 
 function Form() {
-  const { t } = useTranslation('form')
+  const { t, ready } = useTranslation('form')
   const inputs = t<string, InputProps[]>('input', { returnObjects: true })
-  console.log(inputs)
   const [open, setOpen] = React.useState(false)
   const loading = React.useRef(false)
   const handleClick = () => {
@@ -78,7 +77,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {1 === 2 &&
+      {!!ready &&
         inputs.map((input) => (
           <FormControl
             sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
