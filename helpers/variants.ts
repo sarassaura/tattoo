@@ -3,8 +3,8 @@ import { Variants } from 'framer-motion'
 const variants: Variants = {
   hidden: {
     opacity: 0,
-    x: 0,
-    y: -40,
+    x: 120,
+    y: 0,
     transition: { duration: 0.4, type: 'easeOut' },
   },
   enter: {
@@ -15,7 +15,7 @@ const variants: Variants = {
   },
   exit: {
     opacity: 0,
-    x: -0,
+    x: 0,
     y: 40,
     transition: { duration: 0.4, type: 'easeOut' },
   },

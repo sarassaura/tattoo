@@ -14,6 +14,7 @@ interface CardProps {
 function Slider() {
   const { t } = useTranslation('slider')
   const cards = t<string, CardProps[]>('cards', { returnObjects: true })
+  console.log(cards)
   return (
     <Splide
       className="my-carousel"
@@ -107,20 +108,21 @@ function Slider() {
           height: calc(100% - 64px);
         `}
       >
-        {cards.map((slide) => (
-          <SplideSlide key={slide.id}>
-            <Box
-              width="100%"
-              height="100%"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              padding={3}
-            >
-              <Typography>{slide.text}</Typography>
-            </Box>
-          </SplideSlide>
-        ))}
+        {1 === 2 &&
+          cards.map((slide) => (
+            <SplideSlide key={slide.id}>
+              <Box
+                width="100%"
+                height="100%"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                padding={3}
+              >
+                <Typography>{slide.text}</Typography>
+              </Box>
+            </SplideSlide>
+          ))}
       </SplideTrack>
     </Splide>
   )
