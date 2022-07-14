@@ -2,14 +2,14 @@ import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 import { SpeedDialIcon, Link as MuiLink } from '@mui/material'
 
-import { actions, textSpeed } from '../constants/text'
+import { actions, iconButton } from '../constants/icons'
 
 function Speed() {
   return (
     <SpeedDial
-      ariaLabel={textSpeed.aria}
+      ariaLabel={iconButton.aria}
       sx={{ position: 'absolute', bottom: 24, right: 24 }}
-      icon={<SpeedDialIcon icon={textSpeed.icon} />}
+      icon={<SpeedDialIcon icon={iconButton.icon} />}
     >
       {actions.map((action) => (
         <MuiLink

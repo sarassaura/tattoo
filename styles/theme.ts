@@ -228,7 +228,7 @@ const theme = createTheme(tempTheme, {
       color: colors.white,
       letterSpacing: '0.04rem',
       textTransform: 'uppercase',
-      [tempTheme.breakpoints.up('md')]: {
+      [tempTheme.breakpoints.up('sm')]: {
         color: colors.ice,
         fontSize: '2.11rem',
       },

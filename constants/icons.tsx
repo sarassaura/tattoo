@@ -3,18 +3,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 
-export const textInfo = {
-  logo: { start: 'Under', mid: '\u005C', end: 'Ground' },
-  name: 'Vitor Valentim',
-  description: 'Desenhista, tatuador, pintor, grafiteiro e CEO',
-  address: 'Endereço: R. Pe. Vieira Machado de uvas, 200A',
-  phone: 'Fone: +20 11 99123-4567',
-  cell: 'What\u0060s: +20 11 99123-4567',
-  gmail: 'Gmail: vitor.underground',
-  copyright: '©Copyright 2022 Todos os direitos reservados',
-}
-
-export const textIcons = [
+export const icons = [
   {
     id: 0,
     href: 'https://wa.me/5511999999999',
@@ -48,7 +37,7 @@ export const actions = [
   },
 ]
 
-export const textSpeed = {
+export const iconButton = {
   aria: 'Social media',
   icon: <WhatsAppIcon />,
 }

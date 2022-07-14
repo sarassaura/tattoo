@@ -5,7 +5,7 @@ import Slider from '../components/slider'
 
 function home() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('home')
   return (
     <>
       <Typography variant="h1">{t('title')}</Typography>
@@ -20,7 +20,12 @@ function home() {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'slider', 'facts'])),
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'home',
+        'slider',
+        'facts',
+      ])),
     },
   }
 }

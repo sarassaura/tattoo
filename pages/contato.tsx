@@ -17,7 +17,7 @@ function contato() {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['contato', 'form'])),
+      ...(await serverSideTranslations(locale, ['common', 'contato', 'form'])),
     },
   }
 }

@@ -1,8 +1,10 @@
 import { Avatar, Box, Stack, Typography, Link as MuiLink } from '@mui/material'
 import Link from 'next/link'
-import { textIcons, textInfo } from '../constants/text'
+import { useTranslation } from 'next-i18next'
+import { icons } from '../constants/icons'
 
 function Info() {
+  const { t } = useTranslation('common')
   return (
     <>
       <Box
@@ -14,9 +16,7 @@ function Info() {
       >
         <Link href="/">
           <Box display="flex" sx={{ cursor: 'pointer' }}>
-            <Typography variant="h3">{textInfo.logo.start}</Typography>
-            <Typography variant="h3">{textInfo.logo.mid}</Typography>
-            <Typography variant="h3">{textInfo.logo.end}</Typography>
+            <Typography variant="h3">{t('logo')}</Typography>
           </Box>
         </Link>
       </Box>
@@ -26,7 +26,7 @@ function Info() {
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Avatar
-          alt={textInfo.name}
+          alt={t('name')}
           src="./profile.webp"
           sx={{ width: '6rem', height: '6rem' }}
         />
@@ -38,9 +38,9 @@ function Info() {
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        <Typography variant="h5">{textInfo.name}</Typography>
+        <Typography variant="h5">{t('name')}</Typography>
       </Box>
-      <Typography>{textInfo.description}</Typography>
+      <Typography>{t('description')}</Typography>
       <Box
         height="1.5rem"
         display="flex"
@@ -48,7 +48,7 @@ function Info() {
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        {textIcons.map((icon) => (
+        {icons.map((icon) => (
           <MuiLink
             href={icon.href}
             target="_blank"
@@ -62,14 +62,14 @@ function Info() {
         ))}
       </Box>
       <Stack spacing="0.5rem">
-        <Typography>{textInfo.address}</Typography>
-        <Typography>{textInfo.phone}</Typography>
-        <Typography>{textInfo.cell}</Typography>
-        <Typography>{textInfo.gmail}</Typography>
+        <Typography>{t('address')}</Typography>
+        <Typography>{t('phone')}</Typography>
+        <Typography>{t('cell')}</Typography>
+        <Typography>{t('gmail')}</Typography>
       </Stack>
       <Box display="flex" flexGrow={1} />
       <Typography variant="subtitle1" mt={3} sx={{ userSelect: 'none' }}>
-        {textInfo.copyright}
+        {t('copyright')}
       </Typography>
     </>
   )
