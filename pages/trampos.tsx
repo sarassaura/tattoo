@@ -2,6 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { search, mapImageResources, getFolders } from '../utils/cloudinary'
 import Gallery from '../components/gallery'
 import { TramProps } from '../interfaces/trampos'
+import Container from '../components/container'
 
 function trampos({
   images: defaultImages,
@@ -9,11 +10,13 @@ function trampos({
   folders,
 }: TramProps) {
   return (
-    <Gallery
-      defaultimages={defaultImages}
-      defaultcursor={defaultNextCursor}
-      folders={folders}
-    />
+    <Container>
+      <Gallery
+        defaultimages={defaultImages}
+        defaultcursor={defaultNextCursor}
+        folders={folders}
+      />
+    </Container>
   )
 }
 

@@ -1,13 +1,11 @@
 import { Box } from '@mui/material'
 import { Router } from 'next/router'
 import React from 'react'
-import { motion } from 'framer-motion'
 import ScrollProps from '../helpers/scroll'
 import About from './about'
 import Info from './Info'
 import MenuComponent from './menu'
 import Speed from './speedial'
-import variants from '../helpers/variants'
 
 function Layout({
   children,
@@ -61,24 +59,7 @@ function Layout({
             </Box>
             <MenuComponent path={router.asPath} />
           </Box>
-          <Box
-            component={motion.main}
-            display="flex"
-            flexGrow={1}
-            flexShrink={1}
-            marginRight={{ xs: '32px', lg: '32px' }}
-            marginLeft={{ xs: '32px', lg: '0px' }}
-            paddingLeft={{ xs: '0px', lg: '20px' }}
-            alignItems="center"
-            flexDirection="column"
-            initial="hidden"
-            animate="enter"
-            exit="exit"
-            variants={variants}
-            {...ScrollProps}
-          >
-            {children}
-          </Box>
+          {children}
         </Box>
       </Box>
       <Speed />
