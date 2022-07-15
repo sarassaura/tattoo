@@ -1,0 +1,34 @@
+.my-carousel {
+  width: 100%;
+}
+
+.my-carousel .splide__pagination__page {
+  height: 12px;
+  width: 12px;
+  margin: 10px 15px;
+}
+
+.my-carousel .splide__pagination__page.is-active {
+  background: #7e0000;
+}
+
+.my-carousel .splide__pagination__page:hover {
+  background: #7e0000;
+}
+
+.my-carousel .splide__arrow svg {
+  fill: #dae4e9;
+}
+
+.my-carousel .splide__arrows:selection {
+  color: #dae4e9;
+  background: #dae4e9;
+}
+
+.my-carousel .splide__arrow:hover:not(:disabled) svg {
+  fill: #7e0000;
+}
+
+.splide__track {
+  height: calc(100% - 64px);
+}

@@ -1,8 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import { Box, Typography } from '@mui/material'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
-import { css } from '@emotion/react'
 import '@splidejs/react-splide/css/skyblue'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
@@ -23,30 +21,6 @@ function Slider() {
       className="my-carousel"
       aria-label="My Favorite Images"
       extensions={{ Grid }}
-      css={{
-        width: '100%',
-        '& .splide__pagination__page': {
-          height: '12px',
-          width: '12px',
-          margin: '10px 15px',
-        },
-        '& .splide__pagination__page.is-active': {
-          background: '#7E0000',
-        },
-        '& .splide__pagination__page:hover': {
-          background: '#7E0000',
-        },
-        '& .splide__arrow svg': {
-          fill: '#DAE4E9',
-        },
-        '& .splide__arrows:selection': {
-          color: '#DAE4E9',
-          background: '#DAE4E9',
-        },
-        '& .splide__arrow:hover:not(:disabled) svg': {
-          fill: '#7E0000',
-        },
-      }}
       options={{
         grid: {
           rows: 1,
@@ -106,26 +80,21 @@ function Slider() {
       }}
       hasTrack={false}
     >
-      <SplideTrack
-        css={css`
-          height: calc(100% - 64px);
-        `}
-      >
-        {true &&
-          array.current.map((slide) => (
-            <SplideSlide key={slide.id}>
-              <Box
-                width="100%"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                padding={3}
-              >
-                <Typography>{slide.text}</Typography>
-              </Box>
-            </SplideSlide>
-          ))}
+      <SplideTrack>
+        {array.current.map((slide) => (
+          <SplideSlide key={slide.id}>
+            <Box
+              width="100%"
+              height="100%"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              padding={3}
+            >
+              <Typography>{slide.text}</Typography>
+            </Box>
+          </SplideSlide>
+        ))}
       </SplideTrack>
     </Splide>
   )
