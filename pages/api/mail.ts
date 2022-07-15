@@ -12,7 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { nome, email, telefone, textarea } = JSON.parse(req.body)
+  const { nome, email, telefone, textarea } = req.body
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,

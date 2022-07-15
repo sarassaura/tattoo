@@ -12,6 +12,7 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
 import { useTranslation } from 'next-i18next'
+import axios from 'axios'
 
 type Inputs = {
   nome: string
@@ -64,10 +65,7 @@ function Form() {
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     handleClick()
-    fetch('api/mail', {
-      method: 'post',
-      body: JSON.stringify(data),
-    })
+    axios.post('api/mail', data)
     reset()
     loading.current = false
   }
