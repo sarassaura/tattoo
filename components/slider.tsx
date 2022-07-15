@@ -4,6 +4,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
 import { css } from '@emotion/react'
 import '@splidejs/react-splide/css/skyblue'
+import '../styles/slider.css'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
 
