@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import '../styles/fonts.css'
+import '@splidejs/react-splide/css/skyblue'
 import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
 import { appWithTranslation } from 'next-i18next'

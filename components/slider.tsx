@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
-import '@splidejs/react-splide/css/skyblue'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
 
