@@ -1,16 +1,13 @@
-import { Box, Typography } from '@mui/material'
-import { useTranslation } from 'next-i18next'
+import { Box } from '@mui/material'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Container from '../components/container'
+import Logo from '../components/logo'
 import Slider from '../components/slider'
 
 function home() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = useTranslation('home')
   return (
     <Container>
-      <Typography variant="h1">{t('title')}</Typography>
-      <Typography marginBottom={3}>{t('subtitle')}</Typography>
+      <Logo />
       <Box display="flex" flexGrow={1} flexShrink={0} width="100%">
         <Slider />
       </Box>

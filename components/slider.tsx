@@ -5,6 +5,7 @@ import { Grid } from '@splidejs/splide-extension-grid'
 import { css } from '@emotion/react'
 import '@splidejs/react-splide/css/skyblue'
 import { useTranslation } from 'next-i18next'
+import React from 'react'
 
 interface CardProps {
   id: number
@@ -16,6 +17,7 @@ function Slider() {
   const cards = t<string, CardProps[]>('cards', {
     returnObjects: true,
   })
+  const array = React.useRef(cards)
   return (
     <Splide
       className="my-carousel"
@@ -109,8 +111,8 @@ function Slider() {
           height: calc(100% - 64px);
         `}
       >
-        {Array.isArray(cards) &&
-          cards.map((slide) => (
+        {true &&
+          array.current.map((slide) => (
             <SplideSlide key={slide.id}>
               <Box
                 width="100%"
