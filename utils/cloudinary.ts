@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { ImageProp, ResourceProp } from '../interfaces/trampos'
 
 export async function search(options: any = {}) {
@@ -11,19 +12,18 @@ export async function search(options: any = {}) {
   const paramString = Object.keys(params)
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
     .join('&')
-  const results = await fetch(
+  const results = axios.get(
     `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_NAME}/resources/search?${paramString}`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
           `${process.env.CLOUDINARY_API_KEY}:${process.env.CLOUDINARY_API_SECRET}`
         ).toString('base64')}`,
-        'X-Content-Type-Options': 'nosniff',
-        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Type': 'application/json;charset=utf-8',
       },
     }
   )
-  const images = await results.json()
+  const images = (await results).data
   return images
 }
 
@@ -43,18 +43,17 @@ export function mapImageResources(resources: ResourceProp[]) {
 }
 
 export async function getFolders() {
-  const results = await fetch(
+  const results = axios.get(
     `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_NAME}/folders`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
           `${process.env.CLOUDINARY_API_KEY}:${process.env.CLOUDINARY_API_SECRET}`
         ).toString('base64')}`,
-        'X-Content-Type-Options': 'nosniff',
-        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Type': 'application/json;charset=utf-8',
       },
     }
   )
-  const folders = await results.json()
+  const folders = (await results).data
   return folders
 }

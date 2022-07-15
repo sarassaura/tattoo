@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import axios from 'axios'
 import { mapImageResources } from '../utils/cloudinary'
 import { ImageProp } from '../interfaces/trampos'
 
@@ -12,13 +13,8 @@ interface LoadProps {
 
 function Loadmore({ images, nextCursor, setImages, setNextCursor }: LoadProps) {
   const handleLoadMore = async () => {
-    const results = await fetch('/api/search', {
-      method: 'POST',
-      body: JSON.stringify({
-        nextCursor,
-      }),
-    })
-    const definitive = await results.json()
+    const results = axios.post('/api/search', { nextCursor })
+    const definitive = (await results).data
     const { resources, next_cursor: updatedNextCursor } = definitive
     const newimages: ImageProp[] = mapImageResources(resources)
     const tempo = images && [...images, ...newimages]

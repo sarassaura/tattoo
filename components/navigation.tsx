@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Grid } from '@mui/material'
+import axios from 'axios'
 import { ImageProp, Result } from '../interfaces/trampos'
 import { mapImageResources } from '../utils/cloudinary'
 
@@ -26,14 +27,11 @@ function Navigation({
   const [activeFolder, setActiveFolder] = useState('')
   useEffect(() => {
     ;(async () => {
-      const results = await fetch('/api/search', {
-        method: 'POST',
-        body: JSON.stringify({
-          nextCursor,
-          expression: `folder="${activeFolder}"`,
-        }),
+      const results = axios.post('/api/search', {
+        nextCursor,
+        expression: `folder="${activeFolder}"`,
       })
-      const definitive: Result = await results.json()
+      const definitive: Result = (await results).data
       const { resources, next_cursor: updatedNextCursor } = definitive
       const newimages: ImageProp[] = mapImageResources(resources)
       if (activeFolder !== '') {

@@ -8,7 +8,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const params = JSON.parse(req.body)
+  const params = req.body
   const definitive = await search(params)
   res.status(200).json({
     ...definitive,
