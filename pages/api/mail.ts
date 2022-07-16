@@ -52,5 +52,6 @@ export default async function handler(
     })
   })
   res.setHeader('x-content-type-options', 'nosniff')
+  res.setHeader('cache-control', 'no-cache')
   res.status(200).json({ status: 'Ok' })
 }
