@@ -31,11 +31,11 @@ const fonts = {
 const tempTheme = createTheme({
   breakpoints: {
     values: {
-      xs: 0, // mobile
-      sm: 576, // ???
-      md: 768, // ?????
-      lg: 1015, // max-width
-      xl: 1200, // desktop
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1015,
+      xl: 1200,
     },
   },
 })

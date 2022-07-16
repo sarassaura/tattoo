@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Box, ImageListItem } from '@mui/material'
+import { Box, ImageListItem, Typography } from '@mui/material'
+import Dialog from '@mui/material/Dialog'
 import ScrollProps from '../helpers/scroll'
 import { ImageProp } from '../interfaces/trampos'
 import Loadmore from './loadmore'
@@ -21,6 +22,24 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   const [images, setImages] = useState<ImageProp[] | false>(defaultimages)
   const [nextCursor, setNextCursor] = useState(defaultcursor)
   const myLoader = ({ src }: { src: string }) => src
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+  const imageUrl = React.useRef<any>('')
+  const imageAlt = React.useRef<string | undefined>('')
+  const imageWidth = React.useRef<string | undefined>('')
+  const imageHeight = React.useRef<string | undefined>('')
+  function handleOnImageClick(
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) {
+    const element = event.target as HTMLElement
+    const { image, alt, width, height } = element.dataset
+    imageUrl.current = image
+    imageAlt.current = alt
+    imageWidth.current = width
+    imageHeight.current = height
+    handleOpen()
+  }
   return (
     <>
       <Navigation
@@ -46,6 +65,9 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
               xl: 5,
             },
           }}
+          onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+            handleOnImageClick(event)
+          }
         >
           {images &&
             images.map((image: ImageProp) => (
@@ -56,11 +78,36 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
                   alt={image.title}
                   width={image.width}
                   height={image.height}
+                  data-image={image.image}
+                  data-alt={image.title}
+                  data-width={image.width}
+                  data-height={image.height}
                 />
               </ImageListItem>
             ))}
         </Box>
       </Box>
+      <Dialog open={open} onClose={handleClose}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Typography variant="h6" component="h2" onClick={handleClose}>
+            {imageAlt.current}
+          </Typography>
+          {imageUrl.current && (
+            <Image
+              loader={myLoader}
+              src={imageUrl.current}
+              alt={imageAlt.current}
+              width={imageWidth.current}
+              height={imageHeight.current}
+            />
+          )}
+        </Box>
+      </Dialog>
       {images && images.length > 50 && (
         <Loadmore
           images={images}
