@@ -20,8 +20,7 @@ interface GalProps {
 function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   const [images, setImages] = useState<ImageProp[] | false>(defaultimages)
   const [nextCursor, setNextCursor] = useState(defaultcursor)
-  const myLoader = ({ src }: any) =>
-    `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/image/upload/${src}`
+  const myLoader = ({ src }: { src: string }) => src
   return (
     <>
       <Navigation
@@ -53,7 +52,7 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
               <ImageListItem key={image.id}>
                 <Image
                   loader={myLoader}
-                  src={image.title}
+                  src={image.image}
                   alt={image.title}
                   width={image.width}
                   height={image.height}

@@ -13,7 +13,7 @@ export async function search(options: any = {}) {
     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
     .join('&')
   const results = axios.get(
-    `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/resources/search?${paramString}`,
+    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_NAME}/resources/search?${paramString}`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
@@ -44,7 +44,7 @@ export function mapImageResources(resources: ResourceProp[]) {
 
 export async function getFolders() {
   const results = axios.get(
-    `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/folders`,
+    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_NAME}/folders`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
