@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { Box, ImageListItem } from '@mui/material'
 import Dialog from '@mui/material/Dialog'
+import { motion } from 'framer-motion'
 import ScrollProps from '../helpers/scroll'
 import { ImageProp } from '../interfaces/trampos'
 import Loadmore from './loadmore'
@@ -69,7 +70,11 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
         >
           {images &&
             images.map((image: ImageProp) => (
-              <ImageListItem key={image.id}>
+              <ImageListItem
+                key={image.id}
+                component={motion.li}
+                whileHover={{ scale: 0.95 }}
+              >
                 <Image
                   loader={myLoader}
                   src={image.image}
