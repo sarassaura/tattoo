@@ -7,7 +7,7 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
     loader: 'cloudinary',
-    path: '/_next/image',
+    path: 'https://res.cloudinary.com/campoflorescente/',
   },
   i18n,
   async headers() {
