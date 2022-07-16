@@ -6,8 +6,9 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/campoflorescente/',
+    /*     loader: 'cloudinary',
+    path: 'https://res.cloudinary.com', */
+    // https:res.cloudinary.com/campoflorescente/f_auto,c_limit,w_1920,q_auto/https://res.cloudinary.com/campoflorescente/image/upload/v1656849844/lagarto-snake.webp
   },
   i18n,
   async headers() {
