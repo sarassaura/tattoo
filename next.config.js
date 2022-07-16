@@ -12,7 +12,7 @@ const nextConfig = {
     ///                                            _next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcampoflorescente%2Fimage%2Fupload%2Fv1656849844%2Flagarto-original.webp&w=828&q=75
     // https://vitor-underground-tattoo.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcampoflorescente%2Fimage%2Fupload%2Fv1656849844%2Flagarto-snake.webp&w=828&q=75
     loader: 'cloudinary',
-    path: 'https://vitor-underground-tattoo.vercel.app/image/upload/',
+    path: 'https://res.cloudinary.com/campoflorescente/image/upload/',
   },
   i18n,
   async headers() {
