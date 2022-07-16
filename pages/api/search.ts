@@ -10,6 +10,8 @@ export default async function handler(
 ) {
   const params = req.body
   const definitive = await search(params)
+
+  res.setHeader('x-content-type-options', 'nosniff')
   res.status(200).json({
     ...definitive,
   })
