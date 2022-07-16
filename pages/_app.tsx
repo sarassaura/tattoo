@@ -22,6 +22,16 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <DefaultSeo
             title={`${router.route} - Underground`}
             description={`Veja mais em: ${router.route}`}
+            languageAlternates={[
+              {
+                hrefLang: 'pt-BR',
+                href: `${process.env.NEXT_PUBLIC_SITE_URL}${router.route}`,
+              },
+              {
+                hrefLang: 'en',
+                href: `${process.env.NEXT_PUBLIC_SITE_URL}/en${router.route}`,
+              },
+            ]}
             {...SEO}
           />
           <AnimatePresence exitBeforeEnter initial>

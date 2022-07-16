@@ -2,8 +2,8 @@ const SEO = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: process.env.SITE_NAME,
-    site_name: process.env.SITE_URL,
+    url: process.env.NEXT_PUBLIC_SITE_NAME,
+    site_name: process.env.NEXT_PUBLIC_SITE_URL,
     images: [
       {
         url: './profile.webp',
@@ -14,12 +14,6 @@ const SEO = {
       },
     ],
   },
-  languageAlternates: [
-    {
-      hrefLang: 'en',
-      href: `${process.env.SITE_URL}/en`,
-    },
-  ],
   twitter: {
     handle: '@victorvalentim',
     site: '@undergroundtattoo',

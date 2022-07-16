@@ -18,8 +18,8 @@ Select Language Mode: Typescript React
 Environmental variables(.env.local):
 
 ```bash
-SITE_NAME
-SITE_URL
+NEXT_PUBLIC_SITE_NAME
+NEXT_PUBLIC_SITE_URL
 CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
