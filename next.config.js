@@ -32,7 +32,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/_next/image(.*)',
+        source: '/_next/image*',
         headers: [
           {
             key: 'X-Content-Type-Options',
@@ -40,7 +40,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'max-age=31536000, immutable',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
