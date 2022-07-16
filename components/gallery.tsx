@@ -27,18 +27,14 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   const handleClose = () => setOpen(false)
   const imageUrl = React.useRef<any>('')
   const imageAlt = React.useRef<string | undefined>('')
-  const imageWidth = React.useRef<string | undefined>('')
-  const imageHeight = React.useRef<string | undefined>('')
   function handleOnImageClick(
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) {
     const element = event.target as HTMLElement
-    const { image, alt, width, height } = element.dataset
+    const { image, alt } = element.dataset
     if (image) {
       imageUrl.current = image
       imageAlt.current = alt
-      imageWidth.current = width
-      imageHeight.current = height
       handleOpen()
     }
   }
@@ -82,8 +78,6 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
                   height={image.height}
                   data-image={image.image}
                   data-alt={image.title}
-                  data-width={image.width}
-                  data-height={image.height}
                 />
               </ImageListItem>
             ))}
