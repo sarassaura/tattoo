@@ -31,6 +31,19 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/:all*(svg|jpg|jpeg|png|webp)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'max-age=31536000, immutable',
+          },
+        ],
+      },
     ]
   },
 }
