@@ -51,5 +51,6 @@ export default async function handler(
       }
     })
   })
+  res.setHeader('x-content-type-options', 'nosniff')
   res.status(200).json({ status: 'Ok' })
 }
