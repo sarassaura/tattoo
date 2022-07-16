@@ -72,6 +72,7 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
             images.map((image: ImageProp) => (
               <ImageListItem
                 key={image.id}
+                sx={{ cursor: 'zoom-in' }}
                 component={motion.li}
                 whileHover={{ scale: 0.95 }}
               >
