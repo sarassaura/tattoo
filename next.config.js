@@ -4,15 +4,16 @@ const { i18n } = require('./next-i18next.config')
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
     /*     loader: 'cloudinary',
     path: 'https://res.cloudinary.com', */
     // https://res.cloudinary.com/campoflorescente/f_auto,c_limit,w_1920,q_auto/https://res.cloudinary.com/campoflorescente/image/upload/v1656849844/lagarto-snake.webp
     ///                                            _next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcampoflorescente%2Fimage%2Fupload%2Fv1656849844%2Flagarto-original.webp&w=828&q=75
     // https://vitor-underground-tattoo.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcampoflorescente%2Fimage%2Fupload%2Fv1656849844%2Flagarto-snake.webp&w=828&q=75
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/campoflorescente/image/upload/',
+    // https://res.cloudinary.com/campoflorescente/image/upload/v1656849845/lagarto-color.webp
+    /*     loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/campoflorescente/image/upload/', */
   },
   i18n,
   async headers() {
