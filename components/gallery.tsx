@@ -20,6 +20,8 @@ interface GalProps {
 function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   const [images, setImages] = useState<ImageProp[] | false>(defaultimages)
   const [nextCursor, setNextCursor] = useState(defaultcursor)
+  const myLoader = ({ src }: any) =>
+    `https://res.cloudinary.com/campoflorescente/image/upload/${src}`
   return (
     <>
       <Navigation
@@ -50,7 +52,8 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
             images.map((image: ImageProp) => (
               <ImageListItem key={image.id}>
                 <Image
-                  src={image.image}
+                  loader={myLoader}
+                  src={image.title}
                   alt={image.title}
                   width={image.width}
                   height={image.height}
