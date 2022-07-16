@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Box, ImageListItem, Typography } from '@mui/material'
+import { Box, ImageListItem } from '@mui/material'
 import Dialog from '@mui/material/Dialog'
 import ScrollProps from '../helpers/scroll'
 import { ImageProp } from '../interfaces/trampos'
@@ -34,11 +34,13 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   ) {
     const element = event.target as HTMLElement
     const { image, alt, width, height } = element.dataset
-    imageUrl.current = image
-    imageAlt.current = alt
-    imageWidth.current = width
-    imageHeight.current = height
-    handleOpen()
+    if (image) {
+      imageUrl.current = image
+      imageAlt.current = alt
+      imageWidth.current = width
+      imageHeight.current = height
+      handleOpen()
+    }
   }
   return (
     <>
@@ -87,25 +89,21 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
             ))}
         </Box>
       </Box>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} fullScreen>
         <Box
           display="flex"
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
+          onClick={handleClose}
         >
-          <Typography variant="h6" component="h2" onClick={handleClose}>
-            {imageAlt.current}
-          </Typography>
-          {imageUrl.current && (
-            <Image
-              loader={myLoader}
-              src={imageUrl.current}
-              alt={imageAlt.current}
-              width={imageWidth.current}
-              height={imageHeight.current}
-            />
-          )}
+          <Image
+            loader={myLoader}
+            src={imageUrl.current}
+            alt={imageAlt.current}
+            objectFit="contain"
+            layout="fill"
+          />
         </Box>
       </Dialog>
       {images && images.length > 50 && (
