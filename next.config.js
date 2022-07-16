@@ -33,7 +33,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/_next/image*',
+        source: '/_next/image(.*)',
         headers: [
           {
             key: 'X-Content-Type-Options',
