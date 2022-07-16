@@ -32,7 +32,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/:all*(svg|jpg|jpeg|png|webp)',
+        source: '/_next/image(.*)',
         headers: [
           {
             key: 'X-Content-Type-Options',
