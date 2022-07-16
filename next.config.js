@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
+    loader: 'cloudinary',
   },
   i18n,
   async headers() {
