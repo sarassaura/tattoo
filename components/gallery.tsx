@@ -21,7 +21,7 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
   const [images, setImages] = useState<ImageProp[] | false>(defaultimages)
   const [nextCursor, setNextCursor] = useState(defaultcursor)
   const myLoader = ({ src }: any) =>
-    `https://res.cloudinary.com/campoflorescente/image/upload/${src}`
+    `https://res.cloudinary.com/${process.env.CLOUDINARY_NAME}/image/upload/${src}`
   return (
     <>
       <Navigation
