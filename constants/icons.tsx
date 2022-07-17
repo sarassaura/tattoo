@@ -12,9 +12,21 @@ export const icons = [
   },
   {
     id: 1,
+    href: 'https://twitter.com/',
+    title: 'twitter',
+    icon: <TwitterIcon />,
+  },
+  {
+    id: 2,
     href: 'https://www.instagram.com/',
     title: 'instagram',
     icon: <InstagramIcon />,
+  },
+  {
+    id: 3,
+    href: 'https://www.youtube.com/',
+    title: 'youtube',
+    icon: <YouTubeIcon />,
   },
 ]
 
