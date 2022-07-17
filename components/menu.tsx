@@ -4,7 +4,9 @@ import LinkItem from './link'
 
 function MenuComponent({ path }: { path: string }) {
   const { t, ready } = useTranslation('common')
-  if (!ready) return 'loading translations...'
+  if (!ready) {
+    return <div>loading translations...</div>
+  }
   return (
     <Stack direction="row" spacing="24px">
       <LinkItem href="/" name={t('menu.first')} path={path} />

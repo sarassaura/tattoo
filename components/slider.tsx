@@ -15,7 +15,9 @@ function Slider() {
     returnObjects: true,
   })
   const array = React.useRef(cards)
-  if (!ready) return 'loading translations...'
+  if (!ready) {
+    return <div>loading translations...</div>
+  }
   return (
     <Splide
       className="my-carousel"

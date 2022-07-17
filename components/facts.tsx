@@ -10,7 +10,9 @@ interface FactProps {
 function Facts() {
   const { t, ready } = useTranslation('facts')
   const facts = t<string, FactProps[]>('facts', { returnObjects: true })
-  if (!ready) return 'loading translations...'
+  if (!ready) {
+    return <div>loading translations...</div>
+  }
   return (
     <Grid
       container

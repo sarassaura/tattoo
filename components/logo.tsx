@@ -6,7 +6,9 @@ function Logo() {
   const { t, ready } = useTranslation('home')
   const title = React.useRef(t('title'))
   const subtitle = React.useRef(t('subtitle'))
-  if (!ready) return 'loading translations...'
+  if (!ready) {
+    return <div>loading translations...</div>
+  }
   return (
     <>
       <Typography variant="h1">{title.current}</Typography>
