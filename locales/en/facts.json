@@ -1,8 +1,0 @@
-{
-  "facts": [
-    { "id": 0, "name": "Clients", "number": 236 },
-    { "id": 1, "name": "Tattoos", "number": 578 },
-    { "id": 2, "name": "Drawings", "number": 1024 },
-    { "id": 3, "name": "Paintings", "number": 95 }
-  ]
-}

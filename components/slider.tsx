@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
 import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
@@ -11,7 +11,7 @@ interface cardProp {
 
 function Slider() {
   const { t } = useTranslation()
-  const cards: cardProp[] = t('slider:cards', {}, { returnObjects: true })
+  const cards: cardProp[] = t('common:cards', {}, { returnObjects: true })
   return (
     <Splide
       className="my-carousel"
@@ -74,10 +74,10 @@ function Slider() {
           },
         },
       }}
-      hasTrack={false}
     >
-      <SplideTrack>
-        {cards.map((card) => (
+      {Array.isArray(cards) &&
+        cards.length > 0 &&
+        cards.map((card) => (
           <SplideSlide key={card.id}>
             <Box
               width="100%"
@@ -91,7 +91,6 @@ function Slider() {
             </Box>
           </SplideSlide>
         ))}
-      </SplideTrack>
     </Splide>
   )
 }

@@ -8,7 +8,7 @@ interface FactProps {
 }
 
 function Facts() {
-  const { t } = useTranslation('facts')
+  const { t } = useTranslation('common')
   const facts: FactProps[] = t('facts', {}, { returnObjects: true })
   return (
     <Grid

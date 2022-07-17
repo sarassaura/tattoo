@@ -34,9 +34,9 @@ interface InputProps {
 }
 
 function Form() {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   const inputs: InputProps[] = t(
-    'form:input',
+    'input',
     {},
     {
       returnObjects: true,
@@ -81,34 +81,36 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {inputs.map((input) => (
-        <FormControl
-          sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
-          key={input.id}
-        >
-          <TextField
-            error={!!errors[input.name as keyof Inputs]}
-            helperText={
-              errors[input.name as keyof Inputs] &&
-              errors[input.name as keyof Inputs]!.message
-            }
-            label={input.label}
-            type={input.type}
-            variant="standard"
-            multiline={input.multi}
-            maxRows={3}
-            {...register(input.name as keyof Inputs, {
-              required: input.maxText,
-              maxLength: {
-                value: input.value,
-                message: input.message,
-              },
-            })}
-            required={input.required}
-            fullWidth
-          />
-        </FormControl>
-      ))}
+      {Array.isArray(inputs) &&
+        inputs.length > 0 &&
+        inputs.map((input) => (
+          <FormControl
+            sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
+            key={input.id}
+          >
+            <TextField
+              error={!!errors[input.name as keyof Inputs]}
+              helperText={
+                errors[input.name as keyof Inputs] &&
+                errors[input.name as keyof Inputs]!.message
+              }
+              label={input.label}
+              type={input.type}
+              variant="standard"
+              multiline={input.multi}
+              maxRows={3}
+              {...register(input.name as keyof Inputs, {
+                required: input.maxText,
+                maxLength: {
+                  value: input.value,
+                  message: input.message,
+                },
+              })}
+              required={input.required}
+              fullWidth
+            />
+          </FormControl>
+        ))}
       <Button variant="input" type="submit" title="submit">
         {loading.current ? (
           <CircularProgress size={20} title="loading" />

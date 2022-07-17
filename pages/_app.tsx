@@ -35,8 +35,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           />
           <AnimatePresence exitBeforeEnter initial>
             <Component {...pageProps} key={router.route} />
-            <ReactQueryDevtools initialIsOpen />
           </AnimatePresence>
+          <ReactQueryDevtools initialIsOpen />
         </Layout>
       </ThemeProvider>
     </QueryClientProvider>

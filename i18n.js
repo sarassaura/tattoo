@@ -3,8 +3,6 @@ module.exports = {
   defaultLocale: 'pt-BR',
   pages: {
     '*': ['common'],
-    '/': ['home', 'slider', 'facts'],
-    '/trampos': ['trampos'],
-    '/contato': ['contato', 'form'],
   },
+  useSuspense: false,
 }

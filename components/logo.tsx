@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import useTranslation from 'next-translate/useTranslation'
 
 function Logo() {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('common')
   return (
     <>
       <Typography variant="h1">{t('title')}</Typography>
