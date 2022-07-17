@@ -11,6 +11,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 import Layout from '../components/layout'
+import nextI18nConfig from '../next-i18next.config'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const queryClient = new QueryClient()
@@ -44,4 +45,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(MyApp, nextI18nConfig)

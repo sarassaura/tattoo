@@ -34,7 +34,7 @@ interface InputProps {
 }
 
 function Form() {
-  const { t } = useTranslation('form')
+  const { t, ready } = useTranslation('form')
   const inputs = t<string, InputProps[]>('input', {
     returnObjects: true,
   })
@@ -69,6 +69,7 @@ function Form() {
     reset()
     loading.current = false
   }
+  if (!ready) return 'loading translations...'
   return (
     <Box
       display="flex"

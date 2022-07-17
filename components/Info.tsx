@@ -4,7 +4,8 @@ import { useTranslation } from 'next-i18next'
 import { icons } from '../constants/icons'
 
 function Info() {
-  const { t } = useTranslation('common')
+  const { t, ready } = useTranslation('common')
+  if (!ready) return 'loading translations...'
   return (
     <>
       <Box

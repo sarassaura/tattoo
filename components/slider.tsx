@@ -10,11 +10,12 @@ interface CardProps {
 }
 
 function Slider() {
-  const { t } = useTranslation('slider')
+  const { t, ready } = useTranslation('slider')
   const cards = t<string, CardProps[]>('cards', {
     returnObjects: true,
   })
   const array = React.useRef(cards)
+  if (!ready) return 'loading translations...'
   return (
     <Splide
       className="my-carousel"

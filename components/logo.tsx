@@ -3,9 +3,10 @@ import { useTranslation } from 'next-i18next'
 import React from 'react'
 
 function Logo() {
-  const { t } = useTranslation('home')
+  const { t, ready } = useTranslation('home')
   const title = React.useRef(t('title'))
   const subtitle = React.useRef(t('subtitle'))
+  if (!ready) return 'loading translations...'
   return (
     <>
       <Typography variant="h1">{title.current}</Typography>

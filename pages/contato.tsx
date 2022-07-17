@@ -1,4 +1,4 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Call from '../components/callme'
 import Container from '../components/container'
 import Form from '../components/form'
@@ -12,12 +12,12 @@ function contato() {
   )
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+/* export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'contato', 'form'])),
     },
   }
-}
+} */
 
 export default contato

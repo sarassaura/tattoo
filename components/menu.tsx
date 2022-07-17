@@ -3,7 +3,8 @@ import { useTranslation } from 'next-i18next'
 import LinkItem from './link'
 
 function MenuComponent({ path }: { path: string }) {
-  const { t } = useTranslation('common')
+  const { t, ready } = useTranslation('common')
+  if (!ready) return 'loading translations...'
   return (
     <Stack direction="row" spacing="24px">
       <LinkItem href="/" name={t('menu.first')} path={path} />
