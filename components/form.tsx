@@ -83,7 +83,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {typeof inputs !== 'undefined' &&
+      {inputs !== undefined &&
         inputs.map((input) => (
           <FormControl
             sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}

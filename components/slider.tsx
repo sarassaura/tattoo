@@ -82,7 +82,7 @@ function Slider() {
       hasTrack={false}
     >
       <SplideTrack>
-        {typeof cards !== 'undefined' &&
+        {cards !== undefined &&
           cards.map((slide) => (
             <SplideSlide key={slide.id}>
               <Box
