@@ -82,20 +82,21 @@ function Slider() {
       hasTrack={false}
     >
       <SplideTrack>
-        {cards.map((slide) => (
-          <SplideSlide key={slide.id}>
-            <Box
-              width="100%"
-              height="100%"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              padding={3}
-            >
-              <Typography>{slide.text}</Typography>
-            </Box>
-          </SplideSlide>
-        ))}
+        {typeof cards !== 'undefined' &&
+          cards.map((slide) => (
+            <SplideSlide key={slide.id}>
+              <Box
+                width="100%"
+                height="100%"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                padding={3}
+              >
+                <Typography>{slide.text}</Typography>
+              </Box>
+            </SplideSlide>
+          ))}
       </SplideTrack>
     </Splide>
   )
