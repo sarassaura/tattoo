@@ -15,6 +15,7 @@ function Slider() {
     returnObjects: true,
   })
   const array = React.useRef(cards)
+  array.current = cards || []
   if (!ready) {
     return <div>loading translations...</div>
   }

@@ -39,6 +39,7 @@ function Form() {
     returnObjects: true,
   })
   const array = React.useRef(inputs)
+  array.current = inputs || []
   const buttonText = React.useRef(t('button'))
   const alertTitle = React.useRef(t('alert.title'))
   const alertBody = React.useRef(t('alert.body'))
