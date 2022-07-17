@@ -1,18 +1,12 @@
 import { Typography } from '@mui/material'
-import { useTranslation } from 'next-i18next'
-import React from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
 function Logo() {
-  const { t, ready } = useTranslation('home')
-  const title = React.useRef(t('title'))
-  const subtitle = React.useRef(t('subtitle'))
-  if (!ready) {
-    return <div>loading translations...</div>
-  }
+  const { t } = useTranslation('home')
   return (
     <>
-      <Typography variant="h1">{title.current}</Typography>
-      <Typography marginBottom={3}>{subtitle.current}</Typography>
+      <Typography variant="h1">{t('title')}</Typography>
+      <Typography marginBottom={3}>{t('subtitle')}</Typography>
     </>
   )
 }

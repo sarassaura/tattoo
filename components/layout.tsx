@@ -57,7 +57,7 @@ function Layout({
             <Box alignItems="center" display={{ xs: 'flex', lg: 'none' }}>
               <About />
             </Box>
-            <MenuComponent path={router.asPath} />
+            <MenuComponent router={router} />
           </Box>
           {children}
         </Box>

@@ -2,8 +2,8 @@ import {
   Alert,
   Box,
   Button,
-  // FormControl,
-  // TextField,
+  FormControl,
+  TextField,
   Snackbar,
   AlertTitle,
   CircularProgress,
@@ -11,8 +11,8 @@ import {
 } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
-import { useTranslation } from 'next-i18next'
 import axios from 'axios'
+import useTranslation from 'next-translate/useTranslation'
 
 type Inputs = {
   nome: string
@@ -21,7 +21,7 @@ type Inputs = {
   textarea: string
 }
 
-/* interface InputProps {
+interface InputProps {
   id: number
   name: string
   label: string
@@ -31,16 +31,17 @@ type Inputs = {
   message: string
   maxText: string | boolean
   required: boolean
-} */
+}
 
 function Form() {
-  const { t, ready } = useTranslation('form')
-  /* const inputs = t<string, InputProps[]>('input', {
-    returnObjects: true,
-  }) */
-  const buttonText = React.useRef(t('button'))
-  const alertTitle = React.useRef(t('alert.title'))
-  const alertBody = React.useRef(t('alert.body'))
+  const { t } = useTranslation()
+  const inputs: InputProps[] = t(
+    'form:input',
+    {},
+    {
+      returnObjects: true,
+    }
+  )
   const [open, setOpen] = React.useState(false)
   const loading = React.useRef(false)
   const handleClick = () => {
@@ -57,19 +58,16 @@ function Form() {
     setOpen(false)
   }
   const {
-    // register,
+    register,
     handleSubmit,
     reset,
-    /* formState: { errors }, */
+    formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     handleClick()
     axios.post('api/mail', data)
     reset()
     loading.current = false
-  }
-  if (!ready) {
-    return <div>loading translations...</div>
   }
   return (
     <Box
@@ -83,7 +81,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {/* {inputs.map((input) => (
+      {inputs.map((input) => (
         <FormControl
           sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
           key={input.id}
@@ -110,12 +108,12 @@ function Form() {
             fullWidth
           />
         </FormControl>
-      ))} */}
+      ))}
       <Button variant="input" type="submit" title="submit">
         {loading.current ? (
           <CircularProgress size={20} title="loading" />
         ) : (
-          <Typography variant="h4">{buttonText.current}</Typography>
+          <Typography variant="h4">{t('button')}</Typography>
         )}
       </Button>
       <Snackbar
@@ -130,8 +128,8 @@ function Form() {
           variant="outlined"
           sx={{ width: '100%', bgcolor: 'teal' }}
         >
-          <AlertTitle color="success">{alertTitle.current}</AlertTitle>
-          {alertBody.current}
+          <AlertTitle color="success">{t('alert.title')}</AlertTitle>
+          {t('alert.body')}
         </Alert>
       </Snackbar>
     </Box>

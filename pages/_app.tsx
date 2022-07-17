@@ -4,14 +4,12 @@ import '../styles/fonts.css'
 import '@splidejs/react-splide/css/skyblue'
 import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
-import { appWithTranslation } from 'next-i18next'
 import { AnimatePresence } from 'framer-motion'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 import Layout from '../components/layout'
-import nextI18nConfig from '../next-i18next.config'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const queryClient = new QueryClient()
@@ -45,4 +43,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default appWithTranslation(MyApp, nextI18nConfig)
+export default MyApp

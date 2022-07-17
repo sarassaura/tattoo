@@ -1,22 +1,17 @@
-// import { Box, Typography } from '@mui/material'
-import { Splide, /* SplideSlide, */ SplideTrack } from '@splidejs/react-splide'
+import { Box, Typography } from '@mui/material'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
-// import { useTranslation } from 'next-i18next'
+import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
 
-/* interface CardProps {
+interface cardProp {
   id: number
   text: string
-} */
+}
 
 function Slider() {
-  /*   const { t, ready } = useTranslation('slider')
-  const cards = t<string, CardProps[]>('cards', {
-    returnObjects: true,
-  })
-  if (!ready) {
-    return <div>loading translations...</div>
-  } */
+  const { t } = useTranslation()
+  const cards: cardProp[] = t('slider:cards', {}, { returnObjects: true })
   return (
     <Splide
       className="my-carousel"
@@ -82,8 +77,8 @@ function Slider() {
       hasTrack={false}
     >
       <SplideTrack>
-        {/* {cards.map((slide) => (
-          <SplideSlide key={slide.id}>
+        {cards.map((card) => (
+          <SplideSlide key={card.id}>
             <Box
               width="100%"
               height="100%"
@@ -92,10 +87,10 @@ function Slider() {
               justifyContent="center"
               padding={3}
             >
-              <Typography>{slide.text}</Typography>
+              <Typography>{card.text}</Typography>
             </Box>
           </SplideSlide>
-        ))} */}
+        ))}
       </SplideTrack>
     </Splide>
   )
