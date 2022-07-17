@@ -2,8 +2,8 @@ import {
   Alert,
   Box,
   Button,
-  FormControl,
-  TextField,
+  // FormControl,
+  // TextField,
   Snackbar,
   AlertTitle,
   CircularProgress,
@@ -21,7 +21,7 @@ type Inputs = {
   textarea: string
 }
 
-interface InputProps {
+/* interface InputProps {
   id: number
   name: string
   label: string
@@ -31,13 +31,13 @@ interface InputProps {
   message: string
   maxText: string | boolean
   required: boolean
-}
+} */
 
 function Form() {
   const { t, ready } = useTranslation('form')
-  const inputs = t<string, InputProps[]>('input', {
+  /* const inputs = t<string, InputProps[]>('input', {
     returnObjects: true,
-  })
+  }) */
   const buttonText = React.useRef(t('button'))
   const alertTitle = React.useRef(t('alert.title'))
   const alertBody = React.useRef(t('alert.body'))
@@ -57,10 +57,10 @@ function Form() {
     setOpen(false)
   }
   const {
-    register,
+    // register,
     handleSubmit,
     reset,
-    formState: { errors },
+    /* formState: { errors }, */
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     handleClick()

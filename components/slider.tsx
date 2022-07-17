@@ -1,22 +1,22 @@
-import { Box, Typography } from '@mui/material'
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+// import { Box, Typography } from '@mui/material'
+import { Splide, /* SplideSlide, */ SplideTrack } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
-import { useTranslation } from 'next-i18next'
+// import { useTranslation } from 'next-i18next'
 import React from 'react'
 
-interface CardProps {
+/* interface CardProps {
   id: number
   text: string
-}
+} */
 
 function Slider() {
-  const { t, ready } = useTranslation('slider')
+  /*   const { t, ready } = useTranslation('slider')
   const cards = t<string, CardProps[]>('cards', {
     returnObjects: true,
   })
   if (!ready) {
     return <div>loading translations...</div>
-  }
+  } */
   return (
     <Splide
       className="my-carousel"
