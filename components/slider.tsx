@@ -14,8 +14,6 @@ function Slider() {
   const cards = t<string, CardProps[]>('cards', {
     returnObjects: true,
   })
-  const array = React.useRef(cards)
-  array.current = cards || []
   if (!ready) {
     return <div>loading translations...</div>
   }
@@ -84,7 +82,7 @@ function Slider() {
       hasTrack={false}
     >
       <SplideTrack>
-        {array.current.map((slide) => (
+        {cards.map((slide) => (
           <SplideSlide key={slide.id}>
             <Box
               width="100%"

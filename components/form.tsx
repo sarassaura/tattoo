@@ -38,8 +38,6 @@ function Form() {
   const inputs = t<string, InputProps[]>('input', {
     returnObjects: true,
   })
-  const array = React.useRef(inputs)
-  array.current = inputs || []
   const buttonText = React.useRef(t('button'))
   const alertTitle = React.useRef(t('alert.title'))
   const alertBody = React.useRef(t('alert.body'))
@@ -85,7 +83,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {array.current.map((input) => (
+      {inputs.map((input) => (
         <FormControl
           sx={{ width: { xs: '60%', md: '50%', lg: '40%' } }}
           key={input.id}
