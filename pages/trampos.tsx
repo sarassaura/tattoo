@@ -20,7 +20,7 @@ function trampos({
   )
 }
 
-export async function getServerSideProps({ locale }: { locale: string }) {
+export async function getStaticProps({ locale }: { locale: string }) {
   const results = await search({
     expression: 'folder=""',
   })
