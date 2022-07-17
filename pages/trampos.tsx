@@ -20,7 +20,7 @@ function trampos({
   )
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getServerSideProps({ locale }: { locale: string }) {
   const results = await search({
     expression: 'folder=""',
   })
@@ -35,7 +35,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),
-    revalidate: 60,
   }
 }
 

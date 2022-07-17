@@ -3,4 +3,5 @@ module.exports = {
     locales: ['pt-BR', 'en'],
     defaultLocale: 'pt-BR',
   },
+  react: { useSuspense: false },
 }
