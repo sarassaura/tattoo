@@ -6,7 +6,6 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
-    // https://res.cloudinary.com/campoflorescente/image/upload/woman.jpg
   },
   async headers() {
     return [
@@ -38,6 +37,15 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:all*(svg|jpg|jpeg|webp|png|json)',
+        headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
