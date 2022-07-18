@@ -5,7 +5,7 @@ import Dialog from '@mui/material/Dialog'
 import { motion } from 'framer-motion'
 import ScrollProps from '../helpers/scroll'
 import { ImageProp } from '../interfaces/trampos'
-import Loadmore from './loadmore'
+// import Loadmore from './loadmore'
 import Navigation from './navigation'
 
 interface FolderProps {
@@ -108,14 +108,14 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
           />
         </Box>
       </Dialog>
-      {images && images.length > 50 && (
+      {/* {nextCursor && (
         <Loadmore
           images={images}
           setImages={setImages}
           nextCursor={nextCursor}
           setNextCursor={setNextCursor}
         />
-      )}
+      )} */}
     </>
   )
 }
