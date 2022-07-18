@@ -84,6 +84,8 @@ function Gallery({ defaultimages, defaultcursor, folders }: GalProps) {
                   height={image.height}
                   data-image={image.image}
                   data-alt={image.title}
+                  placeholder="blur"
+                  blurDataURL="./profile.webp"
                 />
               </ImageListItem>
             ))}

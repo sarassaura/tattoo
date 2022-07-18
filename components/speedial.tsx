@@ -8,7 +8,7 @@ function Speed() {
   return (
     <SpeedDial
       ariaLabel={iconButton.aria}
-      sx={{ position: 'absolute', bottom: 24, right: 24 }}
+      sx={{ position: 'fixed', bottom: 24, right: 24 }}
       icon={<SpeedDialIcon icon={iconButton.icon} />}
     >
       {actions.map((action) => (
