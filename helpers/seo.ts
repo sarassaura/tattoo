@@ -24,19 +24,6 @@ const SEO = {
       rel: 'icon',
       href: './favicon.ico',
     },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-      crossOriginIsolated: 'anonymous',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://res.cloudinary.com',
-    },
   ],
 }
 
