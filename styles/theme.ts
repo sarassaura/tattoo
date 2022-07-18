@@ -62,12 +62,12 @@ const theme = createTheme(tempTheme, {
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          h1: 'h1',
-          h2: 'h2',
-          h3: 'h1',
-          h4: 'h4',
-          h5: 'h2',
-          h6: 'h3',
+          h1: 'h1', // h1
+          h2: 'h2', // h2
+          h3: 'h2', // h1
+          h4: 'h2', // h4
+          h5: 'h2', // h2
+          h6: 'h2', // h3
           subtitle1: 'span',
           subtitle2: 'span',
         },
