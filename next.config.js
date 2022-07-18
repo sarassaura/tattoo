@@ -48,7 +48,33 @@ const nextConfig = {
         ],
       },
       {
-        source: '/:all*(svg|jpg|jpeg|webp|png|json)',
+        source: '/:all*(svg|jpg|jpeg|webp|png|json|ico)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/data(.*)',
         headers: [
           {
             key: 'X-Content-Type-Options',
