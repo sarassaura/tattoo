@@ -27,7 +27,7 @@ const SEO = {
     {
       rel: 'preconnect',
       href: 'https://fonts.googleapis.com',
-      crossOriginIsolated: 'anonymous',
+      crossOrigin: 'anonymous',
     },
     {
       rel: 'preconnect',
