@@ -36,4 +36,5 @@ export interface TramProps {
   images: ImageProp[]
   nextCursor: string | false
   folders: Folder[]
+  active: string | string[] | undefined
 }
