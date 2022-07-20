@@ -66,8 +66,6 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
                   height={image.height}
                   data-image={image.image}
                   data-alt={image.title}
-                  placeholder="blur"
-                  blurDataURL="./profile.webp"
                   unoptimized
                 />
               </ImageListItem>
