@@ -8,7 +8,7 @@ function MenuComponent({ router }: { router: Router }) {
   return (
     <Stack direction="row" spacing="24px">
       <LinkItem href="/" name={t('menu.first')} path={router.asPath} />
-      <LinkItem href="/trampos" name={t('menu.second')} path={router.asPath} />
+      <LinkItem href="/works" name={t('menu.second')} path={router.asPath} />
       <LinkItem href="/contato" name={t('menu.third')} path={router.asPath} />
     </Stack>
   )

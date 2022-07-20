@@ -9,11 +9,6 @@ import Container from '../../components/container'
 import Folders from '../../components/folders'
 import ScrollProps from '../../helpers/scroll'
 
-interface FolderProps {
-  path: string
-  name: string
-}
-
 function Post({ images, nextCursor, folders, active }: TramProps) {
   const myLoader = ({ src }: { src: string }) => src
   const [open, setOpen] = React.useState(false)
@@ -101,23 +96,12 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
   )
 }
 
-export async function getStaticPaths() {
-  const { folders }: { folders: FolderProps[] } = await getFolders()
-  const paths = folders.map((folder) => ({
-    params: { id: folder.path },
-  }))
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const folder = params!.id || ''
+export const getStaticProps: GetStaticProps = async () => {
+  const folder = ''
   const results = await search({
     expression: `folder="${folder}"`,
   })
-  const active = params!.id
+  const active = ''
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
   const { folders } = await getFolders()
