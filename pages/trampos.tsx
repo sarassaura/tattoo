@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { search, mapImageResources, getFolders } from '../utils/cloudinary'
 import Gallery from '../components/gallery'
 import { TramProps } from '../interfaces/trampos'
@@ -19,7 +21,7 @@ function trampos({
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const results = await search({
     expression: 'folder=""',
   })
@@ -30,6 +32,7 @@ export async function getStaticProps() {
     images,
     nextCursor: nextCursor || false,
     folders,
+    ...(await serverSideTranslations(locale!, ['common'])),
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),

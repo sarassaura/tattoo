@@ -3,6 +3,7 @@ import { Box, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getFolders, mapImageResources, search } from '../../utils/cloudinary'
 import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
@@ -94,7 +95,7 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const folder = ''
   const results = await search({
     expression: `folder="${folder}"`,
@@ -108,6 +109,7 @@ export const getStaticProps: GetStaticProps = async () => {
     nextCursor: nextCursor || false,
     folders,
     active,
+    ...(await serverSideTranslations(locale!, ['common'])),
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),

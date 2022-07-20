@@ -3,6 +3,7 @@ import { Box, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getFolders, mapImageResources, search } from '../../utils/cloudinary'
 import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
@@ -110,7 +111,7 @@ export async function getStaticPaths() {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const folder = params!.id || ''
   const results = await search({
     expression: `folder="${folder}"`,
@@ -124,6 +125,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     nextCursor: nextCursor || false,
     folders,
     active,
+    ...(await serverSideTranslations(locale!, ['common'])),
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),

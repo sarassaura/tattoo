@@ -12,7 +12,7 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form'
 import React from 'react'
 import axios from 'axios'
-import useTranslation from 'next-translate/useTranslation'
+import { useTranslation } from 'next-i18next'
 
 type Inputs = {
   nome: string
@@ -35,13 +35,9 @@ interface InputProps {
 
 function Form() {
   const { t } = useTranslation('common')
-  const inputs: InputProps[] = t(
-    'input',
-    {},
-    {
-      returnObjects: true,
-    }
-  )
+  const inputs: InputProps[] = t('input', {
+    returnObjects: true,
+  })
   const [open, setOpen] = React.useState(false)
   const loading = React.useRef(false)
   const handleClick = () => {

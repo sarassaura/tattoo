@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material'
-import useTranslation from 'next-translate/useTranslation'
+import { useTranslation } from 'next-i18next'
 import { Router } from 'next/router'
 import LinkItem from './link'
 

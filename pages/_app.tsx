@@ -7,6 +7,7 @@ import { DefaultSeo } from 'next-seo'
 import { AnimatePresence } from 'framer-motion'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { appWithTranslation } from 'next-i18next'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 import Layout from '../components/layout'
@@ -43,4 +44,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

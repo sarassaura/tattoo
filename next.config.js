@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextTranslate = require('next-translate')
+const { i18n } = require('./next-i18next.config')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -7,6 +7,7 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     contentSecurityPolicy: ``,
   },
+  i18n,
   async headers() {
     return [
       {
@@ -51,4 +52,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextTranslate(nextConfig)
+module.exports = nextConfig
