@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { Box, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -100,11 +100,16 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const { folders }: { folders: FolderProps[] } = await getFolders()
-  const paths = folders.map((folder) => ({
-    params: { id: folder.path },
-  }))
+  const paths = folders
+    .map((folder) =>
+      locales!.map((locale) => ({
+        params: { id: folder.path },
+        locale,
+      }))
+    )
+    .flat()
   return {
     paths,
     fallback: false,
