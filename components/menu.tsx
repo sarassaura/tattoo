@@ -7,9 +7,9 @@ function MenuComponent({ router }: { router: Router }) {
   const { t } = useTranslation('common')
   return (
     <Stack direction="row" spacing="24px">
-      <LinkItem href="/" name={t('menu.first')} path={router.asPath} />
-      <LinkItem href="/works" name={t('menu.second')} path={router.asPath} />
-      <LinkItem href="/contato" name={t('menu.third')} path={router.asPath} />
+      <LinkItem href="" name={t('menu.first')} path={router.asPath} />
+      <LinkItem href="works" name={t('menu.second')} path={router.asPath} />
+      <LinkItem href="contato" name={t('menu.third')} path={router.asPath} />
     </Stack>
   )
 }
