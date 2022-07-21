@@ -27,7 +27,7 @@ function Info() {
       >
         <Avatar
           alt={t('name')}
-          src="./profile.webp"
+          src="/profile.webp"
           sx={{ width: '6rem', height: '6rem' }}
         />
       </Box>

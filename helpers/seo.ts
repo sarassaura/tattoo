@@ -6,7 +6,7 @@ const SEO = {
     site_name: process.env.NEXT_PUBLIC_SITE_URL,
     images: [
       {
-        url: './profile.webp',
+        url: '/profile.webp',
         width: 640,
         height: 640,
         alt: 'Profile Picture',
@@ -22,7 +22,7 @@ const SEO = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: './favicon.ico',
+      href: '/favicon.ico',
     },
   ],
 }
