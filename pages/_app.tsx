@@ -6,7 +6,7 @@ import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
 import { AnimatePresence } from 'framer-motion'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+// import { ReactQueryDevtools } from 'react-query/devtools'
 import { appWithTranslation } from 'next-i18next'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <AnimatePresence exitBeforeEnter initial>
             <Component {...pageProps} key={router.route} />
           </AnimatePresence>
-          <ReactQueryDevtools initialIsOpen />
+          {/* <ReactQueryDevtools initialIsOpen /> */}
         </Layout>
       </ThemeProvider>
     </QueryClientProvider>

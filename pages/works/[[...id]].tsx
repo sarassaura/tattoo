@@ -12,8 +12,8 @@ import Folders from '../../components/folders'
 import ScrollProps from '../../helpers/scroll'
 
 interface FolderProps {
-  path: string
-  name: string
+  path?: string
+  name?: string
 }
 
 function Post({ images, nextCursor, folders, active }: TramProps) {
@@ -98,6 +98,7 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
               alt={imageAlt.current}
               objectFit="contain"
               layout="fill"
+              unoptimized
             />
           </Box>
         </Dialog>
@@ -108,11 +109,12 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const { folders }: { folders: FolderProps[] } = await getFolders()
+  let { folders }: { folders: FolderProps[] } = await getFolders()
+  folders = [...folders, {}]
   const paths = folders
     .map((folder) =>
       locales!.map((locale) => ({
-        params: { id: folder.path },
+        params: { id: folder.path ? [folder.path] : [] },
         locale,
       }))
     )
@@ -124,11 +126,12 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const folder = params!.id || ''
+  let folder = params!.id
+  folder = folder === undefined ? '' : folder
   const results = await search({
     expression: `folder="${folder}"`,
   })
-  const active = params!.id
+  const active = params!.id ? params!.id[0] : ''
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
   const { folders } = await getFolders()
