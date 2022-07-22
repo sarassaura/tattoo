@@ -1,10 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Box, Dialog, ImageListItem } from '@mui/material'
+import { Box, Button, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
+import axios from 'axios'
 import { getFolders, mapImageResources, search } from '../../utils/cloudinary'
 import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
@@ -16,7 +17,13 @@ interface FolderProps {
   name?: string
 }
 
-function Post({ images, nextCursor, folders, active }: TramProps) {
+function Post({ images: im, nextCursor, folders, active }: TramProps) {
+  const [cursor, setCursor] = React.useState(nextCursor)
+  const [images, setImages] = React.useState(im)
+  React.useEffect(() => {
+    setCursor(nextCursor)
+    setImages(im)
+  }, [nextCursor, im])
   const myLoader = ({ src }: { src: string }) => src
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
@@ -33,6 +40,18 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
       imageAlt.current = alt
       handleOpen()
     }
+  }
+  async function handleMore() {
+    const data = {
+      expression: `folder="${active}"`,
+      next_cursor: cursor,
+      max_results: 15,
+    }
+    const results = axios.post('/api/search', data)
+    const { resources, next_cursor: next } = (await results).data
+    const newImages = mapImageResources(resources)
+    setCursor(next)
+    setImages(newImages)
   }
   return (
     <>
@@ -102,7 +121,11 @@ function Post({ images, nextCursor, folders, active }: TramProps) {
             />
           </Box>
         </Dialog>
-        {nextCursor && <Box>A</Box>}
+        {cursor && (
+          <Button variant="active" onClick={() => handleMore()}>
+            Other Images
+          </Button>
+        )}
       </Container>
     </>
   )
@@ -130,6 +153,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   folder = folder === undefined ? '' : folder
   const results = await search({
     expression: `folder="${folder}"`,
+    max_results: 15,
   })
   const active = params!.id ? params!.id[0] : ''
   const { resources, next_cursor: nextCursor } = results

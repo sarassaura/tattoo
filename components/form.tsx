@@ -61,7 +61,7 @@ function Form() {
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     handleClick()
-    axios.post('api/mail', data)
+    axios.post('/api/mail', data)
     reset()
     loading.current = false
   }
