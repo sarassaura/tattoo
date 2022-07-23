@@ -13,26 +13,32 @@ export default async function handler(
       .json({ message: 'Invalid token', received: req.query.secret })
   }
   try {
-    const { notification_type: note } = req.body
+    const note = req.body.notification_type
     if (note === 'upload') {
-      const { public_id: name } = req.body
-      const folder = name.split('/')
-      const path = folder.length > 1 ? `/${folder[0]}` : ''
+      const id = req.body.public_id
+      let folder: string[] | string = id.split('/')
+      folder = folder.length > 1 ? `/${folder[0]}` : ''
+      const final = `/works${folder}`
       // @ts-ignore
-      await res.revalidate(`/works${path}`)
+      await res.unstable_revalidate(final)
       return res.json({ revalidated: true })
     }
     if (note === 'delete') {
-      const { resources } = req.body
-      const name = resources.public_id
-      const folder = name.split('/')
-      const path = folder.length > 1 ? `/${folder[0]}` : ''
+      const id = req.body.resources[0].public_id
+      let folder: string[] | string = id.split('/')
+      folder = folder.length > 1 ? `/${folder[0]}` : ''
+      const final = `/works${folder}`
       // @ts-ignore
-      await res.revalidate(`/works${path}`)
+      await res.unstable_revalidate(final)
       return res.json({ revalidated: true })
     }
-    return res.status(200).send('Rejected')
+
+    return res.status(501).json({ message: 'Not Implemented', note })
   } catch (err) {
-    return res.status(500).send('Error revalidating')
+    return res.status(500).json({
+      message: 'Error revalidating',
+      received: req.body.notification_type,
+      error: err,
+    })
   }
 }
