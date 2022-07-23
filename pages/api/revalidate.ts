@@ -32,7 +32,7 @@ export default async function handler(
       await res.unstable_revalidate(final)
       return res.json({ revalidated: true })
     }
-
+    await res.unstable_revalidate('/works')
     return res.status(501).json({ message: 'Not Implemented', note })
   } catch (err) {
     return res.status(500).json({
