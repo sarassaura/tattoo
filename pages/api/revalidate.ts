@@ -8,7 +8,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.query.secret !== process.env.SECRET_TOKEN) {
-    return res.status(401).json({ message: 'Invalid token' })
+    return res
+      .status(401)
+      .json({ message: 'Invalid token', received: req.query.secret })
   }
   try {
     const { notification_type: note } = req.body
