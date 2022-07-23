@@ -25,4 +25,8 @@ CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
 EMAIL - GMAIL
 PASSWORD - Generate APP password
+SECRET_TOKEN - For ISR revalidation
 ```
+
+Obs: Go to the cloudinary settings, under uploads tab, and put this in notifications:
+https://<your-site.com>/api/revalidate?secret=<token>

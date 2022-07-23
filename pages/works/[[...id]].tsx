@@ -168,7 +168,6 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   }
   return {
     props: JSON.parse(JSON.stringify(propina)),
-    revalidate: 60,
   }
 }
 
