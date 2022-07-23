@@ -20,7 +20,7 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       // @ts-ignore
-      await res.unstable_revalidate(final)
+      await res.revalidate(final)
       return res.json({ revalidated: true })
     }
     if (note === 'delete') {
@@ -29,10 +29,11 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       // @ts-ignore
-      await res.unstable_revalidate(final)
+      await res.revalidate(final)
       return res.json({ revalidated: true })
     }
-    await res.unstable_revalidate('/works')
+    // @ts-ignore
+    await res.revalidate('/works')
     return res.status(501).json({ message: 'Not Implemented', note })
   } catch (err) {
     return res.status(500).json({
