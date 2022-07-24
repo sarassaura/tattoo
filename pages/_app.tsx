@@ -4,7 +4,7 @@ import '../styles/fonts.css'
 import '@splidejs/react-splide/css/skyblue'
 import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
-import { AnimatePresence } from 'framer-motion'
+/* import { AnimatePresence } from 'framer-motion' */
 import { QueryClient, QueryClientProvider } from 'react-query'
 // import { ReactQueryDevtools } from 'react-query/devtools'
 import { appWithTranslation } from 'next-i18next'
@@ -34,9 +34,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             ]}
             {...SEO}
           />
-          <AnimatePresence exitBeforeEnter initial>
+          {/* <AnimatePresence exitBeforeEnter initial> */}
             <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
           {/* <ReactQueryDevtools initialIsOpen /> */}
         </Layout>
       </ThemeProvider>
