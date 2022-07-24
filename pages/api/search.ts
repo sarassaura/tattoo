@@ -11,7 +11,8 @@ export default async function handler(
   const params = req.body
   const definitive = await search(params)
 
-  res.setHeader('cache-control', 'max-age=31536000, immutable')
+  // res.setHeader('cache-control', 'max-age=31536000, immutable')
+  res.setHeader('cache-control', 'no-cache')
   res.setHeader('x-content-type-options', 'nosniff')
   res.status(200).json({
     ...definitive,
