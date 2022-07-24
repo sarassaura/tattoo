@@ -46,7 +46,13 @@ export default async function handler(
         resultsdois,
       })
     }
-    return res.status(501).json({ message: 'Not Implemented', note })
+    const end = `/works`
+    const ended = `/en/works`
+    const justtobesure = await res.revalidate(end)
+    const givememore = await res.revalidate(ended)
+    return res
+      .status(501)
+      .json({ message: 'Not Implemented', note, justtobesure, givememore })
   } catch (err) {
     return res.status(500).json({
       message: 'Error revalidating',
