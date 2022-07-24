@@ -19,16 +19,16 @@ export default async function handler(
       let folder = id.split('/')
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
-      await res.unstable_revalidate(final)
-      return res.json({ revalidated: true })
+      // await res.unstable_revalidate(final)
+      return res.json({ revalidated: true, final })
     }
     if (note === 'delete') {
       const id = req.body.resources[0].public_id
       let folder = id.split('/')
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
-      await res.unstable_revalidate(final)
-      return res.json({ revalidated: true })
+      // await res.unstable_revalidate(final)
+      return res.json({ revalidated: true, final })
     }
     // await res.unstable_revalidate('/works')
     return res.status(501).json({ message: 'Not Implemented', note })
