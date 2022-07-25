@@ -20,6 +20,7 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
+      console.log(req.body)
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({
@@ -36,6 +37,7 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
+      console.log(req.body)
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({
@@ -48,12 +50,14 @@ export default async function handler(
     }
     const end = `/works`
     const ended = `/en/works`
+    console.log(req.body)
     const justtobesure = await res.revalidate(end)
     const givememore = await res.revalidate(ended)
     return res
       .status(501)
       .json({ message: 'Not Implemented', note, justtobesure, givememore })
   } catch (err) {
+    console.log(req.body)
     return res.status(500).json({
       message: 'Error revalidating',
       received: req.body,
