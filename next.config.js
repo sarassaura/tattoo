@@ -9,6 +9,9 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     /* contentSecurityPolicy: ``, */
   },
+  experimental: {
+    nftTracing: true,
+  },
   i18n: {
     defaultLocale: 'pt-BR',
     locales: ['pt-BR', 'en'],
