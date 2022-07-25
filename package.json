@@ -18,6 +18,8 @@
     "@next/env": "^12.2.3",
     "@splidejs/react-splide": "^0.7.8",
     "@splidejs/splide-extension-grid": "^0.4.1",
+    "@tanstack/react-query": "^4.0.10",
+    "@tanstack/react-query-devtools": "^4.0.10",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "framer-motion": "^6.5.1",
@@ -28,8 +30,7 @@
     "nodemailer": "^6.7.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.33.0",
-    "react-query": "^3.39.1"
+    "react-hook-form": "^7.33.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

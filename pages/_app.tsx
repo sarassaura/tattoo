@@ -6,7 +6,8 @@ import '@splidejs/react-splide/css/skyblue'
 import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
 import { AnimatePresence } from 'framer-motion'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }
