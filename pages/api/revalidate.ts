@@ -58,7 +58,6 @@ export default async function handler(
   } catch (err) {
     return res.status(500).json({
       message: 'Error revalidating',
-      received: req.body,
       error: err,
     })
   }
