@@ -21,14 +21,13 @@ export default async function handler(
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
       console.log('coming from if upload:', req.body)
-      console.log('final:', final, finalen)
-      const results = await res.revalidate(final)
+      console.log('final:', finalen)
+      // const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({
         revalidated: true,
         final,
         finalen,
-        results,
         resultsdois,
       })
     }
@@ -40,24 +39,23 @@ export default async function handler(
       const finalen = `/en/works${folder}`
       console.log('coming from if delete:', req.body)
       console.log('final:', final, finalen)
-      const results = await res.revalidate(final)
+      // const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({
         revalidated: true,
         final,
         finalen,
-        results,
         resultsdois,
       })
     }
-    const end = `/works`
+    // const end = `/works`
     const ended = `/en/works`
     console.log('coming from not impremented:', req.body)
-    const justtobesure = await res.revalidate(end)
+    // const justtobesure = await res.revalidate(end)
     const givememore = await res.revalidate(ended)
     return res
       .status(501)
-      .json({ message: 'Not Implemented', note, justtobesure, givememore })
+      .json({ message: 'Not Implemented', note, givememore })
   } catch (err) {
     console.log('coming from catch:', req.body)
     return res.status(500).json({
