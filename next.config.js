@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config')
 
 const nextConfig = {
   /* experimental: {
@@ -10,7 +9,10 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     /* contentSecurityPolicy: ``, */
   },
-  i18n,
+  i18n: {
+    defaultLocale: 'pt-BR',
+    locales: ['pt-BR', 'en'],
+  },
   async headers() {
     return [
       {
