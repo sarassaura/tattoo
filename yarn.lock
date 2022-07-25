@@ -519,7 +519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:12.2.3, @next/env@npm:^12.2.0":
+"@next/env@npm:12.2.3, @next/env@npm:^12.2.3":
   version: 12.2.3
   resolution: "@next/env@npm:12.2.3"
   checksum: e96dcbea3fbb3d6b6a0799fe2e41c4929ded383659709f5bd00b6479b0711b89891b72fb28753b428933871d5fd91792fa54bc64a74a038c704b5862d40821ec
@@ -2638,7 +2638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-i18next@npm:^11.2.2":
+"next-i18next@npm:^11.3.0":
   version: 11.3.0
   resolution: "next-i18next@npm:11.3.0"
   dependencies:
@@ -3589,7 +3589,7 @@ __metadata:
     "@emotion/styled": ^11.9.3
     "@mui/icons-material": ^5.8.4
     "@mui/material": ^5.8.5
-    "@next/env": ^12.2.0
+    "@next/env": ^12.2.3
     "@splidejs/react-splide": ^0.7.8
     "@splidejs/splide-extension-grid": ^0.4.1
     "@types/node": 18.0.0
@@ -3610,7 +3610,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.3.0
     framer-motion: ^6.5.1
     next: ^12.2.3
-    next-i18next: ^11.2.2
+    next-i18next: ^11.3.0
     next-seo: ^5.4.0
     next-sitemap: ^3.1.10
     nodemailer: ^6.7.6
