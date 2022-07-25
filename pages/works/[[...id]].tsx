@@ -3,7 +3,6 @@ import { Box, Button, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextSeo } from 'next-seo'
 import axios from 'axios'
 /* import { useQuery } from '@tanstack/react-query' */
@@ -159,7 +158,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   let folder = params!.id
   folder = folder === undefined ? '' : folder
   const results = await search({
@@ -180,7 +179,6 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   return {
     props: {
       propina,
-      ...(await serverSideTranslations(locale!, ['common'])),
     },
   }
 }

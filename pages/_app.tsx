@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import '../styles/fonts.css'
 import '@splidejs/react-splide/css/skyblue'
@@ -41,4 +40,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default MyApp

@@ -21,8 +21,8 @@ export default async function handler(
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
       // console.log('final:', final, finalen)
-      const results = await res.revalidate('/')
-      const resultsdois = await res.revalidate('/en')
+      const results = await res.revalidate(final)
+      const resultsdois = await res.revalidate(finalen)
       return res.json({
         revalidated: true,
         final,
@@ -38,8 +38,8 @@ export default async function handler(
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
       // console.log('final:', final, finalen)
-      const results = await res.revalidate('/')
-      const resultsdois = await res.revalidate('/en/')
+      const results = await res.revalidate(final)
+      const resultsdois = await res.revalidate(finalen)
       return res.json({
         revalidated: true,
         final,

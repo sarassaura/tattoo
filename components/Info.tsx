@@ -1,6 +1,6 @@
 import { Avatar, Box, Stack, Typography, Link as MuiLink } from '@mui/material'
 import Link from 'next/link'
-import { useTranslation } from 'next-i18next'
+import useTranslation from 'next-translate/useTranslation'
 import { icons } from '../constants/icons'
 
 function Info() {

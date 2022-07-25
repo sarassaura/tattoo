@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
+const nextTranslate = require('next-translate')
 
 const nextConfig = {
-  /* experimental: {
-    isrMemoryCacheSize: 0,
-  }, */
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
@@ -53,4 +51,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = nextTranslate(nextConfig)

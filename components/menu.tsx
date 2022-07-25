@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material'
-import { useTranslation } from 'next-i18next'
+import useTranslation from 'next-translate/useTranslation'
 import LinkItem from './link'
 
 function MenuComponent({ router }: { router: string }) {
