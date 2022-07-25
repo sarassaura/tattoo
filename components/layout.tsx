@@ -1,5 +1,4 @@
 import { Box } from '@mui/material'
-import { Router } from 'next/router'
 import React from 'react'
 import ScrollProps from '../helpers/scroll'
 import About from './about'
@@ -12,7 +11,7 @@ function Layout({
   router,
 }: {
   children: React.ReactNode
-  router: Router
+  router: string
 }) {
   return (
     <>

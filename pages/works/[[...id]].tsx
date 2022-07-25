@@ -11,19 +11,20 @@ import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
 import Folders from '../../components/folders'
 import ScrollProps from '../../helpers/scroll'
+import Layout from '../../components/layout'
 
 interface FolderProps {
   path?: string
   name?: string
 }
 
-function Post({ images: im, nextCursor, folders, active }: TramProps) {
-  const [cursor, setCursor] = React.useState(nextCursor)
-  const [images, setImages] = React.useState(im)
+function Post({ propina: pro }: { propina: TramProps }) {
+  const [cursor, setCursor] = React.useState(pro.nextCursor)
+  const [images, setImages] = React.useState(pro.images)
   React.useEffect(() => {
-    setCursor(nextCursor)
-    setImages(im)
-  }, [nextCursor, im])
+    setCursor(pro.nextCursor)
+    setImages(pro.images)
+  }, [pro.nextCursor, pro.images])
   const myLoader = ({ src }: { src: string }) => src
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
@@ -43,7 +44,7 @@ function Post({ images: im, nextCursor, folders, active }: TramProps) {
   }
   async function handleMore() {
     const data = {
-      expression: `folder="${active}"`,
+      expression: `folder="${pro.active}"`,
       next_cursor: cursor,
       max_results: 15,
     }
@@ -54,13 +55,13 @@ function Post({ images: im, nextCursor, folders, active }: TramProps) {
     setImages(newImages)
   }
   return (
-    <>
+    <Layout router="/works">
       <NextSeo
         title="/works - Underground"
         description="Veja mais em: /works"
       />
       <Container>
-        <Folders folders={folders} active={active} />
+        <Folders folders={pro.folders} active={pro.active} />
         <Box display="flex" flexGrow={1} width="100%" {...ScrollProps}>
           <Box
             component="ul"
@@ -127,7 +128,7 @@ function Post({ images: im, nextCursor, folders, active }: TramProps) {
           </Button>
         )}
       </Container>
-    </>
+    </Layout>
   )
 }
 
@@ -159,15 +160,18 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const { resources, next_cursor: nextCursor } = results
   const images = mapImageResources(resources)
   const { folders } = await getFolders()
-  const propina = {
+  let propina = {
     images,
     nextCursor: nextCursor || false,
     folders,
     active,
-    ...(await serverSideTranslations(locale!, ['common'])),
   }
+  propina = JSON.parse(JSON.stringify(propina))
   return {
-    props: JSON.parse(JSON.stringify(propina)),
+    props: {
+      propina,
+      ...(await serverSideTranslations(locale!, ['common'])),
+    },
   }
 }
 

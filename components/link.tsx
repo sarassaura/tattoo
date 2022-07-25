@@ -11,10 +11,9 @@ function LinkItem({
   name: string
   path: string
 }) {
-  const general = path.split('/')
-  const active = general[1] === href
+  const active = path === href
   return (
-    <Link href={`/${href}`} passHref>
+    <Link href={href} passHref>
       <MuiLink variant="h4" underline={active ? 'always' : 'hover'}>
         {name}
       </MuiLink>
