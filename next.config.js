@@ -5,7 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
-    contentSecurityPolicy: ``,
   },
   i18n: {
     defaultLocale: 'pt-BR',
