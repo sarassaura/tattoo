@@ -20,7 +20,6 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
-      // console.log('final:', final, finalen)
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({
@@ -37,7 +36,6 @@ export default async function handler(
       folder = folder.length > 1 ? `/${folder[0]}` : ''
       const final = `/works${folder}`
       const finalen = `/en/works${folder}`
-      // console.log('final:', final, finalen)
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
       return res.json({

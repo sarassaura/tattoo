@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import axios from 'axios'
-/* import { useQuery } from '@tanstack/react-query' */
 import { getFolders, mapImageResources, search } from '../../utils/cloudinary'
 import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
@@ -53,15 +52,6 @@ function Post({ propina: pro }: { propina: TramProps }) {
     setCursor(next)
     setImages(newImages)
   }
-  /* const { status, data: moka } = useQuery(
-    ['pagination'],
-    () =>
-      fetch('https://api.github.com/repos/tannerlinsley/react-query').then(
-        (res) => res.json()
-      ),
-    { staleTime: 60000, keepPreviousData: true }
-  )
-  console.log(moka, status) */
   return (
     <Layout router="/works">
       <Container>

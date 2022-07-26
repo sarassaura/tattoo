@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
-    /* contentSecurityPolicy: ``, */
+    contentSecurityPolicy: ``,
   },
   i18n: {
     defaultLocale: 'pt-BR',
@@ -28,10 +28,10 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
-          /* {
+          {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
-          }, */
+          },
         ],
       },
       {
@@ -41,10 +41,23 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
-          /* {
+          {
             key: 'Cache-Control',
-            value: 'public, max-age=60, stale-while-revalidate=60',
-          }, */
+            value: 'no-cache',
+          },
+        ],
+      },
+      {
+        source: '/_next/data(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-cache',
+          },
         ],
       },
     ]

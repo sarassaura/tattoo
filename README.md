@@ -29,4 +29,7 @@ SECRET_TOKEN - For ISR revalidation
 ```
 
 Obs: Go to the cloudinary settings, under uploads tab, and put this in notifications:
-https://<your-site.com>/api/revalidate?secret=<token>
+
+```bash
+https://<NEXT_PUBLIC_SITE_URL>/api/revalidate?secret=<SECRET_TOKEN>
+```
