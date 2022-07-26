@@ -12,21 +12,27 @@ import theme from '../styles/theme'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const queryClient = new QueryClient()
+  let title: string | string[] = router.route
+  title = title.split('/')
+  const description = title[1]
+  const route = `/${title[1]}`
+  title = title[1].charAt(0).toUpperCase() + title[1].slice(1)
+  title = title === '' ? '' : `${title} - `
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <DefaultSeo
-          title={`${router.route} - Underground`}
-          description={`Veja mais em: ${router.route}`}
+          title={`${title}Underground`}
+          description={`Veja mais em ${description}`}
           languageAlternates={[
             {
               hrefLang: 'pt-BR',
-              href: `${process.env.NEXT_PUBLIC_SITE_URL}${router.route}`,
+              href: `${process.env.NEXT_PUBLIC_SITE_URL}${route}`,
             },
             {
               hrefLang: 'en',
-              href: `${process.env.NEXT_PUBLIC_SITE_URL}/en${router.route}`,
+              href: `${process.env.NEXT_PUBLIC_SITE_URL}/en${route}`,
             },
           ]}
           {...SEO}

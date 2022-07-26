@@ -3,7 +3,6 @@ import { Box, Button, Dialog, ImageListItem } from '@mui/material'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { NextSeo } from 'next-seo'
 import axios from 'axios'
 /* import { useQuery } from '@tanstack/react-query' */
 import { getFolders, mapImageResources, search } from '../../utils/cloudinary'
@@ -65,10 +64,6 @@ function Post({ propina: pro }: { propina: TramProps }) {
   console.log(moka, status) */
   return (
     <Layout router="/works">
-      <NextSeo
-        title="/works - Underground"
-        description="Veja mais em: /works"
-      />
       <Container>
         <Folders folders={pro.folders} active={pro.active} />
         <Box display="flex" flexGrow={1} width="100%" {...ScrollProps}>
