@@ -2860,16 +2860,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-translate@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "next-translate@npm:1.5.0"
-  peerDependencies:
-    next: ">= 10.0.0"
-    react: ">= 16.8.0"
-  checksum: d78cc4121fc4f05f3c859a021dace4bb5dd52885f45f0f06e6c5ef988b0eb22d75cc464d1151b2ef5747d8fa34a3e75c1bf49b382cdf1c663dd5fc4906f3763b
-  languageName: node
-  linkType: hard
-
 "next@npm:^12.2.3":
   version: 12.2.3
   resolution: "next@npm:12.2.3"
@@ -3761,7 +3751,6 @@ __metadata:
     next: ^12.2.3
     next-seo: ^5.4.0
     next-sitemap: ^3.1.10
-    next-translate: ^1.5.0
     nodemailer: ^6.7.6
     prettier: ^2.7.1
     react: 18.2.0

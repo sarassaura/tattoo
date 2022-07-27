@@ -61,7 +61,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.2.3"],\
             ["next-seo", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.5.0"],\
             ["next-sitemap", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:3.1.11"],\
-            ["next-translate", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:1.5.0"],\
             ["nodemailer", "npm:6.7.7"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
@@ -3794,32 +3793,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["next-translate", [\
-        ["npm:1.5.0", {\
-          "packageLocation": "./.yarn/cache/next-translate-npm-1.5.0-ccc84ee4ca-d78cc4121f.zip/node_modules/next-translate/",\
-          "packageDependencies": [\
-            ["next-translate", "npm:1.5.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:1.5.0", {\
-          "packageLocation": "./.yarn/__virtual__/next-translate-virtual-186796ce02/0/cache/next-translate-npm-1.5.0-ccc84ee4ca-d78cc4121f.zip/node_modules/next-translate/",\
-          "packageDependencies": [\
-            ["next-translate", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:1.5.0"],\
-            ["@types/next", null],\
-            ["@types/react", "npm:18.0.14"],\
-            ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.2.3"],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/next",\
-            "@types/react",\
-            "next",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["node-releases", [\
         ["npm:2.0.6", {\
           "packageLocation": "./.yarn/cache/node-releases-npm-2.0.6-8accb3fefb-e86a926dc9.zip/node_modules/node-releases/",\
@@ -4803,7 +4776,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:12.2.3"],\
             ["next-seo", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:5.5.0"],\
             ["next-sitemap", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:3.1.11"],\
-            ["next-translate", "virtual:111716e114ccd5f7f9b1f641de7f679085767768910ca996bf91d181ebb2197e8b0f2344c2a6b77a4cc8e217a661be37340e07d2ce02d2cc7277ecd205f9a2bb#npm:1.5.0"],\
             ["nodemailer", "npm:6.7.7"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
