@@ -1,10 +1,9 @@
 import { Avatar, Box, Stack, Typography, Link as MuiLink } from '@mui/material'
 import Link from 'next/link'
-import useTranslation from 'next-translate/useTranslation'
 import { icons } from '../constants/icons'
+import { LayoutProps } from '../interfaces/trampos'
 
-function Info() {
-  const { t } = useTranslation('common')
+function Info({ t }: { t: LayoutProps }) {
   return (
     <>
       <Box
@@ -16,7 +15,7 @@ function Info() {
       >
         <Link href="/">
           <Box display="flex" sx={{ cursor: 'pointer' }}>
-            <Typography variant="h3">{t('logo')}</Typography>
+            <Typography variant="h3">{t.logo}</Typography>
           </Box>
         </Link>
       </Box>
@@ -26,7 +25,7 @@ function Info() {
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
         <Avatar
-          alt={t('name')}
+          alt={t.name}
           src="/profile.webp"
           sx={{ width: '6rem', height: '6rem' }}
         />
@@ -38,9 +37,9 @@ function Info() {
         justifyContent="center"
         paddingRight={{ xs: '0px', lg: '32px' }}
       >
-        <Typography variant="h5">{t('name')}</Typography>
+        <Typography variant="h5">{t.name}</Typography>
       </Box>
-      <Typography>{t('description')}</Typography>
+      <Typography>{t.description}</Typography>
       <Box
         height="1.5rem"
         display="flex"
@@ -62,14 +61,14 @@ function Info() {
         ))}
       </Box>
       <Stack spacing="0.5rem">
-        <Typography>{t('address')}</Typography>
-        <Typography>{t('phone')}</Typography>
-        <Typography>{t('cell')}</Typography>
-        <Typography>{t('gmail')}</Typography>
+        <Typography>{t.address}</Typography>
+        <Typography>{t.phone}</Typography>
+        <Typography>{t.cell}</Typography>
+        <Typography>{t.gmail}</Typography>
       </Stack>
       <Box display="flex" flexGrow={1} />
       <Typography variant="subtitle1" mt={3} sx={{ userSelect: 'none' }}>
-        {t('copyright')}
+        {t.copyright}
       </Typography>
     </>
   )

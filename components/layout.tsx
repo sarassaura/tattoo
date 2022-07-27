@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import ScrollProps from '../helpers/scroll'
+import { LayoutProps } from '../interfaces/trampos'
 import About from './about'
 import Info from './Info'
 import MenuComponent from './menu'
@@ -9,9 +10,11 @@ import Speed from './speedial'
 function Layout({
   children,
   router,
+  text,
 }: {
   children: React.ReactNode
   router: string
+  text: LayoutProps
 }) {
   return (
     <>
@@ -28,7 +31,7 @@ function Layout({
           flexDirection="column"
           {...ScrollProps}
         >
-          <Info />
+          <Info t={text} />
         </Box>
         <Box
           height="calc(100%-3rem)"
@@ -54,9 +57,9 @@ function Layout({
             flexDirection={{ xs: 'row-reverse', lg: 'row' }}
           >
             <Box alignItems="center" display={{ xs: 'flex', lg: 'none' }}>
-              <About />
+              <About text={text} />
             </Box>
-            <MenuComponent router={router} />
+            <MenuComponent router={router} t={text} />
           </Box>
           {children}
         </Box>

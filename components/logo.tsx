@@ -1,12 +1,11 @@
 import { Typography } from '@mui/material'
-import useTranslation from 'next-translate/useTranslation'
+import { LogoText } from '../interfaces/trampos'
 
-function Logo() {
-  const { t } = useTranslation('common')
+function Logo({ title, sub }: LogoText) {
   return (
     <>
-      <Typography variant="h1">{t('title')}</Typography>
-      <Typography marginBottom={3}>{t('subtitle')}</Typography>
+      <Typography variant="h1">{title}</Typography>
+      <Typography marginBottom={3}>{sub}</Typography>
     </>
   )
 }

@@ -9,6 +9,10 @@ import { ImageProp, TramProps } from '../../interfaces/trampos'
 import Container from '../../components/container'
 import Folders from '../../components/folders'
 import ScrollProps from '../../helpers/scroll'
+import ptl from '../../locales/pt-BR/common.json'
+import enl from '../../locales/en/common.json'
+import pt from '../../locales/pt-BR/works.json'
+import en from '../../locales/en/works.json'
 import Layout from '../../components/layout'
 
 interface FolderProps {
@@ -53,7 +57,7 @@ function Post({ propina: pro }: { propina: TramProps }) {
     setImages(newImages)
   }
   return (
-    <Layout router="/works">
+    <Layout router="/works" text={pro.layout}>
       <Container>
         <Folders folders={pro.folders} active={pro.active} />
         <Box display="flex" flexGrow={1} width="100%" {...ScrollProps}>
@@ -118,7 +122,7 @@ function Post({ propina: pro }: { propina: TramProps }) {
         </Dialog>
         {cursor && (
           <Button variant="active" onClick={() => handleMore()}>
-            Other Images
+            {pro.text.button}
           </Button>
         )}
       </Container>
@@ -143,7 +147,9 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const layout = locale === 'en' ? enl : ptl
+  const text = locale === 'en' ? en : pt
   let folder = params!.id
   folder = folder === undefined ? '' : folder
   const results = await search({
@@ -159,6 +165,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     nextCursor: nextCursor || false,
     folders,
     active,
+    layout,
+    text,
   }
   propina = JSON.parse(JSON.stringify(propina))
   return {

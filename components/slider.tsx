@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Grid } from '@splidejs/splide-extension-grid'
-import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
 
 interface cardProp {
@@ -9,9 +8,7 @@ interface cardProp {
   text: string
 }
 
-function Slider() {
-  const { t } = useTranslation('common')
-  const cards: cardProp[] = t('cards', {}, { returnObjects: true })
+function Slider({ cards }: { cards: cardProp[] }) {
   return (
     <Splide
       className="my-carousel"

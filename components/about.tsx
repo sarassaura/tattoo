@@ -2,9 +2,10 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { SwipeableDrawer, IconButton, Box } from '@mui/material'
 import { useState } from 'react'
 import ScrollProps from '../helpers/scroll'
+import { LayoutProps } from '../interfaces/trampos'
 import Info from './Info'
 
-function About() {
+function About({ text }: { text: LayoutProps }) {
   const [state, setState] = useState(false)
   return (
     <>
@@ -29,7 +30,7 @@ function About() {
           flexGrow={1}
           {...ScrollProps}
         >
-          <Info />
+          <Info t={text} />
         </Box>
       </SwipeableDrawer>
     </>

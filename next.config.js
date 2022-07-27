@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextTranslate = require('next-translate')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -63,4 +62,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextTranslate(nextConfig)
+module.exports = nextConfig

@@ -1,5 +1,4 @@
 import { Box, Typography, Grid } from '@mui/material'
-import useTranslation from 'next-translate/useTranslation'
 
 interface FactProps {
   id: number
@@ -7,9 +6,7 @@ interface FactProps {
   number: number
 }
 
-function Facts() {
-  const { t } = useTranslation('common')
-  const facts: FactProps[] = t('facts', {}, { returnObjects: true })
+function Facts({ facts }: { facts: FactProps[] }) {
   return (
     <Grid
       container
