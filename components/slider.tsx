@@ -42,25 +42,25 @@ function Slider({ cards }: { cards: cardProp[] }) {
           1200: {
             perPage: 3,
             grid: {
-              rows: 3,
+              rows: 2,
             },
           },
           1015: {
             perPage: 3,
             grid: {
-              rows: 3,
+              rows: 2,
             },
           },
           768: {
             perPage: 2,
             grid: {
-              rows: 3,
+              rows: 2,
             },
           },
           576: {
             perPage: 1,
             grid: {
-              rows: 3,
+              rows: 2,
             },
           },
           400: {

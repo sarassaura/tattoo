@@ -9,12 +9,22 @@ import ptl from '../locales/pt-BR/common'
 import enl from '../locales/en/common'
 import Layout from '../components/layout'
 import { TextProps } from '../interfaces/trampos'
+import Thing from '../public/logo'
 
 function home(props: TextProps) {
   return (
     <Layout router="/" text={props.layout}>
       <Container>
-        <Logo title={props.text.title} sub={props.text.subtitle} />
+        <Box
+          display="flex"
+          width="100%"
+          flexDirection={{ xs: 'column', sm: 'row' }}
+          justifyContent="space-evenly"
+          alignItems="center"
+        >
+          <Logo title={props.text.title} sub={props.text.subtitle} />
+          <Thing />
+        </Box>
         <Box display="flex" flexGrow={1} flexShrink={0} width="100%">
           <Slider cards={props.text.cards} />
         </Box>
