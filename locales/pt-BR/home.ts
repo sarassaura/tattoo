@@ -1,4 +1,4 @@
-{
+const pt = {
   "title": "Under\u005Cground",
   "subtitle": "Tatuagens - Desenhos - Pinturas",
   "cards": [
@@ -40,3 +40,5 @@
     { "id": 3, "name": "Pinturas", "number": 95 }
   ]
 }
+
+export default pt

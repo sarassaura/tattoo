@@ -1,4 +1,4 @@
-{
+const en = {
   "title": "Under\u005Cground",
   "subtitle": "Tattoos - Drawing - Paintings",
   "cards": [
@@ -37,3 +37,5 @@
     { "id": 3, "name": "Paintings", "number": 95 }
   ]
 }
+
+export default en

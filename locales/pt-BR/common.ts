@@ -1,4 +1,4 @@
-{
+const ptl = {
   "logo": "Under\u005Cground",
   "name": "Vitor Valentim",
   "description": "Desenhista, tatuador, pintor, grafiteiro e CEO",
@@ -13,3 +13,5 @@
     "third": "Contato"
   }
 }
+
+export default ptl

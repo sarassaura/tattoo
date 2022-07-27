@@ -1,4 +1,4 @@
-{
+const en = {
   "text": "Any questions call me on whatsapp!",
   "input": [
     {
@@ -52,3 +52,5 @@
     "body": "We will contact you soon."
   }
 }
+
+export default en

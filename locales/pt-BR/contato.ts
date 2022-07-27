@@ -1,4 +1,4 @@
-{
+const pt = {
   "text": "Qualquer dúvida chame pelo whatsapp!",
   "input": [
     {
@@ -52,3 +52,5 @@
     "body": "Entraremos em contato em breve."
   }
 }
+
+export default pt
