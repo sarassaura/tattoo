@@ -18,8 +18,8 @@ function home(props: TextProps) {
         <Box
           display="flex"
           width="100%"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          justifyContent="space-evenly"
+          flexDirection={{ xs: 'column', sm: 'row-reverse' }}
+          justifyContent="center"
           alignItems="center"
         >
           <Logo title={props.text.title} sub={props.text.subtitle} />

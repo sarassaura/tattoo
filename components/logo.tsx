@@ -3,7 +3,7 @@ import { LogoText } from '../interfaces/trampos'
 
 function Logo({ title, sub }: LogoText) {
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" marginX={3}>
       <Typography variant="h1">{title}</Typography>
       <Typography marginBottom={3}>{sub}</Typography>
     </Box>
