@@ -4,7 +4,6 @@ import '../styles/fonts.css'
 import '@splidejs/react-splide/css/skyblue'
 import '../styles/slider.css'
 import { DefaultSeo } from 'next-seo'
-import { AnimatePresence } from 'framer-motion'
 import SEO from '../helpers/seo'
 import theme from '../styles/theme'
 
@@ -33,9 +32,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         ]}
         {...SEO}
       />
-      <AnimatePresence exitBeforeEnter initial>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
+      <Component {...pageProps} key={router.route} />
     </ThemeProvider>
   )
 }
