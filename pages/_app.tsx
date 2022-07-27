@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <DefaultSeo
-        title={`${title}Underground`}
+        title={`${title}WhiteTiger`}
         description={`Veja mais em ${description}`}
         languageAlternates={[
           {

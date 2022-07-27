@@ -15,8 +15,8 @@ const SEO = {
     ],
   },
   twitter: {
-    handle: '@victorvalentim',
-    site: '@undergroundtattoo',
+    handle: '@vitaounderground',
+    site: '@whitetiger',
     cardType: 'summary_large_image',
   },
   additionalLinkTags: [
