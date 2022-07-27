@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Box } from '@mui/material'
 import variants from '../helpers/variants'
-import ScrollProps from '../helpers/scroll'
 
 function Container({ children }: { children: React.ReactNode }) {
   return (
@@ -20,7 +19,6 @@ function Container({ children }: { children: React.ReactNode }) {
       animate="enter"
       exit="exit"
       variants={variants}
-      {...ScrollProps}
     >
       {children}
     </Box>
