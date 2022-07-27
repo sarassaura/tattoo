@@ -148,8 +148,8 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const layout = locale === 'en' ? enl : ptl
-  const text = locale === 'en' ? en : pt
+  const layout = locale === 'pt-BR' ? ptl : enl
+  const text = locale === 'pt-BR' ? pt : en
   let folder = params!.id
   folder = folder === undefined ? '' : folder
   const results = await search({

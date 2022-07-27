@@ -23,11 +23,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         languageAlternates={[
           {
             hrefLang: 'pt-BR',
-            href: `${process.env.NEXT_PUBLIC_SITE_URL}${route}`,
+            href: `${process.env.NEXT_PUBLIC_SITE_URL}/pt-BR${route}`,
           },
           {
             hrefLang: 'en',
-            href: `${process.env.NEXT_PUBLIC_SITE_URL}/en${route}`,
+            href: `${process.env.NEXT_PUBLIC_SITE_URL}${route}`,
           },
         ]}
         {...SEO}

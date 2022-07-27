@@ -63,8 +63,8 @@ function contato(props: TextProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const text = locale === 'en' ? en : pt
-  const layout = locale === 'en' ? enl : ptl
+  const text = locale === 'pt-BR' ? pt : en
+  const layout = locale === 'pt-BR' ? ptl : enl
   return {
     props: {
       text,
