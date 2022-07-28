@@ -18,7 +18,7 @@ export default async function handler(
       const id = req.body.public_id
       let folder = id.split('/')
       folder = folder.length > 1 ? `/${folder[0]}` : ''
-      const final = `/works${folder}`
+      const final = `/pt-BR/works${folder}`
       const finalen = `/en/works${folder}`
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
@@ -34,7 +34,7 @@ export default async function handler(
       const id = req.body.resources[0].public_id
       let folder = id.split('/')
       folder = folder.length > 1 ? `/${folder[0]}` : ''
-      const final = `/works${folder}`
+      const final = `/pt-BR/works${folder}`
       const finalen = `/en/works${folder}`
       const results = await res.revalidate(final)
       const resultsdois = await res.revalidate(finalen)
@@ -46,7 +46,7 @@ export default async function handler(
         resultsdois,
       })
     }
-    const end = `/works`
+    const end = `/pt-BR/works`
     const ended = `/en/works`
     const justtobesure = await res.revalidate(end)
     const givememore = await res.revalidate(ended)
