@@ -9,9 +9,9 @@
 [Usage](#usage) •
 [Environment Variables](#environment-variables)
 
-![Home](/public/CRUD.gif)
-![Portfolio](/public/Authentification.gif)
-![Contact](/public/Authentification.gif)
+![Home](/public/Home.gif)
+![Portfolio](/public/Portfolio.gif)
+![Contact](/public/Contact.gif)
 
 A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, Static Paths
 
