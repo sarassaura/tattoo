@@ -2,15 +2,16 @@
 
 <div align="center">
 
-![Banner](/public/Todo.png?raw=true)
+![Banner](/public/Banner.png?raw=true)
 
 [Features](#features) •
 [Installation](#installation) •
 [Usage](#usage) •
 [Environment Variables](#environment-variables)
 
-![CRUD](/public/CRUD.gif)
-![AUTH](/public/Authentification.gif)
+![Home](/public/CRUD.gif)
+![Portfolio](/public/Authentification.gif)
+![Contact](/public/Authentification.gif)
 
 A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, Static Paths
 
@@ -24,6 +25,7 @@ A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, S
 - Internationalization with _GetStaticProps_
 - Beautiful UI with _material-ui_
 - Beautiful Page Animations with _framer-motion_
+- Responsive 8-pt grid system with _figma_
 - Sitemap with _next-sitemap_
 - SEO with _next-seo_
 
@@ -34,7 +36,7 @@ A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, S
 $ git clone git@github.com:florescente/tattoo.git
 
 # Go into the repository
-$ cd Todo
+$ cd vitor-underground-tattoo
 
 # Install dependencies
 $ npm install
@@ -47,7 +49,7 @@ $ yarn dlx @yarnpkg/sdks vscode
 # Run the app
 $ npm run dev
 OR
-& yarn dev
+$ yarn dev
 ```
 
 ## Usage
