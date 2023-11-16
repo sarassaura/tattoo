@@ -6,9 +6,9 @@ A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, S
 
 ![Banner](/public/Banner.png?raw=true)
 
-[Features](#features) •
-[Installation](#installation) •
-[Usage](#usage) •
+[Features](#features)&nbsp;&nbsp; • &nbsp;&nbsp;
+[Installation](#installation)&nbsp;&nbsp; • &nbsp;&nbsp;
+[Usage](#usage)&nbsp;&nbsp; • &nbsp;&nbsp;
 [Environment Variables](#environment-variables)
 
 [🇬🇧 English](/README.md)&nbsp;&nbsp; • &nbsp;&nbsp;
