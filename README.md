@@ -91,5 +91,5 @@ https://<NEXT_PUBLIC_SITE_URL>/api/revalidate?secret=<SECRET_TOKEN>
 
 ## Meta
 
-Created By Florescente:
-[github.com/florescente](https://github.com/florescente)
+Created By Sarassaura:
+[github.com/florescente](https://github.com/sarassaura)
