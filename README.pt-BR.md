@@ -2,7 +2,7 @@
 
 <div align="center">
 
-A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, Static Paths
+Um `Studio-de-Tatuagem` com Galeria de Imagem usando Cloudinary, ISR Sob Demanda, SSG, Caminhos Estáticos
 
 ![Banner](/public/Banner.png?raw=true)
 
@@ -23,48 +23,48 @@ A `Tattoo-Studio` portfolio with Cloudinary Image Gallery, On-Demand ISR, SSG, S
 
 ## Tecnologias
 
-- Image Gallery connected with _cloudinary_ Account
-- Automatic e-mails with _nodemailer_
-- Form Validation with _react-hook-form_
-- Internationalization with _GetStaticProps_
-- Beautiful UI with _material-ui_
-- Beautiful Page Animations with _framer-motion_
-- Responsive 8-pt grid system with _figma_
-- Sitemap with _next-sitemap_
-- SEO with _next-seo_
+- Galeria de Imagem conectada com _cloudinary_ Account
+- Emails automáticos com _nodemailer_
+- Validação de Formulário com _react-hook-form_
+- Internacionalização com _GetStaticProps_
+- Lindas Interfaces de Usuário com _material-ui_
+- Belíssimas Animações de Página com _framer-motion_
+- Grid de 8 pontos Responsivo com _figma_
+- Sitemap com _next-sitemap_
+- SEO com _next-seo_
 
 ## Instalação
 
 ```sh
-# Clone this repository
+# Clone esse repositório
 $ git clone git@github.com:florescente/tattoo.git
 
-# Go into the repository
+# Entre na pasta
 $ cd vitor-underground-tattoo
 
-# Install dependencies
+# Instale dependências
 $ npm install
-OR
+OU
 $ yarn set version berry
 $ yarn install
 $ yarn dlx @yarnpkg/sdks vscode
 
 
-# Run the app
+# Rode o app
 $ npm run dev
-OR
+OU
 $ yarn dev
 ```
 
 ## Como Usar
 
-1. Create a Cloudinary Account
-2. Create a Gmail Account
-3. Get Cloudinary Config Info
-4. Generate Gmail App password
-5. Create Folders with Images in Cloudinary
-6. Set the environment variables
-7. run
+1. Crie uma conta no Cloudinary
+2. Crie uma conta no Gmail
+3. Pegue as informações de configuração do Cloudinary
+4. Gere uma senha de app no Gmail
+5. Crie pastas com imagens no Cloudinary
+6. Crie as variáveis de ambiente
+7. Rode
 
 ## Variáveis de Ambiente
 
@@ -75,15 +75,15 @@ CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
 EMAIL - GMAIL
-PASSWORD - Generate APP password
+PASSWORD - Gerar senha de APP
 SECRET_TOKEN
 ```
 
 ## Congifurações do Cloudinary
 
-This is important for the ISR revalidation:
+Isso é importante para a revalidação de ISR:
 
-Go to the cloudinary settings, under uploads tab, and put this in notifications:
+Vá para as configurações do cloudinary, debaixo da aba uploads, e coloque isso em notifications:
 
 ```bash
 https://<NEXT_PUBLIC_SITE_URL>/api/revalidate?secret=<SECRET_TOKEN>
