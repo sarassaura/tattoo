@@ -1,8 +1,8 @@
-# Tattoo-Studio
+# Estúdio de Tatuagem
 
 <div align="center">
 
-Um `Studio-de-Tatuagem` com Galeria de Imagem usando Cloudinary, ISR Sob Demanda, SSG, Caminhos Estáticos
+Um `Estúdio-de-Tatuagem` com Galeria de Imagem usando Cloudinary, ISR Sob Demanda, SSG, Caminhos Estáticos
 
 ![Banner](/public/Banner.png?raw=true)
 
