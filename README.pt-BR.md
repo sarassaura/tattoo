@@ -15,9 +15,11 @@ Um `Estúdio-de-Tatuagem` com Galeria de Imagem usando Cloudinary, ISR Sob Deman
 [🇪🇸 Español](/README.es.md)&nbsp;&nbsp; • &nbsp;&nbsp;
 [🇧🇷 Português](/README.pt-BR.md)
 
-![Home](/public/Home.gif)
-![Portfolio](/public/Portfolio.gif)
-![Contact](/public/Contact.gif)
+https://github.com/sarassaura/tattoo/assets/141577271/e63f8c83-db41-4c5a-8633-b127344e4295
+
+https://github.com/sarassaura/tattoo/assets/141577271/3ffb287c-77b6-47c0-9b9e-0f27e76350ab
+
+https://github.com/sarassaura/tattoo/assets/141577271/a6f2aad6-6090-410a-a1b6-506491dcf645
 
 </div>
 
