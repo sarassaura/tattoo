@@ -92,4 +92,4 @@ https://<NEXT_PUBLIC_SITE_URL>/api/revalidate?secret=<SECRET_TOKEN>
 ## Meta
 
 Created By Sarassaura:
-[github.com/florescente](https://github.com/sarassaura)
+[github.com/sarassaura](https://github.com/sarassaura)
