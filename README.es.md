@@ -39,10 +39,10 @@ https://github.com/sarassaura/tattoo/assets/141577271/a6f2aad6-6090-410a-a1b6-50
 
 ```sh
 # Clonar este repositorio
-$ git clone git@github.com:florescente/tattoo.git
+$ git clone git@github.com:sarassaura/tattoo.git
 
 # Ingrese a la carpeta
-$ cd vitor-underground-tattoo
+$ cd tattoo
 
 # Instalar dependencias
 $ npm install
